@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes typing {
+            from { width: 0 }
+        }
+        @keyframes caret {
+            50% { border-color: transparent; }
+        }
+        h1 {
+            width: 0ch; /* Width of text */
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: .05em solid;
+            /*animation: typing 3s steps(4),caret 1s steps(1) infinite;*/
+            /*letter-spacing:1.5px;*/
+        }
+    </style>
+</head>
+<body>
+    <!--<h2>We can go out any day any night。</h2>-->
+    <!--<h2></h2>-->
+</body>
+</html>
+<script src="jquery-1.12.3.min.js"></script>
+<script>
+    var arr=new Array();
+    arr.push("We can go out any day any night。");
+    arr.push("I'm tellin' you now objection overruledoverruled");
+    arr.push("BOOMSHAKALAKA BOOMSHAKALAKA "+
+            "BOOMSHAKALAKA "+
+            "DAN DAN DAN DAN DANCE");
+
+        arr.push("Lately, I've been, I've been losing sleep")
+        arr.push("Dreaming about the things that we could be")
+        arr.push("But baby, I've been, I've been playing hard,")
+        arr.push("Sitting, no more counting dollars")
+        arr.push("We'll be counting stars, yeah we'll be counting stars")
+        arr.push("Counting Stars")
+        arr.push("OneRepublic")
+        arr.push("<Native (Deluxe Version)>")
+        arr.push("Lyircs by Sina Weibo @Berrie_Lau")
+        arr.push("I see this life like a swinging vine")
+        arr.push("Swing my heart across the line")
+        arr.push("And my face is flashing signs")
+        arr.push("Seek it out and you shall find")
+        arr.push("Oh, but I'm not that old")
+        arr.push("Young, but I'm not that bold")
+        arr.push("I don't think the world is sold")
+        arr.push("I'm just doing what we're told")
+        arr.push("I~ feel something so right")
+        arr.push("Doing the wrong thing")
+        arr.push("I~ feel something so wrong")
+        arr.push("Doing the right thing")
+        arr.push("I could lie, could lie, could lie")
+        arr.push("Everything that kills me makes me feel alive")
+        arr.push("Lately, I've been, I've been losing sleep")
+        arr.push("Dreaming about the things that we could be")
+        arr.push("But baby, I've been, I've been playing hard,")
+        arr.push("       Sitting, no more counting dollars")
+        arr.push("We'll be counting stars")
+        arr.push("Lately, I've been, I've been losing sleep")
+       arr.push("Dreaming about the things that we could be")
+       arr.push("But baby, I've been, I've been playing hard,")
+       arr.push("Sitting, no more counting dollars")
+       arr.push("We'll be, we'll be counting stars")
+       arr.push("I feel the love and I feel it burn")
+       arr.push("Down this river, every turn")
+       arr.push("Hope is a four-letter word")
+       arr.push("Make that money, watch it burn")
+       arr.push("Oh, but I'm not that old")
+       arr.push("Young, but I'm not that bold")
+       arr.push("I don't think the world is sold")
+       arr.push("I'm just doing what we're told")
+       arr.push("I~ feel something so wrong")
+       arr.push("Doing the right thing")
+       arr.push("I could lie, could lie, could lie")
+       arr.push("Everything that downs me makes me wanna fly")
+       arr.push("Lately, I've been, I've been losing sleep")
+       arr.push("Dreaming about the things that we could be")
+       arr.push("But baby, I've been, I've been playing hard,")
+       arr.push("Sitting, no more counting dollars")
+       arr.push("We'll be counting stars")
+        arr.push(" Lately, I've been, I've been losing sleep")
+       arr.push("Dreaming about the things that we could be")
+       arr.push("But baby, I've been, I've been playing hard,")
+       arr.push("Sitting, no more counting dollars")
+       arr.push("We'll be, we'll be counting stars")
+       arr.push("Take that money")
+        arr.push(" Watch it burn")
+       arr.push("Sing in the river")
+        arr.push(" The lessons are learnt")
+       arr.push("Take that money")
+       arr.push("Watch it burn")
+       arr.push("Sing in the river")
+       arr.push("The lessons are learnt")
+       arr.push("Take that money")
+       arr.push("Watch it burn")
+       arr.push("Sing in the river")
+       arr.push("The lessons are learnt")
+       arr.push("Take that money")
+       arr.push("Watch it burn")
+       arr.push("Sing in the river")
+       arr.push("The lessons are learnt")
+       arr.push("Everything that kills me makes feel alive")
+       arr.push("Lately, I've been, I've been losing sleep")
+       arr.push("Dreaming about the things that we could be")
+       arr.push("But baby, I've been, I've been playing hard,")
+       arr.push("itting, no more counting dollars")
+       arr.push("We'll be counting stars")
+       arr.push("Lately, I've been, I've been losing sleep")
+       arr.push("Dreaming about the things that we could be")
+       arr.push("But baby, I've been, I've been playing hard,")
+       arr.push("Sitting, no more counting dollars")
+       arr.push("We'll be, we'll be, counting stars")
+       arr.push("Take that money")
+        arr.push("Watch it burn")
+        arr.push("Sing in the river")
+       arr.push("The lessons are learnt")
+       arr.push("Take that money")
+       arr.push("Watch it burn")
+       arr.push("Sing in the river")
+       arr.push("The lessons are learnt")
+       arr.push("Take that money")
+       arr.push("Watch it burn")
+       arr.push("Sing in the river")
+       arr.push("The lessons are learnt")
+       arr.push("Take that money")
+       arr.push("Watch it burn")
+       arr.push("Sing in the river")
+       arr.push("The lessons are learnt")
+
+
+    showText(0)
+//    var aH1=$('h2');
+//    aH1.each(function () {
+//       var length=$(this).text().length+1;
+//        $(this).css({"width":length+"ch","animation":"typing "+length/10+"s steps("+length+"),caret 1s steps(1) infinite"});
+//    });
+
+
+
+    function showText(int){
+        (function(){
+            if(int>=arr.length){return;}
+            if(int!=0){$($("h1")[int-1]).css("border","0")}
+            var length=arr[int].trim().length;
+            var h1=$("<h1></h1>");
+            h1.text(arr[int]);
+            h1.css({"width":length+"ch","animation":"typing "+length/10+"s steps("+length+"),caret 1s steps(1) infinite"});
+            $("body").append(h1);
+            $('html,body').animate({scrollTop: $("body").height()}, 100);
+            int++;
+            window.setTimeout(arguments.callee,length/10*1000+100);
+        })();
+//        var length=arr[int].length;
+//        var h1=$("<h1></h1>");
+//        h1.text(arr[int]);
+//        h1.css({"width":length+"ch","animation":"typing "+length/8+"s steps("+length+"),caret 1s steps(1) infinite"});
+//        $("body").append(h1);
+//        setTimeout((function(arr,int){
+//            return function(){
+//                int+=1;
+//                if(int<arr.length){
+//                    showText(arr,int);
+//                }else{
+//                    return false;
+//                }
+//            }
+//        })(arr,int),length/8);
+    }
+//    for(var i in arr){
+//        var length=arr[i].length;
+//        var h1=$("<h1></h1>");
+//        h1.text(arr[i]);
+//        h1.css({"width":length+"ch","animation":"typing "+length/8+"s steps("+length+"),caret 1s steps(1) infinite"});
+//        $("body").append(h1);
+//    }
+
+</script>

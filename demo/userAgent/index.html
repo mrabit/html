@@ -1,0 +1,50 @@
+<div id="load">
+
+</div>
+<script src="jquery-1.12.3.min.js"></script>
+<script>
+
+    var browser = function() {
+        var ua = navigator.userAgent;
+        return {
+            android: function() {
+                return ua.match(/Android/i);
+            },
+            iphone: function() {
+                return ua.match(/iPhone|iPod/i);
+            },
+            ipad: function() {
+                return ua.match(/iPad/i);
+            }
+        }
+    }();
+    //config1.js加载完的回调
+    function callback(data) {
+        var url = '';
+        if(browser.android()) {
+            url = data.android.download_url;
+            $("#load").load(url)
+        } else if(browser.iphone()) {
+            url = data.iphone.download_url;
+            $("#load").load(url)
+        } else if(browser.ipad()) {
+            url = data.ipad.download_url;
+            alert(url);
+        } else {
+            url = 'http://www.mrabit.com';
+            alert(url);
+        }
+
+
+    }
+    (function() {
+        var params= {
+            "android": {"download_url":"android.html","version":"3.6","date":"2016-4-22","size":"14.8MB","platform":"Android 4.0及更高版本"},
+            "iphone":{"download_url":"iphone.html","version":"3.1.2","date":"2015-07-21","size":"62.2MB","platform":"iOS 6.0及更高版本"},
+            "ipad":{"download_url":"ipad","version":"2.1","date":"2014-08-21","size":"29.1MB","platform":"iOS 5.0.1及更高版本"},
+            "windows":{"download_url":"windows","version":"3.4","date":"2016-05-16","size":"23.1MB","platform":"XP/vista/win7/win8"},
+            "mac_sync":{"download_url":"mac_sync","version":"3.0","date":"2016-05-11","size":"11MB","platform":"OS X10.9及更高版本"}};
+        typeof callback === "function" && callback(params)
+
+    })()
+</script>

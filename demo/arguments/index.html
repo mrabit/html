@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/js/bootstrap-dialog/bootstrap-dialog.min.css">
+    <script src="../../public/js/require.js"></script>
+    <script src="../../public/js/main.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    require(["jquery", 'bootstrapDialog'], function ($) {
+        $.bootstrapDialog = {};
+        require(["bootstrap-dialog"], function (d) {
+            $.bootstrapDialog = d;
+            $.bootstrapDialog.success = function (content, func) {
+                var $success = $('<div class="padder padder-v"><div class="row m-t-sm">' +
+                        '<div class="col-xs-4 m-t m-r-n col-xs-offset-1"><img class="img-full" src="/images/success01.png"></div>' +
+                        '<div class="col-xs-7 m-t"><h3>' + content + '</h3></div>' +
+                        '<div class="col-xs-12 m-t-lg" style="padding: 0 100px;"><button class="btn btn-info btn-block" data-dismiss="modal" aria-label="Close">确 &nbsp;认</button></div>' +
+                        '</div></div>');
+                $.bootstrapDialog.show({
+                    size: "size-small",
+                    onshow: function (dialog) {
+                        dialog.getModalHeader().remove();
+                        dialog.getModalDialog().css("margin-top", $(window).height() / 2 * 0.4 + "px");
+                        dialog.getModalContent().html($success);
+                    },
+                    onhidden: function () {
+                        func.apply(this);
+                    }
+                });
+            };
+            $.bootstrapDialog.test = function () {
+                var btn = {};
+                $.each(arguments, function (k,v) {
+                    if(typeof v === "object"){
+                        btn = v;
+                    }
+                });
+                console.log(btn);
+//                var $success = $('<div class="padder padder-v"><div class="row m-t-sm">' +
+//                        '<div class="col-xs-4 m-t m-r-n col-xs-offset-1"><img class="img-full" src="/images/success01.png"></div>' +
+//                        '<div class="col-xs-7 m-t"><h3>' + content + '</h3></div>' +
+//                        '<div class="col-xs-12 m-t-lg" name="modal_btn_group" style="padding: 0 100px;"></div>' +
+//                        '</div></div>');
+//                $.bootstrapDialog.show({
+//                    size: "size-small",
+//                    onshow: function (dialog) {
+//                        $.each(arguments, function (k,v) {
+//                            console.log(k)
+//                            console.log(v)
+//                        })
+//                        dialog.getModalHeader().remove();
+//                        dialog.getModalDialog().css("margin-top", $(window).height() / 2 * 0.4 + "px");
+//                        dialog.getModalContent().html($success);
+//                    },
+//                    onhidden: function () {
+//                        func.apply(this);
+//                    }
+//                });
+            };
+//            console.log($.bootstrapDialog)
+        });
+
+
+
+
+
+        setTimeout(function () {
+//            console.log($.bootstrapDialog)
+            $.bootstrapDialog.test({"btn":[{"name":"btn1"},{"name":"btn2"}]});
+        },5000);
+    });
+
+</script>

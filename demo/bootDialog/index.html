@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/js/bootstrap-dialog/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+</head>
+<body >
+
+</body>
+</html>
+<script src="../../public/js/jquery-1.12.3.min.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+<script src="../../public/js/bootstrap-dialog/bootstrap-dialog.js"></script>
+<script src="../../public/js/app.min.js"></script>
+<script>
+    (function ($, owner) {
+        BootstrapDialog.success = function (content, func) {
+            var $success = '<div class="row padder-v">' +
+                    '<div class="col-xs-12 text-center">' +
+                    content +
+                    '</div>' +
+                    '<div class="col-xs-12 text-center m-t-md">' +
+                    '<button type="button" class="btn btn-default padder m-r-xs">取消</button>' +
+                    '<button type="button" class="btn btn-success padder m-l-xs">确定</button>' +
+                    '</div>';
+            BootstrapDialog.show({
+                size: "size-small",
+                onshow: function (dialog) {
+                    dialog.getModalHeader().remove();
+                    dialog.getModalDialog().css("margin-top", "20px");
+                    dialog.getModalContent().html($success);
+//                    func.apply(this);
+                },
+                onhidden: function () {
+//                     func.apply(this);
+                }
+            });
+        }
+        BootstrapDialog.success("是否关注当前选中停车位" , function () {
+            alert("asd");
+        });
+    }(jQuery, document))
+</script>

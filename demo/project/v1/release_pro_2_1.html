@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8"/>
+    <title>数据街</title>
+    <meta name="description"
+          content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css"/>
+    <script src="public/angular/angular.min.js"></script>
+    <style>
+        html, body, a, p, span, small, h3, h5 {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        .col-md-12 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 0px;
+            padding-left: 15px;
+        }
+
+        .input-group[class*="col-"] {
+            float: none;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body class="bg-light dk">
+
+<!-- header -->
+
+<!-- / header -->
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+    <div class="bg-light">
+        <div class="container ">
+            <form class="" method="get" action="release_pro_3.html">
+
+                <div class="row ">
+                    <div class="col-md-12 m-b-n-sm  ">
+                        <!-- .breadcrumb -->
+                        <ul class="breadcrumb no-borders no-radius bg-white  b-b ">
+                            <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                            <li><a href="#">卖家中心</a></li>
+                            <li class="active">发布产品</li>
+                        </ul>
+                        <!-- / .breadcrumb -->
+                    </div>
+                    <div class="col-sm-3 ">
+                        <section class="panel bg-white">
+                            <header class="panel-heading">
+                                <div class="clearfix">
+                                    <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                                        <img src="public/img/a2.jpg" alt="...">
+                                    </a>
+
+                                    <div class="clear">
+                                        <div class="h3 m-t-xs m-b-xs">
+                                            Eson
+                                            <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                                        </div>
+                                        <small class="text-muted">金牌代理商</small>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="line line-dotted b-b  "></div>
+                            <section class="m-l-md m-t-md">
+                                <article class="media">
+                                    <p>组织：勤智数码<span></span></p>
+
+                                    <p>授权日期：<span><time class="date" datetime="2015-01-01">2015-01-01</time></span></p>
+                                    <p>类别：<span class="font-bold m-r-sm">数据提供商</span><span
+                                            class="m-r-sm font-bold">服务提供商</span></p>
+
+                                    <p>服务/产品下载总次数：<span class="text-info">120</span></p>
+
+                                    <p></p>汇总收入：<span class="text-info">56000</span></p>
+                                </article>
+                            </section>
+                            <div class="line line-dotted b-b  "></div>
+                            <section class="m-l-md">
+                                <article class="media m-b-lg">
+                                    <span><h4>联系我们帮助你发布</h4></span>
+                                    <span class="m-t-md"><p>电话：4001231234</p></span>
+                                    <span><p>周一至周四</p></span>
+                                    <!--<span><p class="text-center" style="line-height: 45px; width:123px;background-image: url('public/img/u82.png')">客服在线</p></span>-->
+                                    <div class="text-center col-sm-12 m-t-md">
+                                        <div class="row">
+                                            <a class="btn btn-info   btn-lg col-sm-8 col-sm-offset-2" href="#">客服在线</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </section>
+                        </section>
+                    </div>
+                    <div class="col-sm-9 ">
+                        <div class="row bg-white">
+                            <div class="nav-tabs-alt">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li>
+                                        <a>
+                                            产品分类信息
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            描述您的产品
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a>
+                                            详细信息
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            发布产品
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 m-t-md">
+                                <p>您选择的产品类型: <span class="font-bold text-info">API</span></p>
+                            </div>
+                            <div class="col-sm-4 m-t-md">
+                                <p>所属的行业类别: <span class="font-bold text-info m-r-md">金融</span><span
+                                        class="font-bold text-info m-r-md">农业</span></p>
+                            </div>
+                            <div class="line line-dotted b-b line-lg "></div>
+                            <div class="col-sm-10 col-sm-offset-1 m-t-md">
+                                <!--内容-->
+                                <div class="row info-content">
+
+                                    <div class="col-md-5 m-t-md">
+                                        <div class="panel b-a no-radius ">
+                                            <div class="item m-l-n-xxs m-r-n-xxs">
+                                                <img src="public/img/img_example.jpg" class="img-full">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 m-t-lg">
+                                        <div class="panel-heading wrapper-sm ">
+                                            <!--title-->
+                                            <h3 class="font-bold m-t-none m-b-none">某北方一线城市居民公交出行数据</h3>
+                                            <!--简介-->
+                                            <p class="m-t-lg m-b-xs ">
+                                                采集北方一线城市1千万张公交卡刷卡数据，7千万/月刷卡记录，覆盖826万公交线路，可用于智能交通、用户行为分析、城市规划等.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 m-t-lg">
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li class="active"><a href="#pro" data-toggle="tab">服务详情</a></li>
+                                            <li><a href="#pram" data-toggle="tab">案例介绍</a></li>
+                                            <li><a href="#contact" data-toggle="tab">联系方式</a></li>
+                                        </ul>
+                                        <div id="myTabContent" class="tab-content">
+                                            <!--服务详情-->
+                                            <div class="row tab-pane fade in active" id="pro">
+                                                <div class="col-sm-12 m-t-lg">
+                                                    <div class="btn-toolbar m-b-sm btn-editor"
+                                                         data-role="editor-toolbar" data-target="#editor">
+                                                        <div class="btn-group dropdown" dropdown="">
+                                                            <a class="btn btn-default" dropdown-toggle=""
+                                                               data-toggle="dropdown" tooltip="Font Size"><i
+                                                                    class="fa fa-text-height"></i>&nbsp;<b
+                                                                    class="caret"></b></a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="" data-edit="fontSize 5"
+                                                                       style="font-size:24px">Huge</a></li>
+                                                                <li><a href="" data-edit="fontSize 3"
+                                                                       style="font-size:18px">Normal</a></li>
+                                                                <li><a href="" data-edit="fontSize 1"
+                                                                       style="font-size:14px">Small</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="bold"
+                                                               tooltip="Bold (Ctrl/Cmd+B)"><i
+                                                                    class="fa fa-bold"></i></a>
+                                                            <a class="btn btn-default" data-edit="italic"
+                                                               tooltip="Italic (Ctrl/Cmd+I)"><i
+                                                                    class="fa fa-italic"></i></a>
+                                                            <a class="btn btn-default" data-edit="strikethrough"
+                                                               tooltip="Strikethrough"><i
+                                                                    class="fa fa-strikethrough"></i></a>
+                                                            <a class="btn btn-default" data-edit="underline"
+                                                               tooltip="Underline (Ctrl/Cmd+U)"><i
+                                                                    class="fa fa-underline"></i></a>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="insertunorderedlist"
+                                                               tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                                            <a class="btn btn-default" data-edit="insertorderedlist"
+                                                               tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                                                            <a class="btn btn-default" data-edit="outdent"
+                                                               tooltip="Reduce indent (Shift+Tab)"><i
+                                                                    class="fa fa-dedent"></i></a>
+                                                            <a class="btn btn-default" data-edit="indent"
+                                                               tooltip="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="justifyleft"
+                                                               tooltip="Align Left (Ctrl/Cmd+L)"><i
+                                                                    class="fa fa-align-left"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifycenter"
+                                                               tooltip="Center (Ctrl/Cmd+E)"><i
+                                                                    class="fa fa-align-center"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifyright"
+                                                               tooltip="Align Right (Ctrl/Cmd+R)"><i
+                                                                    class="fa fa-align-right"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifyfull"
+                                                               tooltip="Justify (Ctrl/Cmd+J)"><i
+                                                                    class="fa fa-align-justify"></i></a>
+                                                        </div>
+                                                        <div class="btn-group dropdown" dropdown="">
+                                                            <a class="btn btn-default" dropdown-toggle=""
+                                                               tooltip="Hyperlink"><i class="fa fa-link"></i></a>
+
+                                                            <div class="dropdown-menu">
+                                                                <div class="input-group m-l-xs m-r-xs">
+                                                                    <input class="form-control input-sm" id="LinkInput"
+                                                                           placeholder="URL" type="text"
+                                                                           data-edit="createLink">
+
+                                                                    <div class="input-group-btn">
+                                                                        <button class="btn btn-sm btn-default"
+                                                                                type="button">Add
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <a class="btn btn-default" data-edit="unlink"
+                                                               tooltip="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default"
+                                                               tooltip="Insert picture (or just drag &amp; drop)"
+                                                               id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                                            <input type="file" data-edit="insertImage"
+                                                                   style="position:absolute; opacity:0; width:41px; height:34px">
+                                                        </div>
+                                                    </div>
+                                                    <div ui-jq="wysiwyg" class="form-control"
+                                                         style="overflow:scroll;height:200px;max-height:200px"
+                                                         contenteditable="true">
+                                                        产品详情
+                                                    </div>
+                                                    <div class="m-t-lg"></div>
+                                                </div>
+                                            </div>
+                                            <!--案例介绍-->
+                                            <div class="row tab-pane fade in " id="pram">
+                                                <div class="col-sm-12 m-t-lg">
+                                                    <div class="btn-toolbar m-b-sm btn-editor"
+                                                         data-role="editor-toolbar" data-target="#editor">
+                                                        <div class="btn-group dropdown" dropdown="">
+                                                            <a class="btn btn-default" dropdown-toggle=""
+                                                               data-toggle="dropdown" tooltip="Font Size"><i
+                                                                    class="fa fa-text-height"></i>&nbsp;<b
+                                                                    class="caret"></b></a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="" data-edit="fontSize 5"
+                                                                       style="font-size:24px">Huge</a></li>
+                                                                <li><a href="" data-edit="fontSize 3"
+                                                                       style="font-size:18px">Normal</a></li>
+                                                                <li><a href="" data-edit="fontSize 1"
+                                                                       style="font-size:14px">Small</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="bold"
+                                                               tooltip="Bold (Ctrl/Cmd+B)"><i
+                                                                    class="fa fa-bold"></i></a>
+                                                            <a class="btn btn-default" data-edit="italic"
+                                                               tooltip="Italic (Ctrl/Cmd+I)"><i
+                                                                    class="fa fa-italic"></i></a>
+                                                            <a class="btn btn-default" data-edit="strikethrough"
+                                                               tooltip="Strikethrough"><i
+                                                                    class="fa fa-strikethrough"></i></a>
+                                                            <a class="btn btn-default" data-edit="underline"
+                                                               tooltip="Underline (Ctrl/Cmd+U)"><i
+                                                                    class="fa fa-underline"></i></a>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="insertunorderedlist"
+                                                               tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                                            <a class="btn btn-default" data-edit="insertorderedlist"
+                                                               tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                                                            <a class="btn btn-default" data-edit="outdent"
+                                                               tooltip="Reduce indent (Shift+Tab)"><i
+                                                                    class="fa fa-dedent"></i></a>
+                                                            <a class="btn btn-default" data-edit="indent"
+                                                               tooltip="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="justifyleft"
+                                                               tooltip="Align Left (Ctrl/Cmd+L)"><i
+                                                                    class="fa fa-align-left"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifycenter"
+                                                               tooltip="Center (Ctrl/Cmd+E)"><i
+                                                                    class="fa fa-align-center"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifyright"
+                                                               tooltip="Align Right (Ctrl/Cmd+R)"><i
+                                                                    class="fa fa-align-right"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifyfull"
+                                                               tooltip="Justify (Ctrl/Cmd+J)"><i
+                                                                    class="fa fa-align-justify"></i></a>
+                                                        </div>
+                                                        <div class="btn-group dropdown" dropdown="">
+                                                            <a class="btn btn-default" dropdown-toggle=""
+                                                               tooltip="Hyperlink"><i class="fa fa-link"></i></a>
+
+                                                            <div class="dropdown-menu">
+                                                                <div class="input-group m-l-xs m-r-xs">
+                                                                    <input class="form-control input-sm" id="LinkInput"
+                                                                           placeholder="URL" type="text"
+                                                                           data-edit="createLink">
+
+                                                                    <div class="input-group-btn">
+                                                                        <button class="btn btn-sm btn-default"
+                                                                                type="button">Add
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <a class="btn btn-default" data-edit="unlink"
+                                                               tooltip="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default"
+                                                               tooltip="Insert picture (or just drag &amp; drop)"
+                                                               id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                                            <input type="file" data-edit="insertImage"
+                                                                   style="position:absolute; opacity:0; width:41px; height:34px">
+                                                        </div>
+                                                    </div>
+                                                    <div ui-jq="wysiwyg" class="form-control"
+                                                         style="overflow:scroll;height:200px;max-height:200px"
+                                                         contenteditable="true">
+                                                        详细参数
+                                                    </div>
+                                                    <div class="m-t-lg"></div>
+                                                </div>
+                                            </div>
+                                            <!--联系方式-->
+                                            <div class="row tab-pane fade in " id="contact">
+                                                <div class="col-sm-12 m-t-lg">
+                                                    <div class="btn-toolbar m-b-sm btn-editor"
+                                                         data-role="editor-toolbar" data-target="#editor">
+                                                        <div class="btn-group dropdown" dropdown="">
+                                                            <a class="btn btn-default" dropdown-toggle=""
+                                                               data-toggle="dropdown" tooltip="Font Size"><i
+                                                                    class="fa fa-text-height"></i>&nbsp;<b
+                                                                    class="caret"></b></a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="" data-edit="fontSize 5"
+                                                                       style="font-size:24px">Huge</a></li>
+                                                                <li><a href="" data-edit="fontSize 3"
+                                                                       style="font-size:18px">Normal</a></li>
+                                                                <li><a href="" data-edit="fontSize 1"
+                                                                       style="font-size:14px">Small</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="bold"
+                                                               tooltip="Bold (Ctrl/Cmd+B)"><i
+                                                                    class="fa fa-bold"></i></a>
+                                                            <a class="btn btn-default" data-edit="italic"
+                                                               tooltip="Italic (Ctrl/Cmd+I)"><i
+                                                                    class="fa fa-italic"></i></a>
+                                                            <a class="btn btn-default" data-edit="strikethrough"
+                                                               tooltip="Strikethrough"><i
+                                                                    class="fa fa-strikethrough"></i></a>
+                                                            <a class="btn btn-default" data-edit="underline"
+                                                               tooltip="Underline (Ctrl/Cmd+U)"><i
+                                                                    class="fa fa-underline"></i></a>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="insertunorderedlist"
+                                                               tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                                            <a class="btn btn-default" data-edit="insertorderedlist"
+                                                               tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                                                            <a class="btn btn-default" data-edit="outdent"
+                                                               tooltip="Reduce indent (Shift+Tab)"><i
+                                                                    class="fa fa-dedent"></i></a>
+                                                            <a class="btn btn-default" data-edit="indent"
+                                                               tooltip="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                                                        </div>
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default" data-edit="justifyleft"
+                                                               tooltip="Align Left (Ctrl/Cmd+L)"><i
+                                                                    class="fa fa-align-left"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifycenter"
+                                                               tooltip="Center (Ctrl/Cmd+E)"><i
+                                                                    class="fa fa-align-center"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifyright"
+                                                               tooltip="Align Right (Ctrl/Cmd+R)"><i
+                                                                    class="fa fa-align-right"></i></a>
+                                                            <a class="btn btn-default" data-edit="justifyfull"
+                                                               tooltip="Justify (Ctrl/Cmd+J)"><i
+                                                                    class="fa fa-align-justify"></i></a>
+                                                        </div>
+                                                        <div class="btn-group dropdown" dropdown="">
+                                                            <a class="btn btn-default" dropdown-toggle=""
+                                                               tooltip="Hyperlink"><i class="fa fa-link"></i></a>
+
+                                                            <div class="dropdown-menu">
+                                                                <div class="input-group m-l-xs m-r-xs">
+                                                                    <input class="form-control input-sm" id="LinkInput"
+                                                                           placeholder="URL" type="text"
+                                                                           data-edit="createLink">
+
+                                                                    <div class="input-group-btn">
+                                                                        <button class="btn btn-sm btn-default"
+                                                                                type="button">Add
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <a class="btn btn-default" data-edit="unlink"
+                                                               tooltip="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                                        </div>
+
+                                                        <div class="btn-group">
+                                                            <a class="btn btn-default"
+                                                               tooltip="Insert picture (or just drag &amp; drop)"
+                                                               id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                                            <input type="file" data-edit="insertImage"
+                                                                   style="position:absolute; opacity:0; width:41px; height:34px">
+                                                        </div>
+                                                    </div>
+                                                    <div ui-jq="wysiwyg" class="form-control"
+                                                         style="overflow:scroll;height:200px;max-height:200px"
+                                                         contenteditable="true">
+                                                        联系方式
+                                                    </div>
+                                                    <div class="m-t-lg"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 col-sm-offset-10">
+                                        <button data-toggle="modal" data-target="#preview" type="button"
+                                                class="btn btn-info btn-block">预览
+                                        </button>
+                                    </div>
+                                </div>
+                                <!--<div class="row">-->
+                                <!--<div class="col-sm-12">-->
+                                <!-- -->
+                                <!--</div>-->
+                                <!--</div>-->
+                            </div>
+                            <div class="form-group row  text-center">
+                                <div class="col-sm-12 m-t-lg m-b-md">
+                                    <button type="button" onclick="history.go(-1)" class="btn btn-default m-r-lg ">
+                                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                        上一步
+                                    </button>
+                                    <button type="reset" class="btn btn-default m-r-lg ">
+                                        重置
+                                    </button>
+                                    <button type="submit" class="btn btn-info">下一步
+                                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="preview" tabindex="-1" role="dialog" aria-labelledby="preview-ModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <div class="modal-title " id="preview-ModalLabel">预览</div>
+            </div>
+            <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 m-t-md">
+                            <div class="panel b-a no-radius ">
+                                <div class="item m-l-n-xxs m-r-n-xxs">
+                                    <img src="http://121.41.7.165/template/v1/public/img/c2.jpg" class="img-full">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-7">
+                            <div class="panel-heading wrapper-sm b-b b-light m-t-md">
+                                <h2 class="font-bold m-t-none m-b-none">某北方一线城市居民公交出行数据</h2>
+
+                                <p class="m-t-sm m-b-xs">
+                                    采集北方一线城市1千万张公交卡刷卡数据，7千万/月刷卡记录，覆盖826万公交线路，可用于智能交通、用户行为分析、城市规划等.</p>
+                            </div>
+                            <div class="hbox text-center b-b b-light text-sm">
+                                <div class="col padder-v  b-r b-light">
+                                    <span class="text-muted">服务商</span>
+                                    <h4 class="block ">datastore(企业)</h4>
+
+                                </div>
+                                <div class="col padder-v b-light">
+                                    <span class="text-muted">分类</span>
+                                    <h4 class="block ">
+                                        元数据 社会 方言
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class=" col-sm-12 m-b-lg">
+
+                        <ul id="Modal_Tab" class="nav nav-tabs">
+                            <li class="active"><a data-target="#tab-1" role="tab" data-toggle="tab">服务详情</a></li>
+                            <li><a data-target="#tab-2" role="tab" data-toggle="tab">案例介绍</a></li>
+                            <li><a data-target="#tab-3" role="tab" data-toggle="tab">联系方式</a></li>
+                        </ul>
+                        <div id="Modal_TabContent" class="tab-content">
+                            <!--服务详情-->
+                            <div class="row tab-pane fade in active" id="tab-1">
+
+                            </div>
+                            <div class="row tab-pane fade in active" id="tab-2">
+
+                            </div>
+                            <div class="row tab-pane fade in active" id="tab-3">
+
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+</body>
+</html>

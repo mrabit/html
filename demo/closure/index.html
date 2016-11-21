@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="content"></p>
+</body>
+</html>
+<script src="../../public/js/jquery-1.12.3.min.js"></script>
+<script>
+    (function closure(){
+        var i=0;
+        (function (){
+            $("#content").text(i);
+            i++;
+            setTimeout(arguments.callee,100);
+        })();
+    })();
+
+</script>

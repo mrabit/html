@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parsley</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/js/bootstrap-dialog/bootstrap-dialog.min.css">
+    <script src="../../public/js/require.js"></script>
+    <script src="../../public/js/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="m-t-lg">
+            <form id="info_form" class="form-horizontal" data-parsley-validate >
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">With help</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" name="pwd"
+                            data-parsley-trigger="input"
+                            data-parsley-minlength="6"
+                            data-parsley-minlength-message="密码至少6位"
+                            data-parsley-maxlength="12"
+                            data-parsley-maxlength-message="密码最多12位"
+                            required="required"
+                            data-parsley-required-message="请输入您的密码"
+                        />
+                        <!--data-parsley-remote-->
+                        <!--data-parsley-remote-message="请输入正确的密码"-->
+                        <!--data-parsley-remote-options='{ "type": "POST"}'-->
+                        <!--data-parsley-remote-validator='loginCheck'-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">With help</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="account" class="username form-control" placeholder="手机号码/电子邮箱"
+                               data-parsley-trigger="blur"
+                               data-parsley-required="true"
+                               data-parsley-required-message="手机号码/电子邮箱不可为空"
+                               data-parsley-phoneemail
+                               data-parsley-phoneemail-message="请填写正确的手机号码/电子邮箱"
+                               data-parsley-minwords="10"
+                               data-parsley-minwords-message="请输入10"/>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" name="submit_data" class="btn btn-info">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+//    var WEB_DIR_PATH = window.document.location.pathname.replace(location.href.substr(location.href.lastIndexOf('/')+1),"");
+//    require([WEB_DIR_PATH+'parsley_main.js']);
+    require(['jquery','util'], function ($,u) {
+
+    //设置表单验证插件配置文件
+    window.ParsleyConfig = window.ParsleyConfig || {};
+    window.ParsleyConfig.validators = window.ParsleyConfig.validators || {};
+
+    (function($) {
+        //配置错误提示css样式
+        window.ParsleyConfig = $.extend(true, {}, window.ParsleyConfig, {
+            successClass: 'jv-form-success',
+            errorsWrapper: '<span class="help-block m-b-none text-danger"></span>',
+            errorTemplate: '<span ></span>'
+        });
+    }(window.jQuery || window.Zepto));
+    require(['parsley','parsley.extend'], function () {
+        $("#info_form").parsley(window.ParsleyConfig).on('form:submit',function(){
+            //程序到达这里  表示验证已通过  执行下步操作
+
+            alert("成功");
+
+            return false;
+        });
+        function respAsyncloginCheck(xhr){
+            var response= JSON.parse(xhr.responseText);
+            this.options.remoteMessage=response.content;
+            if("1" === response.status) $(this.$element).attr("readonly","readonly");
+            return "1" === response.status;
+        }
+
+        window.Parsley.addAsyncValidator('loginCheck', respAsyncloginCheck, '/tp/Home/index/login.html');
+    })
+    return {};
+});
+</script>

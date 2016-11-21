@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d2dcfbbe-742d-415a-a1cb-fd368a022d59" name="html" url="http://pro.mrabit.com">
+        <fileTransfer host="120.24.72.90" port="22" rootFolder="/usr/share/httpd/html" accessType="SFTP" password="dfeadfd9dfcbdfc6dfcbdfc2dfcfdfd3dfc5dfc7" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

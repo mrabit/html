@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script language="JavaScript">
+    <!--
+    function juli(form) {       // 从form的表单中分别提取两个点的横、纵坐标
+        var x1 = eval(form.x1.value);   // 第一个点的横坐标
+        var y1 = eval(form.y1.value);   // 第一个点的纵坐标
+        var x2 = eval(form.x2.value);   // 第二个点的横坐标
+        var y2 = eval(form.y2.value);   // 第二个点的纵坐标
+        var xdiff = x2 - x1;            // 计算两个点的横坐标之差
+        var ydiff = y2 - y1;            // 计算两个点的纵坐标之差
+        form.answer.value = Math.pow((xdiff * xdiff + ydiff * ydiff), 0.5);   // 计算两点之间的距离，并将结果返回表单元素
+    }
+    function IEMouseMove() {
+        document.test.x.value = window.event.x;
+        document.test.y.value = window.event.y;
+        document.onmousemove= IEMouseMove;
+    }
+    //-->
+</script>
+<center>
+    <form name=test  onMousemove="IEMouseMove()">
+        <table border=0 cellspacing=2 cellpadding=5>
+            <tr>
+                <td colspan=4 align=center>计算平面两点之间的距离</td>
+            </tr>
+            <tr>
+                <td colspan=2 align=center>A点</td>
+                <td colspan=2 align=center>B点</td>
+            </tr>
+            <tr>
+                <td align=center>A点横坐标</td>
+                <td align=center>A点纵坐标</td>
+                <td align=center>B点横坐标</td>
+                <td align=center>B点纵坐标</td>
+            </tr>
+            <tr>
+                <td align=center><input type=text name=x1 size=5></td>
+                <td align=center><input type=text name=y1 size=5></td>
+                <td align=center><input type=text name=x2 size=5></td>
+                <td align=center><input type=text name=y2 size=5></td>
+            </tr>
+            <tr>
+                <td colspan=4 align=center><input type=button value="计算距离" onClick="juli(this.form)"></td>
+            </tr>
+            <tr>
+                <td colspan=4 align=center>X:<input type=text name=x size=5>&nbsp;Y:<input type=text name=y size=5>&nbsp;<input type=text name=answer size=20></td>
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>

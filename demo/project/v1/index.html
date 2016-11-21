@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>数据空间</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css" />
+
+    <link rel="stylesheet" href="public/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css" />
+
+    <script src="public/angular/angular.min.js"></script>
+
+
+    <style>
+        html,body,a,p,span,small,h3,h5{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#header" class="landing bg-dark">
+
+<div id="content" class="bg-white">
+
+    <div class="m-b">
+        <div ng-include="'pages/public/header_main.html'"></div>
+        <div class="container text-center">
+            <div class="m-t-xxl m-b padder-v">
+                <h1 class=" l-h-2x m-b-lg padder-v animated fadeInDown" style="margin-top: 70px">
+                    <p style="font-size: 50px">数 据 空 间</p>
+                    <p class="h2">权 威 的 大 数 据 专 家 聚 集 地</p>
+                </h1>
+                <form action="#" class="m-b-md m-t-xxl">
+                    <section class="wrapper text-left font-thin">
+                        <span class="m-r-sm h4 ">数据</span>
+                        <span class="m-r-sm m-l-sm h4 ">服务</span>
+                        <span class="m-r-sm m-l-sm h4 ">商机</span>
+                        <span class="m-r-sm m-l-sm h4 ">其他</span>
+
+                    </section>
+                    <div class="input-group">
+                        <input type="text" class="form-control input-lg kwd" placeholder="搜索产品/服务/API/应用或需求...">
+                          <span class="input-group-btn">
+                              <button class="btn btn-lg btn-dark" type="button" onclick="window.location.href='search.html'">搜一搜</button>
+                              <button class="btn btn-lg btn-danger"  type="button">我要发布需求</button>
+                          </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div ng-include="'pages/public/footer_main.html'"></div>
+
+</div>
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+<script>
+    $(function(){
+
+
+        $('.selected_item').click(function(){
+            var this_item = $(this);
+
+            alert(this_item.find('.hidden_input').val());
+            if(this_item.find('.hidden_input').val() == 1){
+                this_item.removeClass('btn-default');
+                this_item.addClass('btn-danger');
+                this_item.find('.hidden_input').val('');
+            }else{
+                this_item.find('.hidden_input').val(1);
+                this_item.removeClass('btn-danger');
+                this_item.addClass('btn-default');
+            }
+
+        });
+
+
+        $('#list_show').bind('click', function(){
+
+            $('#list_showing').removeClass('hide');
+            $('#grid_showing').addClass('hide');
+        });
+
+        $('#grid_show').bind('click', function(){
+            $('#grid_showing').removeClass('hide');
+            $('#list_showing').addClass('hide');
+        });
+
+    })
+
+
+</script>
+
+</body>
+</html>

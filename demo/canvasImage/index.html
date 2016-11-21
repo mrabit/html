@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/font-awesome.min.css">
+    <style>
+        /*html{background: url('uqgXAah.jpg');overflow: hidden; background-size: cover;}*/
+    </style>
+</head>
+<body>
+    <div class="row padder m-t-xl" id="loading">
+        <div class="col-md-12 text-center">
+            <i class="fa fa-spin fa-spinner fa-2x"></i>
+            <div class="clear m-t-xs">
+                <span class="text-xs">页面正在加载，请稍...</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../public/js/jquery-1.12.3.min.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+<script>
+
+    (function ($,owner) {
+        var bgimage=new Image();
+        bgimage.src="uqgXAah.jpg";
+        bgimage.addEventListener("load", function () {
+            $("body").css({"background":"url('uqgXAah.jpg')","background-size": "cover"});
+            loadImage();
+            $("#loading").hide();
+        });
+    })(jQuery,document);
+//
+   function loadImage(){
+       var imageWidthHalf, imageHeightHalf;
+
+       var canvas = $( '<canvas></canvas>' );
+       canvas.attr("width",$(window).width());
+       canvas.attr("height",$(window).height());
+       canvas.css({"display":"block"});
+       $("body").append(canvas);
+       var context = canvas[0].getContext( '2d' );
+
+       var image = new Image();
+       image.addEventListener('load', function() {
+            imageWidthHalf = Math.floor( this.width / 2 );
+            imageHeightHalf = Math.floor( this.height / 2 );
+            document.addEventListener( 'mousemove', onMouseEvent, false );
+            document.addEventListener( 'touchstart', onTouchEvent, false );
+            document.addEventListener( 'touchmove', onTouchEvent, false );
+       }, false );
+       image.src = "tZvS9Uu.png";
+       function onMouseEvent( event ) {
+            context.drawImage( image, event.clientX - imageWidthHalf, event.clientY - imageHeightHalf );
+       }
+       function onTouchEvent( event ) {
+            event.preventDefault();
+            for ( var i = 0; i < event.touches.length; i++ ) {
+                context.drawImage( image, event.touches[i].pageX - imageWidthHalf, event.touches[i].pageY - imageHeightHalf );
+            }
+       }
+   }
+
+
+
+</script>

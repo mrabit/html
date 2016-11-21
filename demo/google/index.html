@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <style>
+        section{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        section::after{
+            content: '';
+            flex-grow: 999999999;
+        }
+        div{
+            position: relative;
+            overflow: hidden;
+            flex-grow: 99999999999999;
+            margin: 2px;
+            background-color: violet;
+            height: 200px;
+            cursor: pointer;
+        }
+        img{
+            height: 200px;
+            object-fit: cover;
+            max-width: 100%;
+            min-width: 100%;
+            vertical-align: bottom;
+            display: block;
+            transition: opacity .2s ease-in-out;
+        }
+
+        div:hover img {
+            opacity: .5;
+        }
+        div::after,
+        div::before {
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 50%;
+            transition: transform .4s ease-out;
+            color: #fff;
+        }
+        div::after {
+            content: attr(data-title);
+            top: 0;
+            transform: translateY(-100%) scale(.8);
+            background: rgba(0,0,0,.4);
+            font-size: .5rem;
+            font-weight: 300;
+            font-family: Merriweather, serif;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        div::before {
+            content: attr(data-description);
+            top: 50%;
+            transform: translateY(100%) scale(.8);
+            background: rgba(107,38,68,.6);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            color: #f1f1f1;
+            font-size: .5rem;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        div:hover::after,
+        div:hover::before {
+            transform: translateY(0%) scale(1);
+        }
+        @media screen and (max-width: 768px){
+            div::before {
+                transform: translateY(0%) scale(1);
+                top:70%;
+                height: 30%;
+            }
+            div::after{
+                display: none;
+            }
+            div:hover img {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="box" data-description="2016年10月8日"
+         data-title="在德国灯光节期间，柏林大教堂灯火通明 (© Paul Zinken/Alamy)">
+        <img data-original="1.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="2.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="3.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="4.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="5.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="13.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="7.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="8.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="9.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="2.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="3.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="11.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="5.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="6.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="10.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="8.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="1.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="10.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="3.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="4.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="5.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="1.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="13.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="3.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="4.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="5.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="6.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="7.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="12.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="9.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="2.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="3.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="11.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="5.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="6.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="9.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="8.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="1.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="12.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="3.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="4.jpg"/>
+    </div>
+    <div class="box">
+        <img data-original="5.jpg"/>
+    </div>
+
+</section>
+</body>
+</html>
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/jquery.lazyload.min.js"></script>
+<script>
+    $(".box img").lazyload({effect: "show"});
+    $("div").click(function () {
+       alert(($(this).attr("data-description") || "暂无") + ":" + ($(this).attr("data-title") || "暂无"));
+    });
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <script src="../../public/js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <div class="container" ng-app="">
+        <div class="col-xs-4"  ng-init="mySwitch=false;hour=13">
+            <button class="btn btn-default" type="button" ng-disabled="!mySwitch">click</button>
+            <div class="checkbox">
+                <label class="i-checks">
+                    <input type="checkbox" value="" ng-model="mySwitch">
+                    <i></i>
+                    选择
+                </label>
+            </div>
+            {{mySwitch}}
+        </div>
+        <div class="col-xs-4">
+            <div>
+                <p ng-show="mySwitch">我是可见的。</p>
+
+                <p ng-show="!mySwitch">我是不可见的。</p>
+
+                <p ng-show="hour > 12">我是可见的。</p>
+
+                <p ng-hide="mySwitch">我是不可见的。</p>
+
+                <p ng-hide="!mySwitch">我是可见的。</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+<script src="angular.min.js"></script>
+<script>
+
+</script>

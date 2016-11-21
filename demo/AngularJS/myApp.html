@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <script src="../../public/js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="col-xs-4" ng-app="myApp">
+            <runoob-directive></runoob-directive>
+            <div runoob-directive></div>
+            <div class="runoob-directive"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="angular.min.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("runoobDirective", function() {
+        return {
+            template : "<h1>自定义指令!</h1>"
+        };
+    });
+</script>

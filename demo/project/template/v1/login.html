@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="utf-8" />
+    <title>数据街</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.min.css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.css" type="text/css" />
+    <style>
+        html,body,a,p,span,small,h3,h5{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body{
+
+        }
+    </style>
+</head>
+<body>
+
+<!-- header -->
+<header id="header" class="navbar navbar-fixed-top bg-primary padder-v"  data-spy="affix" data-offset-top="1">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href="#" class="navbar-brand m-r-lg">
+                <img src="img/logo.png" class="m-r-sm hide">
+                <span class="h3">数据街</span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right font-thin">
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="hidden-xs-only">卖家中心</span>
+                    <b class="caret hidden-xs-only"></b> </a>
+                    <ul class="dropdown-menu  font-thin">
+                        <li><a href="#" class="font-thin">交易信息</a></li>
+                        <li><a href="#" class="font-thin">出售产品/服务</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#why" data-ride="scroll">登录</a>
+                </li>
+                <li>
+                    <a href="#features" data-ride="scroll">注册</a>
+                </li>
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="hidden-xs-only">切换到</span>
+                    <b class="caret hidden-xs-only"></b> </a>
+                    <ul class="dropdown-menu font-thin">
+                        <li><a href="#" class="font-thin">开发平台</a></li>
+                        <li><a href="#" class="font-thin">服务平台</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- / header -->
+<div id="content">
+    <div class="bg-white-only">
+        <div class="container">
+            <div style="height: 99px"></div>
+
+            <div  class="col-md-4 col-md-offset-8">
+                <a href="" class="navbar-brand block m-t">登录</a>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-2"><a onclick="
+                        document.getElementById('sj').style.display='none';
+                        document.getElementById('zh').style.display='';
+
+
+                    " >账号密码登录</a></div>
+                    <div class="col-md-1">|</div>
+                    <div class="col-md-4 "><a onclick="
+                        document.getElementById('sj').style.display='';
+                        document.getElementById('zh').style.display='none';
+
+                    ">手机号登录</a> </div>
+                </div>
+                <div class="m-b-lg"  id="zh">
+                    <form name="form" class="form-validation">
+                        <div class="text-danger wrapper text-center" ng-show="authError">
+                        </div>
+                        <div class="list-group list-group-sm">
+                            <div class="list-group-item">
+                                <input  placeholder="登录账号" class="form-control no-border" ng-model="user.name" required="">
+                            </div>
+                            <div class="list-group-item">
+                                <input type="password" placeholder="密码" class="form-control no-border" ng-model="user.password" required="">
+                            </div>
+                            <div class="list-group-item">
+                                <input type="password" placeholder="验证码" class="form-control no-border" ng-model="user.password" required="">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="login()" ng-disabled="form.$invalid">登录</button>
+                        <div class="text-center m-t m-b"><a ui-sref="access.forgotpwd">忘记密码?</a></div>
+                        <div class="line line-dashed"></div>
+                        <p class="text-center"><small>没有账户?</small></p>
+                        <a ui-sref="access.signup" class="btn btn-lg btn-default btn-block">新建一个账户</a>
+                    </form>
+                </div>
+                <div class="m-b-lg" style="display: none" id="sj">
+                    <form name="form" class="form-validation">
+                        <div class="text-danger wrapper text-center" ng-show="authError">
+                        </div>
+                        <div class="list-group list-group-sm">
+                            <div class="list-group-item">
+                                <input  placeholder="手机号" class="form-control no-border" ng-model="user.name" required="">
+                            </div>
+                            <div class="list-group-item">
+                                <input  placeholder="验证码" class="form-control no-border" ng-model="user.password" required="">
+                            </div>
+                            <div class="list-group-item">
+                                <input placeholder="手机动态码" class="form-control no-border" ng-model="user.password" required="">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="login()" ng-disabled="form.$invalid">登录</button>
+                        <div class="text-center m-t m-b"><a ui-sref="access.forgotpwd">忘记密码?</a></div>
+                        <div class="line line-dashed"></div>
+                        <p class="text-center"><small>没有账户?</small></p>
+                        <a ui-sref="access.signup" class="btn btn-lg btn-default btn-block">新建一个账户</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</div>
+</body>
+
+
+</div>
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+
+</body>
+</html>

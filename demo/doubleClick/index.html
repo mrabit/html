@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>doubleClick</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+<body>
+    <div class="bg-danger block doubleClick"  style="height: 200px;width: 200px;"></div>
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+    require(["script"], function ($) {
+        var isDbClick = false;
+        var timer;
+        var dbClickFunc = function () {
+            if(isDbClick && timer){
+                console.log("dbClick");
+                clearTimeout(timer);
+                isDbClick = false;
+                $(".doubleClick").off("click");
+                setTimeout(function () {
+                    $(".doubleClick").click(dbClickFunc);
+                },500);
+                return false;
+            }
+            isDbClick = true;
+            timer = setTimeout(function () {
+                isDbClick = false;
+                console.log("Click")
+            },300);
+        }
+        $(".doubleClick").click(dbClickFunc);
+    });
+</script>

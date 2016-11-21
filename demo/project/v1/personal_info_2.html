@@ -1,0 +1,196 @@
+
+
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="utf-8" />
+    <title>数据街</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.min.css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.css" type="text/css" />
+    <style>
+        html,body,a,p,span,small,h3,h5{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body{
+
+        }
+    </style>
+</head>
+<body>
+
+<!-- header -->
+<header id="header" class="navbar navbar-fixed-top bg-info dker ng-scope affix-top" data-spy="affix" data-offset-top="1">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="btn btn-link visible-xs pull-right m-r" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a href="#" class="navbar-brand m-r-lg">
+                <img src="img/logo.png" class="m-r-sm hide">
+                <span class="h3">数据街</span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right font-thin">
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="hidden-xs-only">卖家中心</span>
+                    <b class="caret hidden-xs-only"></b> </a>
+                    <ul class="dropdown-menu  font-thin">
+                        <li><a href="#" class="font-thin">交易信息</a></li>
+                        <li><a href="#" class="font-thin">出售产品/服务</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#why" data-ride="scroll">登录</a>
+                </li>
+                <li>
+                    <a href="#features" data-ride="scroll">注册</a>
+                </li>
+                <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <span class="hidden-xs-only">切换到</span>
+                    <b class="caret hidden-xs-only"></b> </a>
+                    <ul class="dropdown-menu font-thin">
+                        <li><a href="#" class="font-thin">开发平台</a></li>
+                        <li><a href="#" class="font-thin">服务平台</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- / header -->
+<div id="content">
+    <div class="bg-white-only">
+        <div class="container">
+            <div class="row">
+                <div style="height: 98px;"></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="panel b-a">
+                            <div class="panel panel-default" style="margin-bottom: 0px;">
+                                <div class="panel-heading">
+                                    <div class="clearfix">
+                                        <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                                            <img src="public/img/a8.jpg" alt="...">
+                                        </a>
+                                        <div class="clear">
+                                            <div class="h3 m-t-xs m-b-xs">
+                                                John.Smith
+                                                <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                                            </div>
+                                            <small class="text-muted">Address...</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list-group no-radius alt">
+                                    <a class="list-group-item" href="">
+                                        <span class="badge bg-success"><i class="glyphicon glyphicon-th-list"></i></span>
+                                        收入:
+                                        <span class="text-danger">0.00</span>
+                                    </a>
+                                    <a class="list-group-item" href="">
+                                        <span class="badge bg-success"><i class="glyphicon glyphicon-th-list"></i></span>
+
+                                        支出:
+                                        <span class="text-danger">0.00</span>
+                                    </a>
+                                    <a class="list-group-item" href="">
+                                        <span class="badge bg-info">充值</span>
+                                        <span class="badge bg-info">提现</span>
+                                        余额:
+                                        <span class="text-danger">0.00</span>
+
+
+                                    </a>
+                                </div>
+                            </div>
+                            <ul class="list-group nav ">
+                                <li class="list-group-item text-center">
+                                    <a href="personal_info.html" >个人信息</a>
+                                </li>
+                                <li class="list-group-item text-center ">
+                                    <a href="personal_info_1.html"  >账号绑定</a>
+                                </li>
+                                <li class="list-group-item text-center active">
+                                    <a href="#" >身份认证</a>
+                                </li>
+                                <li class="list-group-item text-center">
+                                    <a href="personal_info_3.html" >安全中心</a>
+                                </li>
+                                <li class="list-group-item text-center">
+                                    <a href="personal_info_4.html" >交易提醒</a>
+                                </li>
+                                <li class="list-group-item text-center">
+                                    <a href="personal_info_5.html">系统通知</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                        <div class="col-lg-9 col-md-8 col-sm-6 tab-content">
+                            <div class="tab-pane fade in active" id="info">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading font-bold">
+                                        身份认证
+                                    </div>
+                                     <div class="row">
+                                            <div class="col-md-3">
+                                                <img src="public/img/gr.png">
+                                            </div>
+                                            <div class="col-md-7 col-md-pull-2">
+                                               <div class="row">个人认证 </div>
+                                                <div class="row text-left">
+                                                     用户名:<a>administrator</a>
+                                                        用户等级:<a>普通用户</a>
+                                                </div>
+                                                <div class="row">
+                                                    认证时间:<a>2015.12.5</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 ">
+                                                <a href="#" class="btn btn-s-md btn-primary">修改认证</a>
+                                            </div>
+                                     </div>
+                                    <div class="line line-dashed b-b line-lg "></div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img src="public/img/qy.png">
+                                        </div>
+                                        <div class="col-md-7 col-md-pull-2">
+                                            <div class="row">企业认证 </div>
+                                            <div class="row text-left">
+                                                需要企业相关证件的扫描或数码照片,审核通常需要1-3个工作日.
+                                            </div>
+                                            <div class="row">
+                                              <h6 class="text-muted">每份证件仅可支持3个账户使用,认证通过后营业执照将在店铺中进行展示且认证通过后信息不能修改</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2  ">
+                                            <a href="#" class="btn btn-s-md btn-primary  disabled">立即申请</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+
+
+</div>
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8"/>
+    <title>数据街</title>
+    <meta name="description"
+          content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css"/>
+    <script src="public/angular/angular.min.js"></script>
+    <style>
+        html, body, a, p, span, small, h3, h5 {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        .modal-body {
+            position: relative;
+            padding: 0px;
+        !important;
+        }
+        .panel {
+            margin-bottom: 0px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        }
+        .modal-footer {
+            padding: 15px;
+            text-align: right;
+            border-top: 0px;
+        }
+    </style>
+</head>
+<body class="bg-light dk">
+
+<!-- header -->
+
+<!-- / header -->
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+    <div class="bg-light">
+        <div class="container ">
+            <form method="get" action="release_need_1.html" id="form1">
+            <div class="row bg-white-only">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- .breadcrumb -->
+                        <ul class="breadcrumb no-borders no-radius bg-white  b-b ">
+                            <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                            <li class="active">发布需求</li>
+                        </ul>
+                        <!-- / .breadcrumb -->
+                    </div>
+                </div>
+                <div class="nav-tabs-alt ">
+                    <ul class="nav nav-tabs font-bold" role="tablist">
+                        <li class="active">
+                            <a data-target="#" >
+                                <div class="text-md wrapper-sm">
+                                    1. 选择类目
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-target="#"  >
+                                <div class="text-md wrapper-sm">
+                                    2. 描述你的需求
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-target="#"  >
+                                <div class="text-md wrapper-sm">
+                                    3 .设置需求赏金
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-target="#" >
+                                <div class="text-md wrapper-sm">
+                                    4 .确认需求,并托管赏金
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                    <article class="col-sm-12 m-t-lg ">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1 m-t-md">
+                                <div class="row">
+                                    <div class="col-sm-8 ">
+                                        <div class="row">
+                                            <div class="col-sm-12  ">
+                                                <div class="form-group row m-t-md">
+                                                    <label class="col-sm-3 control-label"><h4>选择行业类别:</h4></label>
+                                                    <div class="input-group col-sm-9  ">
+                                                        <input class="form-control" type="text" placeholder="行业类别">
+
+                                                        <div class="input-group-btn ">
+                                                            <button data-toggle="modal" data-target="#pro-type" type="button" class="btn btn-info ">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row m-t-md">
+                                                    <label class="col-sm-3 control-label"><h4>选择产品类型:</h4></label>
+                                                    <div class="input-group col-sm-9  ">
+                                                        <input class="form-control" type="text" placeholder="产品类型">
+
+                                                        <div class="input-group-btn">
+                                                            <button data-toggle="modal" data-target="#industry-category" type="button" class="btn btn-info ">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row m-t-md">
+                                                    <label class="col-sm-3 control-label"><h4>选择数据标签:</h4></label>
+                                                    <div class="input-group col-sm-9  ">
+                                                        <input class="form-control" type="text" placeholder="数据标签">
+
+                                                        <div class="input-group-btn">
+                                                            <button data-toggle="modal" data-target="#pro-tag" type="button" class="btn btn-info ">
+                                                                <i class="glyphicon glyphicon-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 text-center ">
+                                        <div class="thumbnail">
+                                            <img src="public/img/发布需求_选择类目1.jpg" alt="...">
+
+                                            <div class="caption">
+                                                <p>全国农业市场信息</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-t-lg">&nbsp;</div>
+
+                                <div class="form-group row  text-center">
+                                    <div class="col-sm-12 m-b-md">
+                                        <button type="button" onclick="history.go(-1)" class="btn btn-default m-r-lg ">
+                                            取消
+                                        </button>
+                                        <button type="reset" class="btn btn-default m-r-lg ">
+                                            重置
+                                        </button>
+                                        <button type="submit" class="btn btn-info">
+                                            下一步
+                                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </form>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+
+
+<!--modal-->
+<div class="modal fade in" id="pro-type" tabindex="-1"  role="dialog" aria-labelledby="pro-type-ModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-title row" id="pro-type-ModalLabel">选择产品类型</div>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <table class="table    ">
+                        <thead>
+                        <tr class="text-info">
+                            <th class="text-right">已选行业:</th>
+                            <th>计算机
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody  class="row bg-light  ">
+                        <tr  class="b-b">
+                            <td class="col-md-2 text-right b-r b-b ">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs  on  "><a name="type" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="b-b">
+                            <td class="col-md-2 text-right b-r">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info" >确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="industry-category" tabindex="-1"  role="dialog" aria-labelledby="industry-category-ModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-title row" id="industry-category-ModalLabel">选择行业类别</div>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <table class="table   ">
+                        <thead>
+                        <tr class="text-info">
+                            <th class="text-right">已选类型:</th>
+                            <th>计算机</th>
+                        </tr>
+                        </thead>
+                        <tbody  class="row bg-light  ">
+                        <tr  class="b-b">
+                            <td class="col-md-2 text-right b-r b-b ">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs  on  "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="b-b">
+                            <td class="col-md-2 text-right b-r">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs  on  "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info" >确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="pro-tag" tabindex="-1"  role="dialog" aria-labelledby="pro-tag-ModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-title row" id="pro-tag-ModalLabel">选择产品标签</div>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <table class="table   ">
+                        <thead>
+                        <tr class="text-info">
+                            <th class="text-right">已选标签:</th>
+                            <th><span id="asd">计算机</span></th>
+                        </tr>
+                        </thead>
+                        <tbody  class="row bg-light  ">
+                        <tr  class="b-b">
+                            <td class="col-md-2 text-right b-r b-b ">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs  on  "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="b-b">
+                            <td class="col-md-2 text-right b-r">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info" >确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+</body>
+</html>

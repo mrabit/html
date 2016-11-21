@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="facebox/facebox.css">
+</head>
+<body>
+<!--<a class="url" apkids="2.png" href="javascript:void(0);">view</a>-->
+<a href="2.png" rel="downloadr" title="Downloadr">Download</a>
+</body>
+</html>
+<script src="jquery-1.12.3.min.js"></script>
+<script src="downloadr/downloadr.js"></script>
+<script src="downloadr/jqbrowser.js"></script>
+<script src="facebox/facebox.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('a[rel*=downloadr]').downloadr();
+
+    })
+</script>

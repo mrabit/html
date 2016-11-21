@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css">
+    <link rel="stylesheet" href="http://flatfull.com/themes/angulr/html/css/app.min.css">
+    <link rel="stylesheet" href="gotop.css">
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+
+    <style>
+        body>div:nth-child(1){
+            height: 100vh;
+            background-image: url(http://cn.bing.com/ImageResolution.aspx?w=320&h=568&t=2016910);
+            background-repeat: no-repeat;
+            background-position-x: center;
+            display: flex;
+            align-items: center;
+            -webkit-align-items: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+            animation: 1s changeOpacity linear;
+            -webkit-animation: 1s changeOpacity linear;
+            animation-fill-mode: both;
+            -webkit-animation-fill-mode: both;
+        }
+
+        @keyframes changeOpacity {
+            0%{
+                opacity:0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        @-webkit-keyframes changeOpacity {
+            0%{
+                opacity:0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+        /********************    share_start     ***************************/
+        .share{
+            visibility: hidden;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 3;
+        }
+        .share_bg{
+            background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.3)),to(rgba(0,0,0,.3)));
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+        .share_content{
+            position: absolute;
+            bottom: 5px;
+            right: 0px;
+            height: 10%;
+            width: 100%;
+        }
+        .share_text{
+            visibility: hidden;
+            font-size: 10px;
+            color: #fff;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .itemArea{
+            visibility: hidden;
+            z-index: -1;
+            position: relative;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            width: 50px;
+            height: 50px;
+        }
+        .inline{
+            margin-right: 10px;
+        }
+        .share_btn{
+            /*position: fixed;*/
+            /*bottom:10px;*/
+            /*right:10px;*/
+            visibility: visible;
+            z-index: 5;
+            position: relative;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            width: 50px;
+            height: 50px;
+        }
+        .move{
+            -webkit-animation:1s move linear;
+            -o-animation:1s move linear;
+            animation:1s move linear;
+        }
+        .move2{
+            -webkit-animation:1s move2 linear;
+            -o-animation:1s move2 linear;
+            animation:1s move2 linear;
+        }
+        /*active*/
+        .share_active{
+            visibility: visible;
+            z-index: 3;
+        }
+        .share_active .share_bg{
+            visibility: visible;
+            z-index: 4;
+        }
+        .share_active .share_text,.share_active .itemArea{
+            visibility: visible;
+            z-index: 5;
+        }
+
+        /********************    share_end     ***************************/
+    </style>
+</head>
+<body>
+    <div class="row text-center" >
+        <div class="col-xs-12" style="box-sizing: border-box;">
+            <p>this is a simple page</p>
+        </div>
+    </div>
+    <div class="share">
+        <div class="share_bg"></div>
+        <div class="share_content padder">
+            <ul class="padder">
+                <ul class="pull-right" style="    padding-left: 10px;
+    position: fixed;
+    bottom: 5px;
+    z-index: 999;
+    right: 5px;">
+                    <li class="inline">
+                        <a>
+                            <div class="itemArea">
+                                <img src="weibo.png" class="img-full">
+                                <!--<div class="share_text" >腾讯微博</div>-->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="inline">
+                        <a>
+                            <div class="itemArea">
+                                <img src="tencent.png" class="img-full">
+                                <!--<div class="share_text" >腾讯微博</div>-->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="inline">
+                        <a>
+                            <div class="itemArea">
+                                <img src="QQzone.png" class="img-full">
+                                <!--<div class="share_text" >腾讯微博</div>-->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="inline share_btn" style="visibility: visible;">
+                        <a>
+                            <div class="">
+                                <img  class="img-full" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAMAAAC5zwKfAAABIFBMVEX/////uQD/uQD/uQD/uQD/uQD/uQD/uQD/uQD/uQD/uQD/uQD/uQD/uQD//////fn//vv//fb//ff//PP/+/D/++//+en/+uv/+er/+Ob/+OT/9+H/9uD/9dv/89H/89X/8s7/8c3/8Mn/8Mf/8Mr/7b//7b3/7Lr/67X/6rP/6rH/6a//6Kr/56b/5aH/5Z//5J3/4pX/4ZD/34n/34z/3oX/3YL/3YP/23v/2Xb/2XT/2HL/127/1WX/1GL/02D/017/0lz/0Vj/0lv/0FP/z1H/z0//zUj/y0D/y0P/yDf/yDj/xzT/xzL/xjH/xSr/xCj/wyT/wyb/wh//wRz/wR7/wBn/vhL/vRD/vAz/vAr/uwb/uwn/ugL/ugX/uQCeTZ/LAAAAYHRSTlMAESJEVWZ3iJmqu8zd7v/////////////////////////////////////////////////////////////////////////////////////////////////////////////ho72nAAACsUlEQVRYha2ZaVvTQBDHkyYNaY5tK5cClUNFKsqhcqvc4FHRqlQRId//W7DbbUpid5LZdP6veMj298xkZmd2J4aRLdMqu54fhFEUBr7nli0z5weZMHvEjwbkj9jFoFYlHKRJhRVL2zgngGhSgaNjpumAxiXMxCPtHOv6VtooXMnD4YS8EsI8hLcJv3ONdHVwQm4mzlTkXZ78jNiUkNFIKwBfZDEeTCzKg4hmYR4nqt5jgXjcyx/kaedLWgPZYw/Hi6L/MryktT9UCtOB0di/kDxSh4USTg+TMfdK5I6D/c3n5tiDp/vQU6dvIDYiBzUmtAI8DmMTy0heu8qk3gMLyj0g9g1u9HhsHlgQSJ6F5EXLMbAKrZDdtYIFrsTACWhFRSck/zbrMRCKigwLMqnPZmIcG2uDq2xsmWkvcdDy16bgNVrwOhcX479bPGEa5/yv1rvd89uMlTzOZj7vZJqx0e3r/IVcJpw0v39KxPfn3M2XlyicSBz1Pu685lbVnh3cXL3h3s5+QuLEflbG5DjOkIUp7u0uztuuXGVpPWIJvergcaLMKppdZzTBa+rgRJgVWbOZNLD2SwsYGoqN9zgJBGsVBFT8s5oCbmkBI3ogucsK4HBBUUQ5lTZrWjyeNnmJvXihBfSArRfb+JD7vKazVVywOMzI4nDaEKXrCg10MsrXZbcmXO9NMvboww0SaCEK7J+3PDHnPuKAJqoFtEVHXvoWiRawk9cCcE3qyxP+Std/oJoUso0eTWPbKLrR74zHxOxGT34UoT8skR/n6A+c6CPxoTwSrwKP+0dijUP7i/H6wj70tH9op79WkF986K9m9JdH8ust/QWcfkRAP8QgH7PQD4LoR1X0wzSDfNxn0A8k6UemBvlQ16AfOxvkg/GuaEf30kzajws9qPj8EYT4zx93ZNyk/vdYb2kAAAAASUVORK5CYII=" >
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+<script src="share_btn.js"></script>

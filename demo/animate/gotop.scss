@@ -1,0 +1,42 @@
+// ----
+// Created with JetBrains WebStorm.
+// User: yuany/biabia123456@126.com
+// Date: 2016/9/10 0010
+// Time: 上午 1:29
+// ----
+
+
+@import "dist/math";
+
+@function lerp($a, $b, $p) {
+  @return $a + $p * ($b - $a);
+}
+
+@function spring-wobbly($t,$num) {
+  @return -0.5 * pow(2.71828, (-6 * $t)) * (-2 * pow(2.71828, (6 * $t)) + sin(12 * $t) + $num * cos(12 * $t))
+}
+
+@mixin keyframes($animate-name){
+  @keyframes #{$animate-name} {
+    @content
+  }
+  @-webkit-keyframes #{$animate-name} {
+    @content;
+  }
+}
+
+@include keyframes(move){
+  @for $i from 0 through 100 {
+    #{$i}% {
+      left: lerp(50vw, 0vw, spring-wobbly($i / 100,2)) ;
+    }
+  }
+}
+
+@include keyframes(move2){
+  @for $i from 0 through 100 {
+    #{$i}% {
+      left: lerp(50vw, 0vw, spring-wobbly($i / 100,3));
+    }
+  }
+}

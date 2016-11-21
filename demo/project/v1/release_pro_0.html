@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8"/>
+    <title>数据街</title>
+    <meta name="description"
+          content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css"/>
+    <script src="public/angular/angular.min.js"></script>
+    <style>
+        html, body, a, p, span, small, h3, h5 {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        .col-md-12{
+            position: relative;
+            min-height: 1px;
+            padding-right: 0px;
+            padding-left: 15px;
+        }
+
+        .modal-body {
+            position: relative;
+            padding: 0px;
+            !important;
+        }
+        .panel {
+            margin-bottom: 0px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        }
+        .modal-footer {
+            padding: 15px;
+            text-align: right;
+            border-top: 0px;
+        }
+        .on{
+            color: #19A9D5;
+        }
+        .modal-open {
+            overflow: initial ;
+        }
+    </style>
+</head>
+<body class="bg-light dk " >
+
+<!-- header -->
+
+<!-- / header -->
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+    <div class="bg-light">
+        <div class="container ">
+            <form class="" method="get" action="release_pro_1.html">
+
+            <div class="row ">
+                <div class="col-md-12 m-b-n-sm  " >
+                    <!-- .breadcrumb -->
+                    <ul class="breadcrumb no-borders no-radius bg-white  b-b ">
+                        <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                        <li><a href="#">卖家中心</a></li>
+                        <li class="active">发布产品</li>
+                    </ul>
+                    <!-- / .breadcrumb -->
+                </div>
+                <div class="col-sm-3  " >
+                    <section class="panel ">
+                        <header class="panel-heading">
+                            <div class="clearfix">
+                                <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                                    <img src="public/img/a2.jpg" alt="...">
+                                </a>
+
+                                <div class="clear">
+                                    <div class="h3 m-t-xs m-b-xs">
+                                        Eson
+                                        <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                                    </div>
+                                    <small class="text-muted">金牌代理商</small>
+                                </div>
+                            </div>
+                        </header>
+                        <div class="line line-dotted b-b  "></div>
+                        <section class="m-l-md m-t-md">
+                            <article class="media">
+                                <p>组织：勤智数码<span></span></p>
+
+                                <p>授权日期：<span><time class="date" datetime="2015-01-01">2015-01-01</time></span></p>
+                                <p>类别：<span class="font-bold m-r-sm">数据提供商</span><span
+                                        class="m-r-sm font-bold">服务提供商</span></p>
+
+                                <p>服务/产品下载总次数：<span class="text-info">120</span></p>
+
+                                <p></p>汇总收入：<span class="text-info">56000</span></p>
+                            </article>
+                        </section>
+                        <div class="line line-dotted b-b  "></div>
+                        <section class="m-l-md">
+                            <article class="media m-b-lg">
+                                <span><h4>联系我们帮助你发布</h4></span>
+                                <span class="m-t-md"><p>电话：4001231234</p></span>
+                                <span><p>周一至周四</p></span>
+                                <!--<span><p class="text-center" style="line-height: 45px; width:123px;background-image: url('public/img/u82.png')">客服在线</p></span>-->
+                                <div class="text-center col-sm-12 m-t-md">
+                                    <div class="row">
+                                        <a class="btn btn-info   btn-lg col-sm-8 col-sm-offset-2" href="#">客服在线</a>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+                    </section>
+                </div>
+
+                <div class="col-sm-9 " >
+                        <div class="row bg-white">
+                            <div class="nav-tabs-alt ">
+                                <ul class="nav nav-tabs " role="tablist">
+                                    <li class="active">
+                                        <a>
+                                            产品分类信息
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            描述您的产品
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            详细信息
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            发布产品
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="m-t-lg m-b-md">
+
+                                <div class="col-sm-9 col-sm-offset-1 m-t-lg" >
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label"><h4>产品类型:</h4></label>
+                                        <div class="input-group col-sm-9  ">
+                                            <input class="form-control" type="text" placeholder="选择您的产品类型">
+
+                                            <div class="input-group-btn">
+                                                <button data-toggle="modal" data-target="#pro-type" type="button" class="btn btn-info ">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-9 col-sm-offset-1">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 control-label"><h4>行业类别:</h4></label>
+
+                                        <div class="input-group col-sm-9  ">
+                                            <input class="form-control" type="text" placeholder="选择行业类别">
+
+                                            <div class="input-group-btn">
+                                                <button data-toggle="modal" data-target="#industry-category" type="button" class="btn btn-info ">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" m-t-lg">&nbsp;</div>
+                                    <div class="m-t-lg">&nbsp;</div>
+                                    <div class="m-t-lg">&nbsp;</div>
+                                </div>
+
+                                <!--<div class="col-sm-9 col-sm-offset-1">-->
+                                    <!--<div class="form-group row">-->
+                                        <!--<label class="col-sm-3 control-label"><h4 class="b-l-info" >产品标签:</h4></label>-->
+
+                                        <!--<div class="input-group col-sm-9  ">-->
+                                            <!--<input class="form-control" type="text" placeholder="选择标签">-->
+
+                                            <!--<div class="input-group-btn">-->
+                                                <!--<button data-toggle="modal" data-target="#pro-tag" type="button" class="btn btn-info ">-->
+                                                    <!--<span class="glyphicon glyphicon-plus"></span>-->
+                                                <!--</button>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class=" m-t-lg">&nbsp;</div>-->
+                                    <!--<div class="m-t-lg">&nbsp;</div>-->
+                                    <!--<div class="m-t-lg">&nbsp;</div>-->
+                                <!--</div>-->
+                                <div class="form-group row  text-center">
+                                    <div class="col-sm-12 m-b-md m-t-md">
+                                        <button type="button" onclick="history.go(-1)" class="btn btn-default m-r-lg ">
+                                            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                            取消
+                                        </button>
+                                        <button type="reset" class="btn btn-default m-r-lg ">
+                                            重置
+                                        </button>
+                                        <button type="submit" class="btn btn-info">下一步
+                                            <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+
+
+
+<!--modal-->
+<div class="modal fade in" id="pro-type" tabindex="-1"  role="dialog" aria-labelledby="pro-type-ModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-title row" id="pro-type-ModalLabel">选择产品类型</div>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <table class="table   ">
+                        <thead>
+                        <tr class="text-info">
+                            <th class="text-right">已选行业:</th>
+                            <th>计算机</th>
+                        </tr>
+                        </thead>
+                        <tbody  class="row bg-light  ">
+                        <tr  class="b-b">
+                            <td class="col-md-2 text-right b-r b-b ">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs  on  "><a name="type" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="b-b">
+                            <td class="col-md-2 text-right b-r">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="type" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info" >确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="industry-category" tabindex="-1"  role="dialog" aria-labelledby="industry-category-ModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-title row" id="industry-category-ModalLabel">选择行业类别</div>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <table class="table   ">
+                        <thead>
+                        <tr class="text-info">
+                            <th class="text-right">已选行业:</th>
+                            <th>计算机</th>
+                        </tr>
+                        </thead>
+                        <tbody  class="row bg-light  ">
+                        <tr  class="b-b">
+                            <td class="col-md-2 text-right b-r b-b ">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs  on  "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="b-b">
+                            <td class="col-md-2 text-right b-r">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs  on  "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info" >确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="pro-tag" tabindex="-1"  role="dialog" aria-labelledby="pro-tag-ModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-title row" id="pro-tag-ModalLabel">选择产品标签</div>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default">
+                    <table class="table   ">
+                        <thead>
+                        <tr class="text-info">
+                            <th class="text-right">已选行业:</th>
+                            <th>计算机</th>
+                        </tr>
+                        </thead>
+                        <tbody  class="row bg-light  ">
+                        <tr  class="b-b">
+                            <td class="col-md-2 text-right b-r b-b ">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs  on  "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="b-b">
+                            <td class="col-md-2 text-right b-r">
+                                <span>计算机|互联网:</span>
+                            </td>
+                            <td class="col-md-10 text-left  bg-white  ">
+                                <div class="row">
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机服务(系统,数据服务维修)</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">计算机</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">互联网</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">硬件</a></div>
+                                    <div class="col-md-4 m-t-xs   "><a name="indu" href="#">通信/电信/网络设备</a></div>
+
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-info" >确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+</body>
+</html>
+
+<script>
+    $("a[name='type']").click(function () {
+
+    });
+
+</script>

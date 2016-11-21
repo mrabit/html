@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+</head>
+<body>
+<div class="owl-carousel owl-theme owl-loaded">
+    <div class="owl-stage-outer">
+        <div class="owl-stage">
+            <div class="owl-item">...</div>
+            <div class="owl-item">...</div>
+            <div class="owl-item">...</div>
+        </div>
+    </div>
+    <div class="owl-controls">
+        <div class="owl-nav">
+            <div class="owl-prev">prev</div>
+            <div class="owl-next">next</div>
+        </div>
+        <div class="owl-dots">
+            <div class="owl-dot active"><span></span></div>
+            <div class="owl-dot"><span></span></div>
+            <div class="owl-dot"><span></span></div>
+        </div>
+    </div>
+</div>
+    <button type="button" id="btn">asd</button>
+</body>
+</html>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script>
+    $(function(){
+        var owl = $('.owl-carousel');
+        owl.owlCarousel();
+    });
+</script>

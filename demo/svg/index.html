@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="no"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div id="map" class="col-xs-12">
+                <embed src="" type="image/svg+xml" id="embed">
+            </div>
+        </div>
+        <style>
+            .wrapper1 {
+                padding: 5px;
+            }
+        </style>
+        <section class="wrapper-sm">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="btn-group pull-right" data-toggle="buttons">
+                        <label class="btn btn-xs btn-default no-radius set_shop_option active" id="options_1">
+                            <input type="radio" name="options" value="1">
+                            <i class="fa fa-check text-active"></i> 只显示可用车位
+                        </label>
+                        <label class="btn btn-xs btn-dark no-radius set_shop_option" id="options_0">
+                            <input type="radio" name="options" value="0" checked="">
+                            <i class="fa fa-check text-active"></i> 显示所有车位
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <div class="row no-gutter m-b-md text-center"  id="parkList">
+
+        </div>
+        <div id="parkList_template" style="display: none;">
+            <div class="col-xs-3 text-center ">
+                <a href="">
+                    <div class="wrapper1 "  >
+                        <div name="bg-color">
+                            <span class="h4  block text-white" style="line-height: 25px" name="parkId"></span>
+                            <small class="text-muted" >
+                                <span name="updateTime"  class="text-xs"></span>
+                            </small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="lastTime" style="display: none"></div>
+        <div id="parkList_error_template" style="display: none">
+            <p class="text-danger h3">请求无数据</p>
+        </div>
+    </div>
+</body>
+</html>
+<script src="jquery-1.12.3.min.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="main.js"></script>

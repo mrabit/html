@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <script src="../../public/js/require.js"  ></script>
+    <script src="../../public/js/main.js"></script>
+</head>
+<body>
+    <div data-percent="0" id="time_line"></div>
+</body>
+</html>
+<script>
+    require(["jquery",'easypiechart'], function ($) {
+        var percent=0;
+        var ui_options={
+            percent: percent,
+            lineWidth: 4,
+            trackColor: '#e8eff0',
+            barColor: '#7266ba',
+            scaleColor: false,
+            size: 180,
+            lineCap: 'butt',
+            animate:100
+        };
+        $("#time_line").easyPieChart( ui_options);
+        setInterval(function () {
+            console.log(percent)
+            if(percent>=100){
+                percent=0;
+            }
+
+            $("#time_line").data('easyPieChart').update(percent);
+            percent++;
+        },100)
+    });
+</script>

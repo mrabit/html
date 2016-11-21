@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>数据空间</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css" />
+
+    <link rel="stylesheet" href="public/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css" />
+
+    <script src="public/angular/angular.min.js"></script>
+
+
+    <style>
+        html,body,a,p,span,small,h3,h5{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+    </style>
+</head>
+<body class="bg-dark">
+
+
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+    <div class="bg-white">
+        <div class="container">
+            <div style="height: 79px"></div>
+
+            <div class="row m-b-none">
+                <div class="col-md-8 m-b-none ">
+                    <div class="">
+                        <img src="http://youhh.net/shujujie/public/img/tu_1.png" />
+                    </div>
+
+
+                </div>
+                <div class="col-md-4 m-b-none">
+                    <section class="panel panel-default">
+                        <div class=" bg-white-only text-center m-t m-b-none">
+                            <div class="h3 ">用户登录</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="hbox text-center m-b m-t-sm">
+                                <a href="javascript:void(0)" class="col  b-r b-light" id="account_login_btn">
+                                    <div class="h5">账号密码登陆</div>
+                                </a>
+                                <a href="javascript:void(0)" class="col text-muted" id="mobile_login_btn">
+                                    <div class="h5 ">手机动态登陆</div>
+                                </a>
+                            </div>
+                            <!-- 账号登录 -->
+                            <div id="account_login">
+                                <form name="form" class="form-validation">
+                                    <div class="text-danger wrapper text-center" ng-show="authError">
+                                    </div>
+                                    <div class="list-group list-group-sm m-b-md">
+                                        <div class="list-group-item">
+                                            <input  placeholder="用户名/手机/邮箱" class="form-control no-border">
+                                        </div>
+                                        <div class="list-group-item">
+                                            <input type="password" placeholder="密码" class="form-control no-border">
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control no-border" placeholder="验证码">
+                                                <div class="input-group-btn">
+                                                    <a type="button" class="btn btn-dark disabled" >358611</a>
+                                                    <button type="button" class="btn btn-default">换一张</button>
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="checkbox m-b-md m-t-none">
+                                        <label class="i-checks">
+                                            <input type="checkbox" required="" checked><i></i> 5天内自动登录
+                                        </label>
+                                    </div>
+                                    <a data-toggle="modal" role="button" href="#login" class="btn btn-lg btn-info btn-block">登录</a>
+                                    <div class="text-center m-t m-b">
+                                        <a href="#">忘记密码?</a>
+                                    </div>
+                                    <div class="line line-dashed b-t"></div>
+                                    <p class="text-center"><small>没有账户?</small></p>
+                                    <a href="regist.html" class="btn btn-lg btn-default btn-block">新建一个账号</a>
+                                </form>
+                            </div>
+
+                            <!-- 手机动态登录 -->
+                            <div id="mobile_login" class="hide">
+                                <form name="form" class="form-validation">
+                                    <div class="text-danger wrapper text-center" ng-show="authError">
+                                    </div>
+                                    <div class="list-group list-group-sm m-b-md">
+                                        <div class="list-group-item">
+                                            <input  placeholder="手机号" class="form-control no-border">
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control no-border" placeholder="短信码">
+                                                <div class="input-group-btn">
+                                                    <button type="button" class="btn btn-info">获取短信码</button>
+                                                </div><!-- /btn-group -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a data-toggle="modal"  href="#login" class="btn btn-lg btn-info btn-block">登录</a>
+                                    <p class="text-center m-t-md m-b-sm"><small>没有账户?</small></p>
+                                    <a href="regist.html" class="btn btn-lg btn-default btn-block">新建一个账号</a>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div ng-include="'pages/public/footer.html'"></div>
+</div>
+</div>
+</body>
+
+
+</div>
+
+
+<!-- Small modal -->
+<div id="login" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title"><i class="icon-info2"></i> 操作标题</h4>
+            </div>
+            <div class="modal-body with-padding">
+                <p>内容</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" id="cancel_to_quit">取消</button>
+                <a href="javascript:void(0);"><button class="btn btn-info">确定</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /small modal -->
+
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+
+<script>
+    $(function(){
+        $('#mobile_login_btn').bind('click', function(){
+            $(this).removeClass('text-muted');
+            $('#account_login_btn').addClass('text-muted');
+            $('#account_login').addClass('hide');
+            $('#mobile_login').removeClass('hide');
+        })
+
+        $('#account_login_btn').bind('click', function(){
+            $(this).removeClass('text-muted');
+            $('#mobile_login_btn').addClass('text-muted');
+            $('#account_login').removeClass('hide');
+            $('#mobile_login').addClass('hide');
+        })
+    })
+</script>
+</body>
+</html>

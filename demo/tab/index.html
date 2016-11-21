@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <select name="account" class="form-control m-b">
+                <option data-target="#tab-1" role="tab" data-toggle="tab">option 1</option>
+                <option data-target="#tab-2" role="tab" data-toggle="tab">option 2</option>
+                <option data-target="#tab-3" role="tab" data-toggle="tab">option 3</option>
+                <option data-target="#tab-4" role="tab" data-toggle="tab">option 4</option>
+            </select>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tab-1">
+                    tab-1
+                </div>
+                <div role="tabpanel" class="tab-pane " id="tab-2">
+                    tab-2
+                </div>
+                <div role="tabpanel" class="tab-pane " id="tab-3">
+                    tab-3
+                </div>
+                <div role="tabpanel" class="tab-pane " id="tab-4">
+                    tab-4
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/app.min.js"></script>
+
+<script>
+    $("select").change(function () {
+       var tab = $(this).find("option:selected").attr("data-target");
+        $(tab).addClass("active");
+        $(tab).siblings().removeClass("active")
+    });
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <script src="../../public/js/jquery-1.12.3.min.js"></script>
+</head>
+<body>
+<div class="container" ng-app="myApp">
+    <div class="col-xs-4">
+        <div ng-controller="myCtrl">
+
+            <button ng-click="count = count + 1">点我！</button>
+
+            <p>{{ count }}</p>
+
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div ng-controller="personCtrl">
+            <button class="btn btn-default" ng-click="toggle()">隐藏/显示</button>
+            状态：<span>{{!myVar}}</span>
+            <div ng-hide="myVar">
+                姓：<input type="text" class="form-control" ng-model="firstName">
+                名：<input type="text" class="form-control" ng-model="lastName">
+                密码：<input type="text" class="form-control" ng-model="pwd">
+                确认密码：<input type="text" class="form-control" value="{{pwd}}">
+                结果：<span>{{firstName + "" + lastName}}</span>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div ng-controller="personCtrls">
+            <button class="btn btn-default" ng-click="toggle()">隐藏/显示</button>
+            状态：<span>{{myVar}}</span>
+            <div ng-show="myVar">
+                姓：<input type="text" class="form-control" ng-model="firstNames">
+                名：<input type="text" class="form-control" ng-model="lastNames">
+                结果：<span>{{firstNames + "" + lastNames}}</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="angular.min.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function ($scope) {
+        $scope.count = 0;
+    });
+    app.controller("personCtrl", function ($scope) {
+        $scope.firstName = "袁";
+        $scope.lastName = "源";
+        $scope.myVar = true;
+        $scope.toggle = function () {
+          $scope.myVar = !$scope.myVar;
+        };
+    });
+    app.controller("personCtrls", function ($scope) {
+        $scope.firstNames = "袁";
+        $scope.lastNames = "源";
+        $scope.myVar = false;
+        $scope.toggle = function () {
+          $scope.myVar = !$scope.myVar;
+        };
+    });
+</script>

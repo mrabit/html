@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" id="callback">点击</button>
+</body>
+</html>
+<script src="../../public/js/jquery-1.12.3.min.js"></script>
+<script>
+    (function ($,owner) {
+        $("#callback").click(function () {
+            var reflog="true";
+            test(reflog,function (i) {
+                console.log(reflog === i);
+                i="false";
+                console.log(i);
+            });
+        });
+        function test(flog,callback){
+          var i=flog;
+            typeof callback === "function" && callback(i);
+
+        };
+    })(jQuery,document);
+</script>

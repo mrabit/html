@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="../../public/js/jquery-1.12.3.min.js"></script>
+<script>
+    (function ($,owner) {
+
+        owner.formatTheTel= function () {
+            var format=function (tel){
+                var tel=tel.split("");
+                var arr=[];
+                var index=[];
+                $.each(tel, function (key,value) {
+                    if($.inArray(value,arr)<0){ arr.push(value)}
+                });
+                arr.sort(function(){ return 0.5 - Math.random() });
+                $.each(tel, function (key,value) {
+                    index.push(""+arr.indexOf(value));
+                });
+                return {
+                    arr:arr,
+                    index:index
+                }
+            };
+            var toString= function (arr,index) {
+                var tel="";
+                $.each(index, function (key,value) {
+                    tel+=arr[parseInt(value)];
+                });
+                return tel;
+            };
+            return {
+                format:format,
+                toString:toString
+            };
+        };
+
+
+        var a=new owner.formatTheTel();
+        var json=a.format("13658176229");
+        console.log(json.arr);
+        console.log(json.index);
+        console.log(a.toString(json.arr,json.index))
+        var json=a.format("18612453282");
+        console.log(json.arr);
+        console.log(json.index);
+        console.log(a.toString(json.arr,json.index))
+        var json=a.format("biabia123456@126.com");
+        console.log(json.arr);
+        console.log(json.index);
+        console.log(a.toString(json.arr,json.index))
+        var json=a.format("519296987");
+        console.log(json.arr);
+        console.log(json.index);
+        console.log(a.toString(json.arr,json.index))
+    })(jQuery,document);
+</script>

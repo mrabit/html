@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8"/>
+    <title>数据街</title>
+    <meta name="description"
+          content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css"/>
+    <script src="public/angular/angular.min.js"></script>
+    <style>
+        html, body, a, p, span, small, h3, h5 {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        .input-group[class*="col-"] {
+            float: none;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body class="bg-light dk">
+
+
+
+
+<div id="content">
+    <!-- header -->
+    <div ng-include="'pages/public/header.html'"></div>
+    <!-- / header -->
+    <div class="bg-light">
+        <div class="container ">
+            <form class="" method="get" action="release_need_2.html">
+            <div class="row bg-white-only">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- .breadcrumb -->
+                        <ul class="breadcrumb no-borders no-radius bg-white  b-b ">
+                            <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                            <li class="active">发布需求</li>
+                        </ul>
+                        <!-- / .breadcrumb -->
+                    </div>
+                </div>
+                <!--nav-->
+                <div class="nav-tabs-alt">
+                    <ul class="nav nav-tabs font-bold" role="tablist">
+                        <li>
+                            <a data-target="#" >
+                                <div class="text-md wrapper-sm">
+                                    1. 选择类目
+                                </div>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a data-target="#"  >
+                                <div class="text-md wrapper-sm">
+                                    2. 描述你的需求
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-target="#"  >
+                                <div class="text-md wrapper-sm">
+                                    3 .设置需求赏金
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-target="#" >
+                                <div class="text-md wrapper-sm">
+                                    4 .确认需求,并托管赏金
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                    <article class="col-sm-12   m-t-lg" >
+                        <div class="row">
+                            <!--上个页面的传值信息-->
+                            <div class="col-sm-10 col-sm-offset-1   m-t-md   ">
+                                <div class="row">
+                                        <div class="col-sm-4 ">
+                                            <p>您选择的行业类型: <span class="text-info h4  m-l-sm m-r-sm">金融</span></p>
+                                        </div>
+                                        <div class="col-sm-4 ">
+                                            <p>您选择数据类别:
+                                                <span class="text-info h4  m-l-sm m-r-sm">API</span>
+                                                <span class="text-info h4  m-l-sm m-r-sm">语音数据</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-4 ">
+                                            <p>您选择数据标签: <span class="text-info h4 -bold m-l-sm m-r-sm">语音</span></p>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="line line-dashed b-b line-lg  "></div>
+                            <!--标题-->
+                            <div class="col-sm-10 col-sm-offset-1 ">
+                                <div class="row">
+                                    <div class="form-group">
+                                            <label class="col-sm-10 control-label  m-b-sm"  >标题:</label>
+
+                                            <div class="col-sm-12 input-group ">
+                                                <input required type="text" class="form-control" required="" placeholder="限20字，为你的产品取个名字">
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line line-dashed b-b line-lg  "></div>
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-12 m-b-sm control-label" >详细描述您的要求：
+                                            </label>
+                                            <!--bootstrap 文本编辑器-->
+                                            <div class="col-sm-12 ">
+                                                <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar"
+                                                     data-target="#editor">
+                                                    <div class="btn-group dropdown" dropdown="">
+                                                        <a class="btn btn-default" dropdown-toggle="" data-toggle="dropdown"
+                                                           tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b
+                                                                class="caret"></b></a>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="" data-edit="fontSize 5"
+                                                                   style="font-size:24px">Huge</a></li>
+                                                            <li><a href="" data-edit="fontSize 3"
+                                                                   style="font-size:18px">Normal</a></li>
+                                                            <li><a href="" data-edit="fontSize 1"
+                                                                   style="font-size:14px">Small</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-default" data-edit="bold" tooltip="Bold (Ctrl/Cmd+B)"><i
+                                                                class="fa fa-bold"></i></a>
+                                                        <a class="btn btn-default" data-edit="italic"
+                                                           tooltip="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                                                        <a class="btn btn-default" data-edit="strikethrough"
+                                                           tooltip="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                                                        <a class="btn btn-default" data-edit="underline"
+                                                           tooltip="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-default" data-edit="insertunorderedlist"
+                                                           tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                                        <a class="btn btn-default" data-edit="insertorderedlist"
+                                                           tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                                                        <a class="btn btn-default" data-edit="outdent"
+                                                           tooltip="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                                                        <a class="btn btn-default" data-edit="indent" tooltip="Indent (Tab)"><i
+                                                                class="fa fa-indent"></i></a>
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-default btn-info" data-edit="justifyleft"
+                                                           tooltip="Align Left (Ctrl/Cmd+L)"><i
+                                                                class="fa fa-align-left"></i></a>
+                                                        <a class="btn btn-default" data-edit="justifycenter"
+                                                           tooltip="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                                                        <a class="btn btn-default" data-edit="justifyright"
+                                                           tooltip="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                                        <a class="btn btn-default" data-edit="justifyfull"
+                                                           tooltip="Justify (Ctrl/Cmd+J)"><i
+                                                                class="fa fa-align-justify"></i></a>
+                                                    </div>
+                                                    <div class="btn-group dropdown" dropdown="">
+                                                        <a class="btn btn-default" dropdown-toggle="" tooltip="Hyperlink"><i
+                                                                class="fa fa-link"></i></a>
+
+                                                        <div class="dropdown-menu">
+                                                            <div class="input-group m-l-xs m-r-xs">
+                                                                <input class="form-control input-sm" id="LinkInput"
+                                                                       placeholder="URL" type="text" data-edit="createLink">
+
+                                                                <div class="input-group-btn">
+                                                                    <button class="btn btn-sm btn-default" type="button">Add
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a class="btn btn-default" data-edit="unlink"
+                                                           tooltip="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                                    </div>
+
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-default"
+                                                           tooltip="Insert picture (or just drag &amp; drop)" id="pictureBtn"><i
+                                                                class="fa fa-picture-o"></i></a>
+                                                        <input type="file" data-edit="insertImage"
+                                                               style="position:absolute; opacity:0; width:41px; height:34px">
+                                                    </div>
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-default" data-edit="undo" tooltip="Undo (Ctrl/Cmd+Z)"><i
+                                                                class="fa fa-undo"></i></a>
+                                                        <a class="btn btn-default" data-edit="redo" tooltip="Redo (Ctrl/Cmd+Y)"><i
+                                                                class="fa fa-repeat"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div ui-jq="wysiwyg" class="form-control"
+                                                     style="overflow:scroll;height:200px;max-height:200px"
+                                                     contenteditable="true" >
+                                                    清楚、详细的说明白你到底需要什么，将你更快、更准确的找到服务提供方。
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!--附件添加-->
+                                            <div class="form-group" >
+                                                <label class="col-sm-12 control-label m-t-md">添加附件:</label>
+                                                <div class="col-sm-4">
+                                                    <input name="file" ui-jq="filestyle"  type="file" data-icon="false" data-classbutton="btn btn-default" data-classinput="form-control inline v-middle input-s" id="filestyle-0" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+                                                </div>
+                                                <div class="col-sm-8">
+                                                    <a href="#" class="text-info" style="line-height: 40px;">上传遇到问题?</a>
+                                                </div>
+                                            </div>
+                                    <!--上一步,重置,提交按钮-->
+                                    <div class="form-group row  text-center">
+                                        <div class="col-sm-12 m-t-lg m-b-md">
+                                            <div class="m-t-lg"></div>
+                                            <button type="button" onclick="history.go(-1)" class="btn btn-default m-r-lg ">
+                                                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                                上一步
+                                            </button>
+                                            <button type="reset" class="btn btn-default m-r-lg ">
+                                                重置
+                                            </button>
+                                            <button type="submit" class="btn btn-info">下一步
+                                                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </form>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+
+
+
+</body>
+</html>

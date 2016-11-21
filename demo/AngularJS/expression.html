@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <script src="../../public/js/jquery-1.12.3.min.js"></script>
+</head>
+<body data-ng-app>
+    <div class="container">
+        <div class="col-xs-4" ng-init="first=1;last=2">
+            <input type="text" class="form-control" ng-model="first">
+            <input type="text" class="form-control" ng-model="last">
+            <p>总数: <span ng-bind="first * last"></span></p>
+            <p>字符串: <span ng-bind="first + '' + last"></span></p>
+        </div>
+        <div class="col-xs-4">
+            <div  ng-init="person={firstName:'千秋万载',lastName:'一桶浆糊'}">
+
+                <p>姓为 '{{ person.lastName }}'</p>
+                <p>名为 '{{ person.firstName }}'</p>
+
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div ng-init="points=[1,15,19,2,40]">
+
+                <p>第一个值为 {{ points[0] }}</p>
+                <p>第二个值为 {{ points[1] }}</p>
+                <p>第三个值为 {{ points[2] }}</p>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="angular.min.js"></script>
+<script>
+
+</script>

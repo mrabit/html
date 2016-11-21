@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <script src="../../public/js/jquery-1.12.3.min.js"></script>
+</head>
+<body ng-app="myApp">
+<div  ng-controller="myCtrl">
+
+    <input ng-model="carname">
+
+    <h1>我的名字是 {{carname}}</h1>
+
+</div>
+<div  ng-controller="myCtrl1">
+
+    <ul>
+        <li ng-repeat="x in names">{{x}}</li>
+    </ul>
+
+</div>
+</body>
+</html>
+<script src="angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+
+    app.controller('myCtrl', function($scope) {
+        $scope.carname = "Volvo";
+    });
+
+    app.controller('myCtrl1', function($scope) {
+        $scope.names = ["Emil", "Tobias", "Linus"];
+    });
+</script>

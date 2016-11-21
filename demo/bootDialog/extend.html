@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/js/bootstrap-dialog/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/font-awesome.min.css">
+</head>
+<body >
+
+</body>
+</html>
+<script src="../../public/js/jquery-1.12.3.min.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+<script src="../../public/js/bootstrap-dialog/bootstrap-dialog.js"></script>
+<script src="../../public/js/app.min.js"></script>
+<script>
+    (function ($, owner) {
+        BootstrapDialog.success = function (pram) {
+            var content = pram.content,cssClass = pram.cssClass, func = pram.func,icons = pram.icons,time = pram.time;
+            var $success = '<div class="row padder-v '+ cssClass +' " style="border-radius: 10px;">' +
+                    '<div class="col-xs-12 text-center " style="font-size: 1.5em;">' +
+                    '<i class="fa '+ icons +' m-r" ></i>' +
+                    content +
+                    '</div>' +
+                    '</div>';
+            BootstrapDialog.show({
+                size: "size-small",
+                onshow: function (dialog) {
+                    dialog.getModalHeader().remove();
+                    dialog.getModalContent().html($success);
+                },
+                onshown: function (dialog) {
+                    dialog.getModalDialog().css("margin-top", $(window).height()/2 - dialog.getModalDialog().height() + "px");
+                    setTimeout(function () {
+                        func.apply(this);
+                        dialog.close();
+                    },time);
+                }
+            });
+        }
+
+        $.extend( $,{
+            alert:function(content,level,func,time){
+                var level=level || "default";
+                time = time || 2000;
+                var cssClass = "";
+                var icons = "fa-check-circle-o";
+                if(level == "error"){
+                    cssClass = "bg-danger";
+                    icons = "fa-times-circle-o";
+                }else if(level == "success"){
+                    cssClass = "bg-success";
+                }else{
+                    cssClass = "bg-default";
+                }
+                var _opt={
+                    content: content,
+                    cssClass: cssClass,
+                    icons: icons,
+                    time: time,
+                    func: func
+                };
+                BootstrapDialog.success(_opt);
+            }
+        })
+        $.alert("对了","success", function () {
+            alert('asd')
+        },5000);
+
+    }(jQuery, document))
+</script>

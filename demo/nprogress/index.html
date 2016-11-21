@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>nprogress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+
+<body>
+<script id="demo" type="text/html">
+    {{# var a = JSON.parse(d.result);}}
+    {{# for(var i = 0, len = a.length; i < len; i++){ }}
+    <img src="{{a[i].img_url}}" alt="{{a[i].img_title}}">
+    {{# } }}
+</script>
+<div class="demo"></div>
+</body>
+
+</html>
+<script src="../../public/js/require.js" type="text/javascript"></script>
+<script src="../../public/js/main.js" type="text/javascript"></script>
+<script>
+    require(["script", "nprogress", "laytpl"], function ($, NProgress, laytpl) {
+
+        NProgress.start();
+
+        var promise = function () {
+            return new Promise(function (resolve, reject) {
+                $.post("http://blog.mrabit.com/home/bing/get_lists", {start: 0, length: 10}, function (d) {
+                    resolve(d);
+                }, "json").error(function (e) {
+                    reject(e);
+                });
+            });
+        };
+        var success = function (message) {
+            message.result = JSON.stringify(message.result);
+            var gettpl = document.getElementById('demo').innerHTML;
+            laytpl(gettpl).render(message, function (html) {
+                $(".demo").append(html);
+            });
+        };
+
+        promise().then(function (data) {
+            var img_url_arr = [];
+            data.result.forEach(function (v) {
+                img_url_arr.push(v.img_url);
+            });
+            return $.loadImage(img_url_arr, data);
+        }).then(function (data) {
+            success(data);
+        }).then(function () {
+            NProgress.done();
+        });
+    });
+</script>

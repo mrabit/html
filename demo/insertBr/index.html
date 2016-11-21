@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Title</title>
+    <style>
+        dt, dd,span,soan {
+            display: inline;
+            margin: 0;
+        }
+
+        dd,span {
+            font-weight: 600;
+        }
+
+        dd + dt::before {
+            content: "\A";
+            white-space: pre;
+        }
+
+        dd + dd::before {
+            content: ', ';
+            font-weight: normal;
+            margin-left: -.25em;
+        }
+        span + span::before{
+            content: ', ';
+            font-weight: normal;
+            margin-left: -.25em;
+        }
+        span + soan:before{
+            content: "\A";
+            white-space: pre;
+        }
+        dd + span:before{
+            content: "\A";
+            white-space: pre;
+        }
+        body {
+            font: 150%/1.6 Baskerville, Palatino, serif;
+        }
+    </style>
+</head>
+<body>
+<dl>
+    <dl>
+        <dt>Name:</dt>
+        <dd>Lea Verou</dd>
+
+        <dt>Email:</dt>
+        <dd>lea@verou.me</dd>
+        <dd>leaverou@mit.edu</dd>
+
+        <dt>Location:</dt>
+        <dd>Earth</dd>
+        <span>asd</span>
+        <span>qwe</span>
+        <soan>zxc</soan>
+
+    </dl>
+</dl>
+</body>
+</html>

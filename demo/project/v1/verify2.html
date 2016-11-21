@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>数据空间</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css" />
+
+    <link rel="stylesheet" href="public/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css" />
+
+    <script src="public/angular/angular.min.js"></script>
+
+
+    <style>
+        html,body,a,p,span,small,h3,h5{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+    </style>
+</head>
+<body class="bg-light dk">
+
+
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+
+
+    <div class="bg-white-only">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- .breadcrumb -->
+                    <ul class="breadcrumb no-borders no-radius bg-white b-b">
+                        <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                        <li><a href="#">个人中心</a></li>
+                        <li class="active">服务商认证</li>
+                    </ul>
+                    <!-- / .breadcrumb -->
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                </div>
+            </div>
+
+            <div class="row m-b-lg">
+                <div class="col-md-12">
+                    <div class="nav-tabs-alt" >
+                        <ul class="nav nav-tabs font-bold" role="tablist">
+                            <li class="active">
+                                <a data-target="#tab-1" role="tab" data-toggle="tab">
+                                    <div class="text-md wrapper-sm">
+                                        1. 基本信息填写
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a data-target="#tab-2" role="tab" data-toggle="tab">
+                                    <div class="text-md wrapper-sm">
+                                        2. 机构信息填写
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-target="#tab-4" role="tab" data-toggle="tab">
+                                    <div class="text-md wrapper-sm">
+                                        3 .银行付款信息填写
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="tab-1">
+                            <div class="row m-t">
+                                <div class="col-md-12">
+                                    <p class="text-center m-t-md m-b">
+                                        欢迎加入数据街，请完善填写你的企业信息，我们将竭尽所能为你提供更多的商业机会。
+                                    </p>
+
+                                    <div>
+                                        <div class="wrapper-md">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading font-bold">
+                                                    机构信息
+                                                </div>
+                                                <div class="panel-body">
+                                                    <form class="form-horizontal" method="get">
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">公司/机构全称*</label>
+                                                            <div class="col-sm-9">
+                                                                <div class="row">
+                                                                    <div class="col-md-8">
+                                                                        <input type="email" class="form-control" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">手机号</label>
+                                                            <div class="col-sm-9">
+                                                                <div class="row">
+                                                                    <div class="col-md-8">
+                                                                        <div class="input-group">
+                                                                            <input type="tel" class="form-control text-info-dker" value="18108273211">
+                                                                              <span class="input-group-btn">
+                                                                                <button class="btn btn-default" type="button"><i class="icon icon-pencil"></i> 修改</button>
+                                                                              </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">密码</label>
+                                                            <div class="col-sm-9">
+                                                                <div class="row">
+                                                                    <div class="col-md-4">
+                                                                        <input type="password" class="form-control" placeholder="设置6-12位密码">
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <input type="password" class="form-control" placeholder="确认密码">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">电子邮箱</label>
+                                                            <div class="col-sm-9">
+                                                                    <div class="row">
+                                                                        <div class="col-md-8">
+                                                                            <input type="email" class="form-control" placeholder="">
+                                                                        </div>
+                                                                    </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">QQ</label>
+                                                            <div class="col-sm-9">
+                                                                <div class="row">
+                                                                    <div class="col-md-8">
+                                                                        <input type="email" class="form-control" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                                                        <div class="form-group">
+                                                            <label class="col-sm-3 control-label">微信</label>
+                                                            <div class="col-sm-9">
+                                                                <div class="row">
+                                                                    <div class="col-md-8">
+                                                                        <input type="email" class="form-control" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="line line-dashed b-b line-lg pull-in"></div>
+                                                        <div class="form-group m-b-none">
+
+                                                                <label class="col-lg-3 control-label"></label>
+                                                                <div class="col-lg-9">
+                                                                    <button type="submit" class="btn btn-default" onclick="window.location.href='verify.html'">上一步</button>
+                                                                    <button type="reset" class="btn btn-default">取消重新填写</button>
+                                                                    <button type="submit" class="btn btn-info"  onclick="window.location.href='verify3.html'">提交资料，进入下一步 <i class="fa fa-long-arrow-right"></i></button>
+                                                                </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane tab-2" id="tab-2">
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane tab-3" id="tab-3">
+                            <div class=" wrapper">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+</body>
+
+
+</div>
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+
+</body>
+</html>

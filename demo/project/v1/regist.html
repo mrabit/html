@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>数据空间</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css" />
+
+    <link rel="stylesheet" href="public/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css" />
+
+
+    <script src="public/angular/angular.min.js"></script>
+    <script src="public/angular/angular-route.min.js"></script>
+    <script src="public/angular/angular-sanitize.min.js"></script>
+
+
+    <style>
+        html,body,a,p,span,small,h3,h5{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+    </style>
+</head>
+<body class="bg-light dk">
+
+
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+    <div class="bg-white-only">
+        <div class="container">
+            <div style="height: 79px"></div>
+
+            <div class="row m-b-none">
+                <div class="col-md-8 m-b-none ">
+                    <div class="">
+                        <img src="http://youhh.net/shujujie/public/img/tu_1.png" />
+                    </div>
+
+
+                </div>
+                <div class="col-md-4 m-b-none">
+
+
+                    <section class="panel panel-default">
+                        <div class="panel-body">
+                            <h3 class="m-t-none m-b-md text-center">
+                                <a href="" class="">新用户注册</a>
+                            </h3>
+                            <div class=" m-t-none"  id="zh">
+                            <form name="form" class="form-validation">
+                                <div class="text-danger wrapper text-center" ng-show="authError">
+
+                                </div>
+                                <div class="list-group list-group-sm">
+
+                                    <div class="list-group-item">
+                                        <input  placeholder="手机号码注册" class="form-control no-border" ng-model="user.name" required="">
+                                    </div>
+
+                                    <div class="list-group-item">
+                                        <input type="password" placeholder="密码" class="form-control no-border" ng-model="user.password" required="">
+                                    </div>
+
+                                    <div class="list-group-item">
+                                        <input type="password" placeholder="确认密码" class="form-control no-border" ng-model="user.password" required="">
+                                    </div>
+                                </div>
+                                <div class="checkbox m-b-md m-t-none">
+                                    <label class="i-checks">
+                                        <input type="checkbox" ng-model="agree" required=""><i></i> 同意 <a href="">条款和政策</a>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-lg btn-info btn-block">注册</button>
+                                <div class="line line-dashed"></div>
+                                <p class="text-center"><small>我已注册账户?</small></p>
+                                <a href="login.html" class="btn btn-lg btn-default btn-block">登录</a>
+                            </form>
+                                </div>
+                        </div>
+                    </section>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div ng-include="'pages/public/footer.html'"></div>
+</div>
+</div>
+</body>
+
+
+</div>
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+
+</body>
+</html>

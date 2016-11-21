@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8"/>
+    <title>数据街</title>
+    <meta name="description"
+          content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css"/>
+    <script src="public/angular/angular.min.js"></script>
+    <style>
+        html, body, a, p, span, small, h3, h5 {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        .col-md-12 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 0px;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body class="bg-light dk">
+
+<!-- header -->
+
+<!-- / header -->
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+    <div class="bg-light">
+        <div class="container ">
+            <form class="" method="get">
+
+                <div class="row ">
+                    <div class="col-md-12 m-b-n-sm  ">
+                        <!-- .breadcrumb -->
+                        <ul class="breadcrumb no-borders no-radius bg-white  b-b ">
+                            <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                            <li><a href="#">卖家中心</a></li>
+                            <li class="active">发布产品</li>
+                        </ul>
+                        <!-- / .breadcrumb -->
+                    </div>
+                    <div class="col-sm-3 ">
+                        <section class="panel bg-white">
+                            <header class="panel-heading">
+                                <div class="clearfix">
+                                    <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                                        <img src="public/img/a2.jpg" alt="...">
+                                    </a>
+
+                                    <div class="clear">
+                                        <div class="h3 m-t-xs m-b-xs">
+                                            Eson
+                                            <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                                        </div>
+                                        <small class="text-muted">金牌代理商</small>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="line line-dotted b-b line-lg "></div>
+                            <section class="m-l-md">
+                                <article class="media">
+                                    <p>组织：勤智数码<span></span></p>
+
+                                    <p>授权日期：<span><time class="date" datetime="2015-01-01">2015-01-01</time></span></p>
+                                    <p>类别：<span class="font-bold m-r-sm">数据提供商</span><span
+                                            class="m-r-sm font-bold">服务提供商</span></p>
+
+                                    <p>服务/产品下载总次数：<span class="text-info">120</span></p>
+
+                                    <p></p>汇总收入：<span class="text-info">56000</span></p>
+                                </article>
+                            </section>
+                            <div class="line line-dotted b-b  "></div>
+                            <section class="m-l-md">
+                                <article class="media m-b-lg">
+                                    <span><h4>联系我们帮助你发布</h4></span>
+                                    <span class="m-t-md"><p>电话：4001231234</p></span>
+                                    <span><p>周一至周四</p></span>
+                                    <!--<span><p class="text-center" style="line-height: 45px; width:123px;background-image: url('public/img/u82.png')">客服在线</p></span>-->
+                                    <div class="text-center col-sm-12 m-t-md">
+                                        <div class="row">
+                                            <a class="btn btn-info   btn-lg col-sm-8 col-sm-offset-2" href="#">客服在线</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </section>
+                        </section>
+                    </div>
+                    <div class="col-sm-9 ">
+                        <div class="row bg-white">
+                            <div class="nav-tabs-alt">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li>
+                                        <a>
+                                            产品分类信息
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            描述您的产品
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            确认信息
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a>
+                                            发布产品
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-8 col-sm-offset-1 m-t-lg">
+                                <p>请设置您产品的价格</p>
+
+                                <div class=" m-t-md">
+                                    <div class="input-group m-b col-sm-6 m-l-md m-b-md m-t-md">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-yen"
+                                                                                  aria-hidden="true"></span></span>
+                                        <input type="text" class="form-control" pattern="[0-9]+"
+                                               placeholder="请输入产品价格,单价'元'">
+                                        <span class="input-group-addon">.00</span>
+                                    </div>
+                                    <div class="input-group m-b col-sm-8 m-l-md m-b-md m-t-md">
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-subscript"
+                                                                                  aria-hidden="true"></span></span>
+                                        <input type="text" class="form-control" placeholder="请描述你的销售方式，比如：10000次/299元">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line line-dotted b-b line-lg "></div>
+
+                            <div class="col-sm-5 col-sm-offset-1 ">
+                                <p>请用你注册的手机验证，客户才知道怎么联系你哦</p>
+                                <!--<input style="margin-left: 20px;" value="13888888888" required type="text"  class="form-control " readonly placeholder="请输入预定的产品价格">-->
+                                <div class="input-group m-l-md m-b-md m-t-md">
+                                    <input type="text" class="form-control" value="18888888888" readonly>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">修改</button>
+                                        </span>
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info" type="button">获取验证码</button>
+                                        </span>
+                                </div>
+                                <div class="input-group m-l-md m-b-md m-t-md">
+                                    <input type="text" class="form-control" placeholder="输入您收到的手机验证码">
+                                </div>
+                                <div class="m-t-lg"></div>
+                            </div>
+                            <div class="form-group row m-t-md text-center">
+                                <div class="col-sm-12 m-t-lg m-b-md">
+                                    <button type="button" onclick="history.go(-1)" class="btn btn-default m-r-lg ">
+                                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                        上一步
+                                    </button>
+                                    <button type="reset" class="btn btn-default m-r-lg ">
+                                        重置
+                                    </button>
+                                    <button type="submit" class="btn btn-info">发布
+                                        <span class="glyphicon  glyphicon-ok" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title ng-controller="web_title" ng-bind="web_title"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <style>
+        .container {
+            counter-reset: issues 0;
+        }
+        .issue:before{
+            counter-increment: issues 1;
+            content: "Issue " counter(issues, decimal);
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: darkred;
+            padding: 1em 1.5em;
+            box-sizing: border-box;
+            text-align: center;
+            margin: auto;
+        }
+        .issue{
+            min-height: 10vh;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+    </style>
+</head>
+<body ng-controller="body">
+<div class="container" ng-style="container_style">
+    <div class="row">
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+        <div class="col-xs-3 text-center  m-t-lg">
+            <div class="issue b-a">
+
+            </div>
+        </div>
+    </div>
+    <div class="text-center m-b-lg m-t-lg">
+        <button class="btn btn-default last" ng-click = "toggle($event)" operation="-">上一页</button>
+        <button class="btn btn-default next" ng-click = "toggle($event)" operation="+">下一页</button>
+    </div>
+</div>
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+//    var pageNum = 1;
+//    $(".last").click(function () {
+//        console.log((pageNum - 1 < 0 ? pageNum: pageNum - 1) * $('.issue').length);
+//        $(".container").css("counter-reset","issues " + (pageNum - 1 < 0 ? pageNum: pageNum--) * $('.issue').length);
+//    });
+//    $(".next").click(function () {
+//        console.log((pageNum + 1) * $('.issue').length);
+//        $(".container").css("counter-reset","issues " + (pageNum++) * $('.issue').length);
+//    });
+    var arr = window.location.pathname.split("/");    delete arr[arr.length - 1];
+    var dir = arr.join("/");
+    require([dir + "index.js"]);
+</script>

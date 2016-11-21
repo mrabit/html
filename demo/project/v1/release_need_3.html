@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8"/>
+    <title>数据街</title>
+    <meta name="description"
+          content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css"/>
+    <script src="public/angular/angular.min.js"></script>
+    <style>
+        html, body, a, p, span, small, h3, h5 {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        th p{
+            margin: 0px;
+        }
+        .table>tbody>tr>td {
+            padding: 0px;
+            border-top: 1px solid #eaeff0;
+        }
+    </style>
+</head>
+<body class="bg-light dk">
+
+<!-- header -->
+
+<!-- / header -->
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+    <div class="bg-light">
+        <div class="container ">
+            <form class="" method="get">
+                <div class="row bg-white-only">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- .breadcrumb -->
+                            <ul class="breadcrumb no-borders no-radius bg-white  b-b ">
+                                <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                                <li class="active">发布需求</li>
+                            </ul>
+                            <!-- / .breadcrumb -->
+                        </div>
+                    </div>
+                    <div class="nav-tabs-alt ">
+                        <ul class="nav nav-tabs font-bold" role="tablist">
+                            <li>
+                                <a data-target="#" >
+                                    <div class="text-md wrapper-sm">
+                                        1. 选择类目
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-target="#"  >
+                                    <div class="text-md wrapper-sm">
+                                        2. 描述你的需求
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-target="#"  >
+                                    <div class="text-md wrapper-sm">
+                                        3 .设置需求赏金
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a data-target="#" >
+                                    <div class="text-md wrapper-sm">
+                                        4 .确认需求,并托管赏金
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 bg-white m-t-lg">
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1 m-t-md">
+                                <div class="panel panel-default row ">
+                                    <div class="panel-heading">
+                                        确认发布
+                                    </div>
+                                    <!--<article class="col-sm-12 bg-white-only m-t-md">-->
+                                    <!--<div class="row">-->
+                                    <!--<div class="col-sm-10 col-sm-offset-1 m-b-xs  m-t-md   ">-->
+                                    <!--<div class="row">-->
+                                    <!--<div class="col-sm-4 ">-->
+                                    <!--<p>您选择的行业类型: <span class="text-info h4  m-l-sm m-r-sm">金融</span></p>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-4 ">-->
+                                    <!--<p>您选择数据类别:-->
+                                    <!--<span class="text-info h4  m-l-sm m-r-sm">API</span>-->
+                                    <!--<span class="text-info h4  m-l-sm m-r-sm">语音数据</span>-->
+                                    <!--</p>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-4 ">-->
+                                    <!--<p>您选择数据标签: <span class="text-info h4  m-l-sm m-r-sm">语音</span></p>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="line line-dashed b-b line-lg  "></div>-->
+                                    <!--<div class="col-sm-10 col-sm-offset-1 m-t-sm m-b-md">-->
+                                    <!--<div class="row">-->
+                                    <!--<div class="col-sm-12">-->
+                                    <!--<p class="h4"><span class="">求2015年皮鞋销售数据</span></p>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-sm-8  m-t-md ">-->
+                                    <!--<p class="h5"><span class="">求购2015年的皮鞋销售统计数据，品类销售数量级排名，全国各大区域销售数据排名。采用直接采购方式或是数据交换方式都可以。具体数据格式参看附件.</span>-->
+                                    <!--</p>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="line line-dashed b-b line-lg  "></div>-->
+                                    <!--<div class="col-sm-10 col-sm-offset-1 m-t-sm m-b-md">-->
+                                    <!--<div class="row">-->
+                                    <!--<div class="col-sm-8 ">-->
+                                    <!--<p class="h4">预算: <span class=" m-l-sm m-r-sm">卖方报价</span></p>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="line line-dashed b-b line-lg   "></div>-->
+                                    <!--<div class="col-sm-10 col-sm-offset-1 m-t-sm m-b-md">-->
+                                    <!--<div class="row">-->
+                                    <!--<div class="col-sm-12 ">-->
+                                    <!--<p class="h4">附件:<span-->
+                                    <!--class=" text-info m-l-sm m-r-sm">file1.ext</span>,<span-->
+                                    <!--class=" text-info m-l-sm m-r-sm">file2.ext</span></p>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="line line-dashed b-b line-lg  "></div>-->
+                                    <!--<div class="col-sm-10 col-sm-offset-1 m-t-sm ">-->
+                                    <!--<div class="row">-->
+                                    <!--<div class="col-sm-8">-->
+                                    <!--<p class="h4 ">发布人: <span >Eason</span></p>-->
+
+                                    <!--<p class="h4 m-t-md">电话: <span >13888888888</span></p>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="m-t-lg">&nbsp;</div>-->
+                                    <!--</article>-->
+                                    <table class="table   m-b-none">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-sm-4">
+                                                <p class="m-t-sm m-b-sm">您选择的行业类型: <span class="text-info h4  m-l-sm m-r-sm">金融</span></p>
+                                            </th>
+                                            <th class="col-sm-4 ">
+                                                <p class="m-t-sm m-b-sm">您选择数据类别:
+                                                    <span class="text-info h4  m-l-sm m-r-sm">API</span>
+                                                    <span class="text-info h4  m-l-sm m-r-sm">语音数据</span>
+                                                </p>
+                                            </th>
+                                            <th class="col-sm-4 ">
+                                                <p class="m-t-sm m-b-sm">您选择数据标签: <span class="text-info h4  m-l-sm m-r-sm">语音</span></p>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="3">
+                                                <div class="col-sm-12">
+                                                    <p class="h4 m-t-md"><span class="">求2015年皮鞋销售数据</span></p>
+                                                </div>
+                                                <div class="col-sm-8  m-t-md ">
+                                                    <p class="h5 m-t-sm m-b-md"><span class="">求购2015年的皮鞋销售统计数据，品类销售数量级排名，全国各大区域销售数据排名。采用直接采购方式或是数据交换方式都可以。具体数据格式参看附件.</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="3">
+                                                <div class="col-sm-8 ">
+                                                    <p class="h4 m-t-md m-b-md">预算: <span class=" m-l-sm m-r-sm">卖方报价</span></p>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="3">
+                                                <div class="col-sm-8 ">
+                                                    <p class="h4 m-t-md m-b-md">附件:
+                                                        <span class=" m-l-sm m-r-sm text-info">file1.ext</span>
+                                                        <span class=" m-l-sm m-r-sm text-info">file2.ext</span>
+                                                    </p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <div class="col-sm-8 ">
+                                                    <p class="h4 m-t-md m-b-md">发布人:
+                                                        <span class=" h4 m-l-sm m-r-sm ">Eason</span>
+                                                    </p>
+                                                    <p class="h4 m-t-md m-b-md">电话:
+                                                        <span class="h4 m-l-sm m-r-sm ">13888888888</span>
+                                                    </p>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="form-group row  text-center">
+                                <div class="col-sm-12 m-t-lg m-b-md">
+                                    <button type="button" onclick="history.go(-1)" class="btn btn-default m-r-lg ">
+                                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                        上一步
+                                    </button>
+                                    <button type="submit" class="btn btn-info">发布
+                                        <span class="glyphicon  glyphicon-ok" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+</body>
+</html>

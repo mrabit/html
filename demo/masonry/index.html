@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <!--<link rel="stylesheet" href="../../public/js/masonry-docs/masonry-docs.css">-->
+    <style>
+        .item{
+            padding:15px 15px 0px 15px ;
+        }
+    </style>
+</head>
+<body>
+<div id="masonry" class="container-fluid">
+    <div class="row">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item" style="height: 200px;">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item" style="height:400px;">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+        <img src="1.jpg" alt="" class="item">
+    </div>
+</div>
+</body>
+</html>
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/masonry-docs/masonry-docs.min.js"></script>
+<!--<script src="../../public/js/jquery.lazyload.min.js"></script>-->
+<!--<script src="../../public/js/require.js"></script>-->
+<!--<script src="../../public/js/main.js"></script>-->
+<script type="text/javascript">
+//    require(["jquery","jquery.masonry"], function ($) {
+//
+//    });
+$(document).ready(function () {
+    $(function () {
+
+        var $container = $('#masonry .row');
+        $container.imagesLoaded(function () {
+            $container.masonry({columnWidth: 0, itemSelector: '.item'});
+        });
+
+    });
+});
+</script>

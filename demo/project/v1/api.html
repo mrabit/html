@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>数据空间</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css" />
+
+    <link rel="stylesheet" href="public/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css" />
+
+    <script src="public/angular/angular.min.js"></script>
+
+
+    <style>
+        html,body,a,p,span,small,h3,h5{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+    </style>
+</head>
+<body class="bg-light dk">
+
+
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+
+
+    <div class="bg-white-only">
+        <div class="container">
+            <div class=" m-b-none padder-v">
+                <form action="#" class="m-b-md">
+                    <section class="wrapper text-left font-thin">
+                        <span class="m-r-sm h4 ">数据</span>
+                        <span class="m-r-sm m-l-sm h4 ">服务</span>
+                        <span class="m-r-sm m-l-sm h4 ">商机</span>
+                        <span class="m-r-sm m-l-sm h4 ">其他</span>
+
+                    </section>
+                    <div class="input-group">
+                        <input type="text" class="form-control input-lg search_text" placeholder="搜索产品/服务/API/应用或需求...">
+                      <span class="input-group-btn">
+                          <button class="btn btn-lg btn-dark" type="button">搜一搜</button>
+                          <button class="btn btn-lg btn-danger"  type="button">我要发布需求</button>
+                      </span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- .breadcrumb -->
+                    <ul class="breadcrumb no-borders no-radius bg-white b-b">
+                        <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                        <li><a href="#">产品</a></li>
+                        <li class="active">API数据</li>
+                    </ul>
+                    <!-- / .breadcrumb -->
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-5">
+                        <div class="panel b-a no-radius ">
+                            <div class="item m-l-n-xxs m-r-n-xxs">
+                                <img src="http://121.41.7.165/template/v1/public/img/c1.jpg" class="img-full">
+                            </div>
+                            <div class="hbox text-center b-light text-sm ">
+                                <div class="col padder-v  b-r b-light">
+                                    <h4 class="block text-info-dker">115</h4>
+                                    <span class="text-muted">调用次数</span>
+                                </div>
+                                <div class="col padder-v b-r b-light">
+                                    <h4 class="block text-info-dker">92,032</h4>
+                                    <span class="text-muted">访问</span>
+                                </div>
+                                <div class="col padder-v">
+                                    <h4 class="block text-info-dker">3,915</h4>
+                                    <span class="text-muted">收藏</span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="col-md-7">
+                    <div class="panel-heading wrapper-sm b-b b-light">
+                        <h2 class="font-bold m-t-none m-b-none">中文领域词典系列</h2>
+                        <p class="m-t-sm m-b-xs">75个不同领域的中文词典包括常见领域词汇、城市地物名称等，可用于新词发现、机器翻译等. 最全面的汉语语言资料库.</p>
+                    </div>
+                    <div class="hbox text-center b-b b-light text-sm">
+                        <div class="col padder-v  b-r b-light">
+                            <h4 class="block ">datastore(企业)</h4>
+                            <span class="text-muted">服务商</span>
+                        </div>
+                        <div class="col padder-v b-light">
+                            <h4 class="block ">
+                                API   金融
+                            </h4>
+                            <span class="text-muted">分类</span>
+                        </div>
+                    </div>
+                    <div class="hbox text-center b-b b-light text-sm">
+                        <div class="col padder-v  b-r b-light">
+                            <h4 class="block text-danger">10,000次/299元</h4>
+                            <span class="">价格</span>
+                        </div>
+                        <div class="col padder-v b-light">
+                            <h4 class="block ">2016-1-24</h4>
+                            <span class="text-muted">更新时间</span>
+                        </div>
+                    </div>
+
+                    <div class="row text-center m-t">
+                        <div class="col-xs-6">
+                            <a href class="block panel padder-v bg-info item">
+                                <span class="text-white  h3 block">申 请</span>
+                            </a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a href class="block panel padder-v bg-dark item">
+                                <span class="text-white  h3 block">测 试</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row m-b-lg">
+                <div class="col-md-12">
+                        <div class="nav-tabs-alt" >
+                            <ul class="nav nav-tabs font-bold" role="tablist">
+                                <li class="active">
+                                    <a data-target="#tab-1" role="tab" data-toggle="tab">
+                                        <div class="text-md wrapper-sm">
+                                            API介绍
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-target="#tab-2" role="tab" data-toggle="tab">
+                                        <div class="text-md wrapper-sm">
+                                            错误码参照
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-target="#tab-3" role="tab" data-toggle="tab">
+                                        <div class="text-md wrapper-sm">
+                                            评论
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="tab-1">
+                                <div class="">
+                                    <div class="hbox hbox-auto-xs hbox-auto-sm">
+                                        <div class="col w-sm bg-light lter b-r bg-auto">
+                                            <div class="wrapper hidden-sm hidden-xs" >
+                                                <ul class="nav nav-pills nav-stacked nav-sm">
+                                                    <li class="active">
+                                                        <a> 美股查询</a>
+                                                    </li>
+                                                    <li>
+                                                        <a>港股查询</a>
+                                                    </li>
+                                                    <li>
+                                                        <a>股票查询</a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+                                        </div>
+                                        <div class="col">
+
+                                            <div>
+
+                                                <!-- list -->
+                                                <ul class="list-group list-group-lg no-radius m-b-none m-t-n-xxs no-borders b-t">
+                                                    <li class="list-group-item clearfix">
+
+                                                        <div class="clear">
+                                                            <div><span  class="text-md">接口地址 : <pan class="text-info-dker">http://apis.baidu.com/apistore/stockservice/hkstock</pan></span></div>
+                                                            <div class="m-t-sm"><span  class="text-md">请求方法 : <pan class="text-info-dker">GET</pan></span></div>
+                                                            <div class="m-t-sm"><span  class="text-md">请求参数说明 :</span></div>
+                                                            <div class="m-t-sm">
+                                                                <table class="table table-striped bg-white b-a">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th width="20%">名称</th>
+                                                                        <th width="20%">类型</th>
+                                                                        <th width="10%">必填</th>
+                                                                        <th >说明</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td>key</td>
+                                                                        <td>string</td>
+                                                                        <td>是</td>
+                                                                        <td>应用AppKey(应用详细页查询)</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>dtype</td>
+                                                                        <td>string</td>
+                                                                        <td>是</td>
+                                                                        <td>返回数据格式: json或xml，默认json</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>stock</td>
+                                                                        <td>string</td>
+                                                                        <td>是</td>
+                                                                        <td>股票名称</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                            <div class="m-t-sm"><span  class="text-md">返回参数说明 :</span></div>
+                                                            <div class="m-t-sm">
+                                                                <table class="table table-striped bg-white b-a">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th width="20%">名称</th>
+                                                                        <th width="20%">类型</th>
+                                                                        <th width="10%">必填</th>
+                                                                        <th>说明</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td>province</td>
+                                                                        <td>string</td>
+                                                                        <td>否</td>
+                                                                        <td>默认全部，省份简写：GZ，SH</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>dtype</td>
+                                                                        <td>string</td>
+                                                                        <td>否</td>
+                                                                        <td>返回数据格式: json或xml，默认json</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>format</td>
+                                                                        <td>int</td>
+                                                                        <td>否</td>
+                                                                        <td>格式选择1或2，默认1</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td> callback</td>
+                                                                        <td>string</td>
+                                                                        <td>否</td>
+                                                                        <td>返回格式选择jsonp时，必须传递</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>key</td>
+                                                                        <td>string</td>
+                                                                        <td>是</td>
+                                                                        <td>你申请的key</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+
+                                                            <div class="m-t-sm"><span  class="text-md">请求示例 :</span></div>
+                                                            <div class="m-t-sm">
+                                                                <div class="tab-container">
+                                                                    <ul class="nav nav-tabs">
+                                                                        <li class="active">
+                                                                            <a href data-toggle="tab" data-target="#tab_1">curl示例</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href data-toggle="tab" data-target="#tab_2">php示例 </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href data-toggle="tab" data-target="#tab_3">python示例</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href data-toggle="tab" data-target="#tab_3">java示例</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href data-toggle="tab" data-target="#tab_3">C#示例</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href data-toggle="tab" data-target="#tab_3">ObjectC示例</a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href data-toggle="tab" data-target="#tab_3">Swift示例</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <div class="tab-content">
+                                                                        <div class="tab-pane active" id="tab_1">
+                                                                            <ul class="list-group no-borders pull-in m-t-none m-b-none">
+                                                                                <li class="list-group-item m-t-none m-b-none">
+                                                                                    <div class="b wrapper-sm bg-light r ">
+                                                                                        curl  --get --include  'http://apis.baidu.com/apistore/stockservice/hkstock?stockid=00168&list=1'  -H 'apikey:您自己的apikey'
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="tab-pane" id="tab_2">
+                                                                            <ul class="list-group no-borders pull-in m-t-none m-b-none">
+                                                                                <li class="list-group-item m-t-none m-b-none">
+                                                                                    <div class="b wrapper-sm bg-light r ">
+                                                                                        curl  --get --include  'http://apis.baidu.com/apistore/stockservice/hkstock?stockid=00168&list=1'  -H 'apikey:您自己的apikey'
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="tab-pane" id="tab_3">
+                                                                            <ul class="list-group no-borders pull-in m-t-none m-b-none">
+                                                                                <li class="list-group-item m-t-none m-b-none">
+                                                                                    <div class="b wrapper-sm bg-light r ">
+                                                                                        curl  --get --include  'http://apis.baidu.com/apistore/stockservice/hkstock?stockid=00168&list=1'  -H 'apikey:您自己的apikey'
+                                                                                    </div>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    </tabset>
+                                                                </div>
+                                                            </div>
+                                                            <div class="m-t-sm"><span  class="text-md">JSON返回示例 :</span></div>
+                                                            <div class="well m-t bg-light lt">
+                                                                <div class="row">
+                                                                    <div class="col-xs-12">
+                                                                        <p class="m-b-none">
+                                                                            "errNum": 0,
+                                                                            "errMsg": "success",
+                                                                            "retData": {
+                                                                            "stockinfo": {
+                                                                            "name": "青岛啤酒",//股票名称
+                                                                            "code": "00168",//股票代码
+                                                                            "date": "2015/07/29 11:59", //日期
+                                                                            "openningPrice": 42.5, //开盘价
+                                                                            "closingPrice": 42.05,//昨日收盘价
+                                                                            "hPrice": 42.5,//今日最高价
+                                                                            "lPrice": 41.6,//今日最低价
+                                                                            "currentPrice": 41.75,//当前价
+                                                                            "growth": -0.3,//价格涨幅
+                                                                            "growthPercent": -0.713, //价格涨幅比例，单位%
+                                                                            "dealnumber": 947355, //成交量股
+                                                                            "turnover": 39639371,//成交金额，单位港币
+                                                                            "52hPrice": 64, //52周最高价
+                                                                            "52lPrice": 41.15//52周最低价
+                                                                            },
+                                                                            "market": {
+                                                                            "shanghai": {
+                                                                            "name": "上证指数",
+                                                                            "curdot": 3655.265,//52周最低价
+                                                                            "curprice": -7.737,//当前价格
+                                                                            "rate": -0.21,//涨跌率
+                                                                            "dealnumber": 2200597,//成交量（手）
+                                                                            "turnover": 28321565 //成交金额（万元）
+                                                                            },
+
+                                                                            "shenzhen": {
+                                                                            "name": "深证成指",
+                                                                            "curdot": 12262.868, //当前点数
+                                                                            "curprice": -53.908,//当前价格
+                                                                            "rate": -0.44, //涨跌率
+                                                                            "dealnumber": 150072036, //成交量（手）
+                                                                            "turnover": 26837342 //成交金额（万元）
+                                                                            },
+
+                                                                            "DJI": {
+                                                                            "name": "道琼斯",
+                                                                            "date": "2015-07-29 05:28:06", //日期
+                                                                            "curdot": 17630.27, //当前点数
+                                                                            "rate": 1.09, //增长率,单位%
+                                                                            "growth": 189.68, //增长点数
+                                                                            "startdot": 17561.78,//开盘点数
+                                                                            "closedot": 17440.59, //昨收盘点数
+                                                                            "hdot": 17561.78, //今日最高点位
+                                                                            "ldot": 17399.17,//今日最低点位
+                                                                            "turnover": 0 //成交量
+                                                                            },
+
+                                                                            "IXIC": {
+                                                                            "name": "纳斯达克",
+                                                                            "date": "2015-07-29 05:39:57",//日期
+                                                                            "curdot": 5089.21,//当前点数
+                                                                            "rate": 0.98,//增长率,单位%
+                                                                            "growth": 49.43,//增长点数
+                                                                            "startdot": 5063.44,//开盘点数
+                                                                            "closedot": 5039.78, //昨收盘点数
+                                                                            "hdot": 5097.69,//今日最高点位
+                                                                            "ldot": 5025.61,//今日最低点位
+                                                                            "turnover": 2013976426//成交量，单位股
+                                                                            }
+
+                                                                            }
+                                                                            }
+                                                                            }
+
+                                                                            备注 :
+                                                                            港股查询非实时更新大约延迟17min，股票查询API【深圳、上海证券交易】为实时更新。
+                                                                            当返回{"errNum":300003,"errMsg":"url is not parse"} 时，请校验是否传入apikey； 请将apikey作为参数添加到header中；
+                                                                            当list=1，则stockid=股票代码1，股票代码2，股票代码3，...，股票代码10.  最多一次查10支或查前10支股票代码
+                                                                            当list=其它值，则stockid=股票代码1；
+
+                                                                        </p>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+
+                                                </ul>
+                                                <!-- / list -->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane tab-2" id="tab-2">
+                                <div class="m-t"><span  class="text-md">限制类错误 :</span></div>
+                                <div class="row m-t-sm">
+                                    <div class="col-md-12">
+                                        <table class="table table-striped bg-white b-a">
+                                            <thead>
+                                            <tr>
+                                                <th width="20%">错误码</th>
+                                                <th width="20%">错误码返回</th>
+                                                <th>错误码返回说明</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>key</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            <tr>
+                                                <td>dtype</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            <tr>
+                                                <td>stock</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="m-t-sm"><span  class="text-md">调用方错误 :</span></div>
+                                <div class="row m-t-sm">
+                                    <div class="col-md-12">
+                                        <table class="table table-striped bg-white b-a">
+                                            <thead>
+                                            <tr>
+                                                <th width="20%">错误码</th>
+                                                <th width="20%">错误码返回</th>
+                                                <th>错误码返回说明</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>key</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            <tr>
+                                                <td>dtype</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            <tr>
+                                                <td>stock</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="m-t-sm"><span  class="text-md">代理平台错误 :</span></div>
+                                <div class="row m-t-sm">
+                                    <div class="col-md-12">
+                                        <table class="table table-striped bg-white b-a">
+                                            <thead>
+                                            <tr>
+                                                <th width="20%">错误码</th>
+                                                <th width="20%">错误码返回</th>
+                                                <th>错误码返回说明</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>key</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            <tr>
+                                                <td>dtype</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            <tr>
+                                                <td>stock</td>
+                                                <td>string</td>
+                                                <td>是</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane tab-3" id="tab-3">
+                                <div class=" wrapper">
+                                    <div class="m-t">
+                                        <div>
+                                            <a class="pull-left thumb-sm">
+                                                <img src="http://img.jiemian.com/userface/210x210//816/259/101763951-1453355189.jpg" class="img-circle">
+                                            </a>
+                                            <div class="m-l-xxl m-b">
+                                                <div>
+                                                    <a href><strong>成都鱼游科技</strong></a>
+                                                      <span class="text-muted text-xs block m-t-xs">
+                                                        20 分钟前
+                                                      </span>
+                                                </div>
+                                                <div class="m-t-sm">
+                                                    我公司提供的方案已发至您的邮箱，请查收，Email地址: 7996812@qq.com
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="m-l-xxl">
+                                            <a class="pull-left thumb-sm">
+                                                <img src="http://img.jiemian.com/userface/210x210//816/259/101763951-1453355189.jpg" class="img-circle">
+                                            </a>
+                                            <div class="m-l-xxl m-b">
+                                                <div>
+                                                    <a href><strong>成都鱼游科技</strong></a>
+                                                      <span class="text-muted text-xs block m-t-xs">
+                                                        26 分钟前
+                                                      </span>
+                                                </div>
+                                                <div class="m-t-sm">
+                                                    补充一下，包括技术方案及演示数据包(xml文件)一份。
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                        </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div ng-include="'pages/public/footer.html'"></div>
+</div>
+</div>
+</body>
+
+
+</div>
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+
+</body>
+</html>

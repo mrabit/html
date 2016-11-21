@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="http://www.jq22.com/demo/jqtl-150326222647/jquery.range.css">-->
+    <style>
+        html{
+            cursor: none;
+        }
+        body{
+            margin:0;
+            padding: 0;
+            border:0;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+
+        @keyframes goto {
+            from{
+                width:0;
+            }
+            to{
+                 width:100%;
+             }
+        }
+        .image-slider {
+            position:relative;
+            display: inline-block;
+        }
+        .image-slider  .div {
+            position: absolute;
+            top: 0; bottom: -10px; left: 0;
+            width: 50%;
+            overflow: hidden;
+            animation:goto  20s infinite alternate ease;
+        }
+        .image-slider img {
+            display: block;
+            user-select: none;
+        }
+        .image-slider input {
+            position: absolute;
+            left: 0;
+            bottom:10px;
+            width: 100%;
+            margin: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="image-slider" >
+    <div class="div">
+        <img src="6671345_img0_after.jpg" alt="Before" />
+    </div>
+    <img src="6671345_img0_before.png" alt="After" />
+    <!--<input type="range" value="0"  />-->
+</div>
+</body>
+</html>
+<script src="jquery-1.12.3.min.js"></script>
+<!--<script src="http://www.jq22.com/demo/jqtl-150326222647/jquery.range.js"></script>-->
+<script>
+    $(".image-slider img").each(function () {
+        $(this).css({width:$(window).width(),height:$(window).height()});
+    });
+//    $("input[type=range]").on("input change", function() {
+////        if($(".div").css("animation-play-state")=="running"){
+////            $(".div").css("animation-play-state","paused")
+////        }
+//        $('.image-slider').find('.div').css({"width":$(this).val()+"%"});
+////        $(".div").css("animation","none")
+////        $(".div").css("animation","goto  5s infinite alternate")
+////        $(".div").css("animation-play-state","running")
+//    });
+//    $('img').click(function (e) {
+//            var val=e.offsetX/$("input[type=range]").width()*100;
+//            $("input[type=range]").val(val);
+//            $('.image-slider').find('div').css({"width":e.offsetX+"px"});
+//        })
+    $(document).keyup(function(e){
+        if(e.which==122){
+            return false;
+        }
+//        console.log(e.which)
+        return false;
+//        var key =  e.which;
+////        console.log(key)
+//        if(key == 37){
+//            $("input[type=range]").val(+$("input[type=range]").val()-5);
+//        }else if(key==39){
+//            $("input[type=range]").val(+$("input[type=range]").val()+5);
+//        }
+//        $('.image-slider').find('div').css({"width":$("input[type=range]").val()+"%"});
+    });
+</script>

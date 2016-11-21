@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+<body>
+
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+    require(["script"], function ($) {
+//        $.post("http://blog.mrabit.com/home/bing/get_smallImg_lists",null, function (d) {
+//            return false;
+//        },"json");
+
+        function printHello (ready) {
+            return new Promise(function (resolve, reject) {
+                if (ready) {
+                    resolve("Hello");
+                } else {
+                    reject("Good bye!");
+                }
+            });
+        }
+
+        printHello(true).then(function (message) {
+            return message;
+        }).then(function (message) {
+            return message  + ' World';
+        }).then(function (message) {
+            return message + '!';
+        },function (message) {
+            return message + '?';
+        }).then(function (message) {
+            alert(message);
+        });
+    });
+</script>

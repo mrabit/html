@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>一桶浆糊</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+    <link rel="stylesheet" href="../../public/css/simple-line-icons.css">
+    <link rel="stylesheet" href="app.css">
+</head>
+<body class="app">
+<nav id="sidebar" class="behavior_1">
+    <div class="text-center m-t-lg profile ">
+        <a href="index.html" class="block">
+            <img src="image_logo.jpg" class="thumb-lg avatar image_logo" alt="">
+        </a>
+        <span class="m-t-md block h4 sidebar_title hidden-sm hidden-xs">一桶浆糊的博客</span>
+    </div>
+    <ul class="nav_list padder-lg">
+        <li class="list-inline m-t-md block">
+            <a class="block" href="index.html" title="首页">
+                <i class="iconfont fa fa-home"></i>
+                <span class="text-md visible-md-inline visible-lg-inline">首页</span>
+            </a>
+        </li>
+        <li class="list-inline m-t-md">
+            <a class="block" href="archives.html" title="归档">
+                <i class="iconfont fa fa-archive"></i>
+                <span class="text-md visible-md-inline visible-lg-inline">归档</span>
+            </a>
+        </li>
+        <li class="list-inline m-t-md">
+            <a class="block" href="tags.html" title="标签">
+                <i class="iconfont fa fa-tags"></i>
+                <span class="text-md visible-md-inline visible-lg-inline">标签</span>
+            </a>
+        </li>
+        <li class="list-inline m-t-md">
+            <a class="block" href="about.html" title="关于">
+                <i class="iconfont fa fa-user"></i>
+                <span class="text-md visible-md-inline visible-lg-inline">关于</span>
+            </a>
+        </li>
+        <li class="list-inline m-t-md">
+            <a class="block" href="/links/" title="友链">
+                <i class="iconfont fa fa-link"></i>
+                <span class="text-md visible-md-inline visible-lg-inline">友链</span>
+            </a>
+        </li>
+        <li class="list-inline m-t-md">
+            <a class="block" href="/page/slideshare/" title="分享">
+                <i class="iconfont fa fa-share-alt"></i>
+                <span class="text-md visible-md-inline visible-lg-inline">分享</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+<header class="header navbar navbar-inverse navbar-fixed-top visible-xs-block">
+    <div id="menuToggle"><i class="fa fa-align-justify"></i></div>
+    <p class="text-center text-lg header_title m-b-none">一桶浆糊的博客</p>
+    <a class="me"><img src="image_logo.jpg" class=" avatar " alt=""></a>
+</header>
+<div id="sidebar-mask"></div>
+<section class="content">
+    <div class="wrapper">
+        <section class="row padder">
+            <article class="col-xs-12 padder-v">
+                <p class="article-title h2">关于</p>
+                <div class="entry-content m-t-md">
+                    <p>击败恶龙的勇士，也渐渐长出了龙鳞</p>
+                    <div class="line  b-b line-lg "></div>
+                    <p class="text-center">
+                        <i class="fa fa-smile-o" style="font-size: 30vw"></i>
+                    </p>
+                    <p class="">
+                        <span >新浪微博: <a target="_blank" href="http://weibo.com/biabia123"><i class="fa fa-weibo"></i></a></span>
+                        <!--<span >新浪微博: <a target="_blank" href="https://www.zhihu.com/people/biabia123456"><i class="fa fa-weibo"></i></a></span>-->
+                    </p>
+                </div>
+            </article>
+        </section>
+    </div>
+</section>
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+    var arr = window.location.pathname.split("/");
+    delete arr[arr.length - 1];
+    var dir = arr.join("/");
+        require(["angular","init-angular",dir+"ctrlLogin.js"],function(angular){
+            angular.bootstrap(document,["xxxapp"]);
+        });
+    require([dir + "common.js"], function ($) {
+
+    });
+</script>

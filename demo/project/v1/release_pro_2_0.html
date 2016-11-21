@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8"/>
+    <title>数据街</title>
+    <meta name="description"
+          content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css"/>
+    <script src="public/angular/angular.min.js"></script>
+    <style>
+        html, body, a, p, span, small, h3, h5 {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        .col-md-12{
+            position: relative;
+            min-height: 1px;
+            padding-right: 0px;
+            padding-left: 15px;
+        }
+        .l-h-2x{
+            line-height: 35px;
+        }
+        a button.close {
+            display: none;
+        }
+        .active .close {
+            display: block;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            z-index: 1;
+            background: transparent;
+            border: 0;
+        }
+        textarea{
+            /*outline:none;*/
+            resize:none;
+
+        }
+        #myTabContent .form-control {
+            display: block;
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            border: 1px solid #ccc;
+            border-top: none;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+
+    </style>
+</head>
+<body class="bg-light dk">
+
+<!-- header -->
+
+<!-- / header -->
+<div id="content">
+    <div ng-include="'pages/public/header.html'"></div>
+    <div class="bg-light">
+        <div class="container ">
+            <form class="" method="get" action="release_pro_3.html">
+
+                <div class="row ">
+                    <div class="col-md-12 m-b-n-sm  " >
+                        <!-- .breadcrumb -->
+                        <ul class="breadcrumb no-borders no-radius bg-white  b-b ">
+                            <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                            <li><a href="#">卖家中心</a></li>
+                            <li class="active">发布产品</li>
+                        </ul>
+                        <!-- / .breadcrumb -->
+                    </div>
+                    <div class="col-sm-3 ">
+                        <section class="panel bg-white">
+                            <header class="panel-heading">
+                                <div class="clearfix">
+                                    <a href="" class="pull-left thumb-md avatar b-3x m-r">
+                                        <img src="public/img/a2.jpg" alt="...">
+                                    </a>
+
+                                    <div class="clear">
+                                        <div class="h3 m-t-xs m-b-xs">
+                                            Eson
+                                            <i class="fa fa-circle text-success pull-right text-xs m-t-sm"></i>
+                                        </div>
+                                        <small class="text-muted">金牌代理商</small>
+                                    </div>
+                                </div>
+                            </header>
+                            <div class="line line-dotted b-b  "></div>
+                            <section class="m-l-md m-t-md">
+                                <article class="media">
+                                    <p>组织：勤智数码<span></span></p>
+
+                                    <p>授权日期：<span><time class="date" datetime="2015-01-01">2015-01-01</time></span></p>
+                                    <p>类别：<span class="font-bold m-r-sm">数据提供商</span><span
+                                            class="m-r-sm font-bold">服务提供商</span></p>
+
+                                    <p>服务/产品下载总次数：<span class="text-info">120</span></p>
+
+                                    <p></p>汇总收入：<span class="text-info">56000</span></p>
+                                </article>
+                            </section>
+                            <div class="line line-dotted b-b  "></div>
+                            <section class="m-l-md">
+                                <article class="media m-b-lg">
+                                    <span><h4>联系我们帮助你发布</h4></span>
+                                    <span class="m-t-md"><p>电话：4001231234</p></span>
+                                    <span><p>周一至周四</p></span>
+                                    <!--<span><p class="text-center" style="line-height: 45px; width:123px;background-image: url('public/img/u82.png')">客服在线</p></span>-->
+                                    <div class="text-center col-sm-12 m-t-md">
+                                        <div class="row">
+                                            <a class="btn btn-info   btn-lg col-sm-8 col-sm-offset-2" href="#">客服在线</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </section>
+                        </section>
+                    </div>
+                    <div class="col-sm-9 ">
+                        <div class="row bg-white">
+                            <div class="nav-tabs-alt">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li>
+                                        <a>
+                                            产品分类信息
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            描述您的产品
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <a>
+                                            详细信息
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            发布产品
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-12 m-t-sm">
+                                <div class="row">
+                                    <label class="form-label col-sm-2 col-xs-2 text-right">已提交:</label>
+                                    <ul class="col-sm-10 col-xs-10 list-inline">
+                                        <li >
+                                            <button name="deletePost" class="destroy   close  text-sm "><i class="fa fa-times-circle text-danger-dk "></i></button>
+                                            美股查询
+                                        </li>
+                                        <li >
+                                            <button name="deletePost" class="destroy  close  text-sm "><i class="fa fa-times-circle text-danger-dk "></i></button>
+                                            港股查询
+                                        </li>
+                                        <li >
+                                            <button name="deletePost" class="destroy  close  text-sm "><i class="fa fa-times-circle text-danger-dk "></i></button>
+                                            股票查询
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="line line-dotted b-b line-lg "></div>
+                            <form class="form-horizontal" role="form">
+                                <div class="col-sm-12 m-t-sm">
+                                    <div class="form-group row">
+                                        <label class="form-label col-sm-2 l-h-2x text-right">接口名称:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" value="2015期货农产品信息查询">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="form-label col-sm-2 l-h-2x text-right">接口地址:</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control" value="http://a.apix.cn/apixlife/basestation/mob_unic">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="form-label col-sm-2 l-h-1x text-right">请求方式:</label>
+                                        <div class="col-sm-8">
+                                            <label class="checkbox-inline i-checks">
+                                                <input type="checkbox" value="GET"><i></i>GET
+                                            </label>
+                                            <label class="checkbox-inline i-checks">
+                                                <input type="checkbox" value="SET"><i></i>SET
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!--请求参数说明strat-->
+                                    <div class="form-group row">
+                                        <label class="form-label col-sm-2 l-h-2x text-right">请求参数说明:</label>
+                                        <div class="col-sm-10">
+                                            <ul class="list-group list-group-sp">
+                                                <li class="list-group-item hover ">
+                                                    <div class=" row text-center">
+                                                        <div class="col-sm-3 col-xs-3">名称</div>
+                                                        <div class="col-sm-3 col-xs-3">类型</div>
+                                                        <div class="col-sm-2 col-xs-2">必填</div>
+                                                        <div class="col-sm-3 col-xs-3">说明</div>
+                                                    </div>
+                                                </li>
+                                                <!--&lt;!&ndash;第一部分&ndash;&gt;-->
+                                                <!--<li class="list-group-item hover ">-->
+                                                    <!--<div class=" row text-center">-->
+                                                        <!--<div class="col-sm-3 col-xs-3">-->
+                                                            <!--<input value="key" class="form-control" type="text"/>-->
+
+                                                        <!--</div>-->
+                                                        <!--<div class="col-sm-3 col-xs-3">-->
+                                                            <!--<select class="form-control">-->
+                                                                <!--<option value="string">string</option>-->
+                                                                <!--<option value="int">int</option>-->
+                                                                <!--<option value="short">short</option>-->
+                                                                <!--<option value="long">long</option>-->
+                                                                <!--<option value="float">float</option>-->
+                                                                <!--<option value="double">double</option>-->
+                                                                <!--<option value="char">char</option>-->
+                                                            <!--</select>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-sm-2 col-xs-2">-->
+                                                            <!--<label class="checkbox-inline i-checks form-control-static">-->
+                                                                <!--<input type="checkbox" value="是"><i></i>是-->
+                                                            <!--</label>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-sm-3 col-xs-3">-->
+                                                            <!--<input value="用于详细页查询" type="text" class="form-control"/>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-sm-1 col-xs-1">-->
+                                                            <!--<button name="deleteLi" type="button" class=" close form-control " data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</li>-->
+                                                <!--&lt;!&ndash;第二部分&ndash;&gt;-->
+                                                <!--<li class="list-group-item hover ">-->
+                                                    <!--<div class=" row text-center">-->
+                                                        <!--<div class="col-sm-3 col-xs-3">-->
+                                                            <!--<input value="key" class="form-control" type="text"/>-->
+
+                                                        <!--</div>-->
+                                                        <!--<div class="col-sm-3 col-xs-3">-->
+                                                            <!--<select class="form-control">-->
+                                                                <!--<option value="string">string</option>-->
+                                                                <!--<option value="int">int</option>-->
+                                                                <!--<option value="short">short</option>-->
+                                                                <!--<option value="long">long</option>-->
+                                                                <!--<option value="float">float</option>-->
+                                                                <!--<option value="double">double</option>-->
+                                                                <!--<option value="char">char</option>-->
+                                                            <!--</select>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-sm-2 col-xs-2">-->
+                                                            <!--<label class="checkbox-inline i-checks form-control-static">-->
+                                                                <!--<input type="checkbox" value="是"><i></i>是-->
+                                                            <!--</label>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-sm-3 col-xs-3">-->
+                                                            <!--<input value="返回数据的格式" type="text" class="form-control"/>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="col-sm-1 col-xs-1">-->
+                                                            <!--<button name="deleteLi" type="button" class=" close form-control " data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</li>-->
+                                            </ul>
+                                            <!-- 添加按钮-->
+                                            <div class="row m-t-md">
+                                                <div class="col-sm-3">
+                                                    <button name="requ_parm" type="button" name="requ_parm" class=" btn btn-info btn-lg btn-block">添加</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--请求参数说明end-->
+
+                                    <!--返回参数说明strat-->
+                                    <div class="form-group row">
+                                        <label class="form-label col-sm-2 l-h-2x text-right">返回参数说明:</label>
+                                        <div class="col-sm-10">
+                                            <ul class="list-group list-group-sp">
+                                                <li class="list-group-item hover ">
+                                                    <div class=" row text-center">
+                                                        <div class="col-sm-3 col-xs-3">名称</div>
+                                                        <div class="col-sm-3 col-xs-3">类型</div>
+                                                        <div class="col-sm-2 col-xs-2">必填</div>
+                                                        <div class="col-sm-3 col-xs-3">说明</div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <!-- 添加按钮-->
+                                            <div class="row m-t-md">
+                                                <div class="col-sm-3">
+                                                    <button name="return_parm" type="button"  class=" btn btn-info btn-lg btn-block">添加</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--返回参数说明end-->
+
+                                    <!--请求示例-->
+                                    <div class="form-group row">
+                                        <label class="form-label col-sm-2 l-h-2x text-right">请求示例:</label>
+                                        <div class="col-sm-10">
+                                            <div class="row">
+                                                <div class="col-sm-5 col-xs-5">
+                                                    <select name="example" class="form-control">
+                                                        <option value="curl示例">curl示例</option>
+                                                        <option value="php示例">php示例</option>
+                                                        <option value="python示例">python示例</option>
+                                                        <option value="java示例">java示例</option>
+                                                        <option value="C#示例">C#示例</option>
+                                                        <option value="ObjectC示例">ObjectC示例</option>
+                                                        <option value="Swift示例">Swift示例</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-3 col-xs-3" >
+                                                    <button type="button" name="add_Tab"  class="btn btn-block btn-info" >添加</button>
+                                                </div>
+                                                <div class="col-sm-12 m-t-md">
+                                                    <ul id="myTab" class="nav nav-tabs ">
+                                                        <!--<li class="active">-->
+                                                            <!--<a href="#curl" data-toggle="tab">-->
+                                                                <!--<button type="button" class="destroy close  text-xs "><i class="text-xs glyphicon glyphicon-remove" aria-hidden="true"></i></button>-->
+                                                                <!--curl示例-->
+                                                            <!--</a>-->
+                                                        <!--</li>-->
+                                                        <!--<li>-->
+                                                            <!--<a href="#php" data-toggle="tab">-->
+                                                                <!--<button type="button" class="destroy close  text-xs ">x</button>-->
+                                                                <!--php示例-->
+                                                            <!--</a>-->
+                                                        <!--</li>-->
+                                                        <!--<li>-->
+                                                            <!--<a href="#python"  data-toggle="tab">-->
+                                                                <!--<button type="button" class="destroy close  text-xs ">x</button>-->
+                                                                <!--python示例-->
+                                                            <!--</a>-->
+                                                        <!--</li>-->
+                                                    </ul>
+                                                    <div id="myTabContent" class="tab-content   ">
+                                                        <!--<div class="tab-pane fade in active" id="curl">-->
+                                                            <!--<div class="form-group row">-->
+                                                                <!--<div class="col-sm-12 ">-->
+                                                                    <!--<textarea class="form-control" rows="3" >curl示例</textarea>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="tab-pane fade" id="php">-->
+                                                            <!--<div class="form-group row">-->
+                                                                <!--<div class="col-sm-12 ">-->
+                                                                    <!--<textarea class="form-control" rows="3" >php示例</textarea>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                        <!--<div class="tab-pane fade" id="python">-->
+                                                            <!--<div class="form-group row">-->
+                                                                <!--<div class="col-sm-12 ">-->
+                                                                    <!--<textarea class="form-control" rows="3" >Python示例</textarea>-->
+                                                                <!--</div>-->
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--错误码参照-->
+                                    <div class="form-group row">
+                                        <label class="form-label col-sm-2 l-h-2x text-right">错误码参照:</label>
+                                        <div class="col-sm-10">
+                                            <ul class="list-group list-group-sp">
+                                                <li class="list-group-item hover ">
+                                                    <div class=" row text-center">
+                                                        <div class="col-sm-3 col-xs-3">错误码</div>
+                                                        <div class="col-sm-4 col-xs-4">错误码返回</div>
+                                                        <div class="col-sm-4 col-xs-4">错误码返回说明</div>
+                                                        <div class="col-sm-1 col-xs-1"></div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <!-- 添加按钮-->
+                                            <div class="row m-t-md">
+                                                <div class="col-sm-3">
+                                                    <button name="append_error_code" type="button" class=" btn btn-info btn-lg btn-block">添加</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-2 col-sm-offset-5">
+                                            <button type="button" class="btn btn-block btn-info col-sm-2 ">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="form-group row  text-center">
+                                <div class="col-sm-12 m-t-lg m-b-md">
+                                    <button type="button" onclick="history.go(-1)" class="btn btn-default m-r-lg ">
+                                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                        上一步
+                                    </button>
+                                    <button type="reset" class="btn btn-default m-r-lg ">
+                                        重置
+                                    </button>
+                                    <button type="submit" class="btn btn-info">下一步
+                                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("button[name=deletePost]").click(function(){
+            $(this).parent().remove();
+        }) ;
+
+        $("button[name=requ_parm],button[name=return_parm]").click(function(){
+            var name=$(this).attr("name");
+            var parm_name="";
+            var parm_type="";
+            var parm_flog="";
+            var parm_state="";
+            switch(name){
+                case "requ_parm":
+                    parm_name="requ_parm_name[]";
+                    parm_type="requ_parm_type[]";
+                    parm_flog="requ_parm_type[]";
+                    parm_state="requ_parm_state[]";
+                    break;
+                case "return_parm":
+                    parm_name="return_parm_name[]";
+                    parm_type="return_parm_type[]";
+                    parm_flog="return_parm_type[]";
+                    parm_state="return_parm_state[]";
+                    break;
+            }
+            $(this).parent().parent().prev().append("<li class='list-group-item hover '> <div class=' row text-center'> <div class='col-sm-3 col-xs-3'> <input name='"+parm_name+"' value='key' class='form-control' type='text'> </div> <div class='col-sm-3 col-xs-3'> <select  name='"+parm_type+"'  class='form-control'> <option value='string'>string</option> <option value='int'>int</option> <option value='short'>short</option> <option value='long'>long</option> <option value='float'>float</option> <option value='double'>double</option> <option value='char'>char</option> </select> </div> <div class='col-sm-2 col-xs-2'> <label class='checkbox-inline i-checks form-control-static'> <input  name='"+parm_flog+"'  type='checkbox' value='是'><i></i>是 </label> </div> <div class='col-sm-3 col-xs-3'> <input  name='"+parm_state+"'  value='返回数据的格式' type='text' class='form-control'> </div> <div class='col-sm-1 col-xs-1'> <button name='deleteLi' type='button' class=' close form-control ' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button> </div> </div> </li>");
+            $("button[name=deleteLi]").unbind().click(function(){
+                $(this).parent().parent().parent().remove();
+            }) ;
+        });
+        $("button[name=append_error_code]").click(function(){
+            $(this). parent().parent().prev().append("<li class='list-group-item hover'><div class='row text-center'><div class='col-sm-3 col-xs-3'><input name='error_code[]' value='300101' class='form-control' type='text'></div><div class='col-sm-4 col-xs-4'><input name='return_error_code[]' value='User'srequestisexpired' class='form-control' type='text'></div><div class='col-sm-4 ol-xs-4'><input name='error_code_state[]' value='用户请求过期' class='form-control' type='text'></div><div class='col-sm-1 col-xs-1'><button name='deleteLi' type='button' class='close form-control' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button></div></div></li>");
+            $("button[name=deleteLi]").unbind().click(function(){
+                $(this).parent().parent().parent().remove();
+            }) ;
+        });
+
+        $("#myTab button").click(function(){
+//            获取当前li是第几个元素
+            var num=$(this).parent().parent().index();
+            $(this).parent().parent().remove();
+            $("#myTabContent").children()[num].remove();
+            $("#myTab li:first").addClass("active");
+            $("#myTabContent div:first").addClass("active in");
+        });
+
+
+        $("[name='add_Tab']").click(function(){
+            var name=$("[name='example']").find("option:selected").text();
+            var flog=false;
+            $("#myTab li").each(function(){
+                if($(this).text()==name){
+                    alert("已添加"+name);
+                    flog=true;
+                    return false;
+                }
+            });
+            if(flog){
+                return false;
+            }
+            $("#myTab").append("<li><a href='#"+name+"' data-toggle='tab'>"+name+"<button type='button' class='destroy close  text-xs '><i class='text-xs glyphicon glyphicon-remove' aria-hidden='true'></button></a></li>");
+            $("#myTabContent").append("<div class='tab-pane fade' id='"+name+"'><div class='form-group row'><div class='col-sm-12 '><textarea class='form-control' rows='3'>"+name+"</textarea></div></div></div>");
+
+            $("#myTab button").unbind().click(function(){
+//            获取当前li是第几个元素
+                var num=$(this).parent().parent().index();
+                $(this).parent().parent().remove();
+                $("#myTabContent").children()[num].remove();
+                $("#myTab li:first").addClass("active");
+                $("#myTabContent div:first").addClass("active in");
+            });
+
+            if($("#myTab li").size()<=1) {
+                $("#myTab li:first").addClass("active");
+                $("#myTabContent div:first").addClass("active in");
+            }
+        });
+    });
+    <!-- -->
+//    $("button[name=requ_parm]").click(function(){
+//        {
+//            $(this).parent().parent()
+//        }
+//    });
+
+
+</script>
+
+</body>
+</html>

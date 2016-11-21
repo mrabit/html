@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul, ol { padding: 0;}
+
+        .banner { position: relative; overflow: auto; text-align: center;}
+        .banner li { list-style: none; }
+        .banner ul li { float: left; }
+        #slider {
+            display: none;
+            width: 100%;
+        }
+        #slider .dots { position: absolute; left: 0; right: 0; bottom: 20px;}
+        #slider .dots li {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 0 8px;
+            text-indent: -999em;
+            border: 2px solid #fff;
+            border-radius: 50% ;
+            cursor: pointer;
+            opacity: .4;
+            -webkit-transition: background .5s, opacity .5s;
+            -moz-transition: background .5s, opacity .5s;
+            transition: background .5s, opacity .5s;
+        }
+        #slider .dots li.active
+        {
+            background: #fff;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<div class="banner" id="slider" style="display: none">
+    <ul>
+        <li><img class="sliderimg" src="01.jpg" alt="" width="100%" ></li>
+        <li><img class="sliderimg" src="02.jpg" alt="" width="100%" ></li>
+        <li><img class="sliderimg" src="03.jpg" alt="" width="100%" ></li>
+        <li><img class="sliderimg" src="04.jpg" alt="" width="100%" ></li>
+        <li><img class="sliderimg" src="05.jpg" alt="" width="100%" ></li>
+    </ul>
+</div>
+</body>
+</html>
+<script src="http://flatfull.com/themes/angulr/html/js/app.min.js"></script>
+<script src="jquery.event.swipe.js"></script>
+<script src="jquery.event.move.js"></script>
+<script src="unslider.min.js"></script>
+<script>
+    /***
+     * 图片全屏
+     */
+    function imgReload()
+    {
+        var imgHeight = 0;
+        var wtmp = $("body").width();
+        $("#slider ul li").each(function(){
+            $(this).css({width:wtmp + "px"});
+        });
+        $(".sliderimg").each(function(){
+            $(this).css({width:wtmp + "px"});
+            imgHeight = $(this).height();
+        });
+        $('#slider').show();
+
+    }
+    $(document).ready(function(e) {
+        imgReload();
+        var slider_banner = $('#slider').unslider({
+                    speed: 200,               //  滚动速度
+                    delay: 3000,
+                    dots: true,
+                    fluid: true
+                }),
+        data06 = slider_banner.data('unslider'),slides = jQuery('.banner');
+        slides.on('swipeleft', function() {
+//                    var maxNum=$("#slider").find("ul li").length;
+//                    var num=$(".dots").find(".active").index();
+//                    if(num==maxNum-2){
+//                        $(".dots li:eq(0)").click();
+//                        return false;
+//                    }
+                    data06.next();
+                })
+                .on('swiperight', function() {
+                    data06.prev()
+                });
+    });
+
+
+</script>

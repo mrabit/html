@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body, button, input, select, textarea {
+            font: 12px/16px Verdana, Helvetica, Arial, sans-serif;
+        }
+        p{
+            width:603px;
+            padding-top:3px;
+            overflow:hidden;
+        }
+        .btn{
+            width:142px;
+        }
+        #container{
+            min-width:600px;
+            min-height:767px;
+        }
+    </style>
+</head>
+<body >
+<div id="container"></div>
+<p>该地图禁址了鼠标拖动、鼠标轮滚缩放、双击放大功能。</p>
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script src="http://map.qq.com/api/js?v=2.exp&key=CZXBZ-LAD35-NV5IT-QCHXB-G5W2E-DRBYT"></script>
+<script>
+
+
+    require(["jquery"], function ($) {
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    var latitude=position.coords.latitude;
+                    var longitude=position.coords.longitude;
+                    init(latitude,longitude);
+                });
+            }
+            else{alert("Geolocation is not supported by this browser.");}
+        }
+
+        getLocation();
+
+//初始化函数
+        var init = function(latitude,longitude) {
+            //获取地图显示控件
+            var center=new qq.maps.LatLng(latitude,longitude);
+            var map = new qq.maps.Map(
+                    document.getElementById("container"), {
+                        //加载地图经纬度信息
+                        center:center ,
+                        zoom: 18                       //设置缩放级别
+                     });
+            var marker = new qq.maps.Marker({
+                position: center,
+                map: map
+            });
+            var coord=new qq.maps.LatLng(latitude,longitude);
+            geocoder.getAddress(coord);
+        };
+
+
+        geocoder = new qq.maps.Geocoder({
+            complete:function(result){
+                alert('成功：'+result.detail.address);
+            }
+        });
+
+
+        setTimeout(function () {
+            init(30.53815,104.0728);
+        },2000);
+    })
+
+</script>

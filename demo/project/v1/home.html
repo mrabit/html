@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>数据空间</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css" />
+
+    <link rel="stylesheet" href="public/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css" />
+
+    <script src="public/angular/angular.min.js"></script>
+
+
+    <style>
+        html,body,a,p,span,small,h3,h5{
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        .main_banner_bg{
+            background-image: url('public/img/main_banner_bg.png');
+            background-size:100% auto;
+            background-repeat: no-repeat;
+        }
+
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#header" class="landing">
+
+<div id="content" class="bg-white-only">
+
+    <div class="m-b main_banner_bg">
+        <div ng-include="'pages/public/header.html'"></div>
+        <div class="container text-center">
+            <div class=" m-b padder-v">
+                <h1 class="font-thin l-h-1x m-b-lg padder-v animated fadeInDown text-white" style="margin-top: 70px">
+                    权 威 的 大 数 据 专 家 聚 集 地
+                </h1>
+                <form action="#" class="m-b-md m-t-xxl">
+                    <section class="wrapper text-left font-thin text-white">
+                        <span class="m-r-sm h4 ">数据</span>
+                        <span class="m-r-sm m-l-sm h4 ">服务</span>
+                        <span class="m-r-sm m-l-sm h4 ">商机</span>
+                        <span class="m-r-sm m-l-sm h4 ">其他</span>
+
+                    </section>
+                    <div class="input-group">
+                        <input type="text" class="form-control input-lg font-thin" placeholder="搜索产品/服务/API/应用或需求...">
+                          <span class="input-group-btn">
+                            <button class="btn btn-lg bg-info dker" type="button">搜一搜</button>
+                              <button class="btn btn-lg bg-danger" onclick="window.location.href='release_need_0.html'"  type="button">我要发布需求</button>
+                          </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white-only">
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">筛选查询</div>
+                            <table class="table table-striped m-b-none">
+                                <tbody>
+                                <tr>
+                                    <td>类型</td>
+                                    <td>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">元数据</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">元数据</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">API</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">API</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">应用</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">应用</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">服务</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">服务</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">定制服务</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">定制服务</span>
+                                        </button>
+                                    </td>
+                                    <!--<td class="text-info">-->
+                                        <!--查看所有类型-->
+                                    <!--</td>-->
+                                </tr>
+                                <tr>
+                                    <td>行业</td>
+                                    <td>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">金额</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">金融</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">交通</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">交通</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">食品</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">食品</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">医疗</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">医疗</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">制鞋</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">制鞋</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">连锁超市</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">连锁超市</span>
+                                        </button>
+                                    </td>
+                                    <!--<td class="text-info">-->
+                                        <!--查看所有行业-->
+                                    <!--</td>-->
+                                </tr>
+                                <tr>
+                                    <td>高级选项</td>
+                                    <td>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">供方信息</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">供方信息</span>
+                                        </button>
+                                        <button class="btn btn-default btn-sm" ui-toggle-class="btn-danger">
+                                            <i class="fa fa-plus text"></i>
+                                            <span class="text">需求信息</span>
+                                            <i class="fa fa-check text-active"></i>
+                                            <span class="text-active">需求信息</span>
+                                        </button>
+                                    </td>
+                                    <!--<td class="text-info">-->
+                                        <!--查看所有高级选项-->
+                                    <!--</td>-->
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="m-b-sm m-t-lg">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default">默认排序</button>
+                                        <button type="button" class="btn btn-default">按时间</button>
+                                        <button type="button" class="btn btn-default">按价格</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col-md-12 text-right">
+                                             <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" id="grid_show"><i class="icon icon-grid"></i></button>
+                                                <button type="button" class="btn btn-default" id="list_show"><i class="icon icon-list"></i></button>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="m-t">
+                            <div class="row animated fadeInLeft" id="grid_showing">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="blog-post">
+                                                <div class="panel panel-default bg-white no-radius">
+                                                    <div>
+                                                        <img src="public/img/c1.jpg" class="img-full">
+                                                    </div>
+                                                    <div class="wrapper">
+                                                        <h4 class="m-t-none font-bold"><a href>中文领域词典系列</a></h4>
+                                                        <div>
+                                                            <p>75个不同领域的中文词典包括常见领域词汇、城市地物名称等，可用于新词发现、机器翻译等. 最全面的汉语语言资料库.</p>
+                                                        </div>
+                                                        <div class="line line-lg b-b b-light"></div>
+                                                        <div class="text-muted">
+                                                            <span class="text-danger h3 font-thin">¥ 600.00</span>
+                                                            <span class="text-right pull-right">了解详情 <i class="fa fa-angle-right"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="blog-post">
+                                                <div class="panel panel-default bg-white no-radius">
+                                                    <div>
+                                                        <img src="public/img/c2.jpg" class="img-full">
+                                                    </div>
+                                                    <div class="wrapper">
+                                                        <h4 class="m-t-none font-bold"><a href>某北方一线城市居民公交出行数据</a></h4>
+                                                        <div>
+                                                            <p>采集北方一线城市1千万张公交卡刷卡数据，7千万/月刷卡记录，覆盖826万公交线路，可用于智能交通、用户行为分析、城市规划等.</p>
+                                                        </div>
+                                                        <div class="line line-lg b-b b-light"></div>
+                                                        <div class="text-muted">
+                                                            <span class="text-danger h3 font-thin">¥ 90,000.00</span>
+                                                            <span class="text-right pull-right">了解详情 <i class="fa fa-angle-right"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="blog-post">
+                                                <div class="panel panel-default bg-white no-radius">
+                                                    <div>
+                                                        <img src="public/img/c3.jpg" class="img-full">
+                                                    </div>
+                                                    <div class="wrapper">
+                                                        <h4 class="m-t-none font-bold"><a href>美国儿童说英语语音数据</a></h4>
+                                                        <div>
+                                                            <p>100名美国儿童每人录制两百到三百句，50小时有效时长，用于语音识别、人机智能交互等. 百人录入，性别平均，覆盖范围广.</p>
+                                                        </div>
+                                                        <div class="line line-lg b-b b-light"></div>
+                                                        <div class="text-muted">
+                                                            <span class="text-danger h3 font-thin">￥ 40,000.00</span>
+                                                            <span class="text-right pull-right">了解详情 <i class="fa fa-angle-right"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="blog-post">
+                                                <div class="panel panel-default bg-white no-radius">
+                                                    <div>
+                                                        <img src="public/img/c4.jpg" class="img-full">
+                                                    </div>
+                                                    <div class="wrapper">
+                                                        <h4 class="m-t-none font-bold"><a href>车辆标注图像数据</a></h4>
+                                                        <div>
+                                                            <p>7.5万车辆图片库，标注车牌、拍摄时间、车型、颜色、车身等属性，覆盖100车辆，可用于车辆识别、自动驾驶、违章行为监控、车辆跟踪等.</p>
+                                                        </div>
+                                                        <div class="line line-lg b-b b-light"></div>
+                                                        <div class="text-muted">
+                                                            <span class="text-danger h3 font-thin">¥ 300.00</span>
+                                                            <span class="text-right pull-right">了解详情 <i class="fa fa-angle-right"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="blog-post">
+                                                <div class="panel panel-default bg-white no-radius">
+                                                    <div>
+                                                        <img src="public/img/c5.jpg" class="img-full">
+                                                    </div>
+                                                    <div class="wrapper">
+                                                        <h4 class="m-t-none font-bold"><a href>电子商务网站数据集</a></h4>
+                                                        <div>
+                                                            <p>从2010年4月到2011年12月国内著名B2C电商网站数据，15万客户信息，1.1万商品信息，28万顾客行为日志，可用于个性化商品推荐、用户行为分析.</p>
+                                                        </div>
+                                                        <div class="line line-lg b-b b-light"></div>
+                                                        <div class="text-muted">
+                                                            <span class="text-danger h3 font-thin">¥ 12,00.00</span>
+                                                            <span class="text-right pull-right">了解详情 <i class="fa fa-angle-right"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4">
+                                            <div class="blog-post">
+                                                <div class="panel panel-default bg-white no-radius">
+                                                    <div>
+                                                        <img src="public/img/c6.jpg" class="img-full">
+                                                    </div>
+                                                    <div class="wrapper">
+                                                        <h4 class="m-t-none font-bold"><a href>日语手机语音数据</a></h4>
+                                                        <div>
+                                                            <p>800名日语发音人，27万大规模语料，270小时有效时长，文字转写错误率<5%. 日语学习，有"资"可循，日语学习最好的语音资源数据库</p>
+                                                        </div>
+                                                        <div class="line line-lg b-b b-light"></div>
+                                                        <div class="text-muted">
+                                                            <span class="text-danger h3 font-thin">¥ 90,000.00</span>
+                                                            <span class="text-right pull-right">了解详情 <i class="fa fa-angle-right"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!--<div class="col-sm-4">-->
+                                    <!--<div class="row row-sm text-center">-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<div class="panel padder-v item panel-default">-->
+                                                <!--<div class="h1 text-info font-thin h1">521</div>-->
+                                                <!--<span class="text-muted text-xs">源数据</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<a href class="block panel padder-v panel-default item">-->
+                                                <!--<span class="text-info font-thin h1 block">90</span>-->
+                                                <!--<span class="text-muted text-xs">服务</span>-->
+
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<a href class="block panel padder-v panel-default item">-->
+                                                <!--<span class="text-info font-thin h1 block">120</span>-->
+                                                <!--<span class="text-muted text-xs">应用</span>-->
+
+                                            <!--</a>-->
+                                        <!--</div>-->
+                                        <!--<div class="col-xs-6">-->
+                                            <!--<div class="panel padder-v item panel-default">-->
+                                                <!--<div class="text-info font-thin h1">2,100</div>-->
+                                                <!--<span class="text-muted text-xs">API</span>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-sm-12">-->
+                                            <!--<div class="panel-heading wrapper b-b b-light">-->
+                                                <!--<h4 class="font-thin m-t-none m-b-none text-muted">HOT热销数据</h4>-->
+                                            <!--</div>-->
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/84/b0/c2/4bbdfcee0433edee0bc857644e99cfa5.png?1436787331#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>¥ 12,000.00</span></div>-->
+                                                    <!--<span class=" text font-bold">多姿态人脸图像采集数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/f9/90/28/38fa6486147664f20e410db7114fa9d4.png?1436952076#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>¥ 5,000.00</span></div>-->
+                                                    <!--<span class=" text font-bold">欧美明星人脸图像数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/2f/73/3a/0bcfa74874e7b0a6ae9e46e1ab1ce5dc.png?1437358110#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>￥ 1600.00</span></div>-->
+                                                    <!--<span class=" text font-bold">人脸关键点标注图像数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/80/01/3d/4ee8366410923c00b25867b2a01b76c3.png?1436866815#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>¥ 12,000.00</span></div>-->
+                                                    <!--<span class=" text font-bold">杭州方言手机语音数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/8e/8c/5e/d98f3ec4a8a8ed46745d748c8fb6ed31.png?1436866837#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>￥ 25,000.00</span></div>-->
+                                                    <!--<span class=" text font-bold">苏州方言手机语音数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                    <!--<div class="row">-->
+                                        <!--<div class="col-sm-12">-->
+                                            <!--<div class="panel-heading wrapper b-b b-light">-->
+                                                <!--<h4 class="font-thin m-t-none m-b-none text-muted">HOT图像数据</h4>-->
+                                            <!--</div>-->
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/84/b0/c2/4bbdfcee0433edee0bc857644e99cfa5.png?1436787331#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>¥ 12,000.00</span></div>-->
+                                                    <!--<span class=" text font-bold">多姿态人脸图像采集数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/f9/90/28/38fa6486147664f20e410db7114fa9d4.png?1436952076#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>¥ 5,000.00</span></div>-->
+                                                    <!--<span class=" text font-bold">欧美明星人脸图像数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/2f/73/3a/0bcfa74874e7b0a6ae9e46e1ab1ce5dc.png?1437358110#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>￥ 1600.00</span></div>-->
+                                                    <!--<span class=" text font-bold">人脸关键点标注图像数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/80/01/3d/4ee8366410923c00b25867b2a01b76c3.png?1436866815#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>¥ 12,000.00</span></div>-->
+                                                    <!--<span class=" text font-bold">杭州方言手机语音数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+
+                                            <!--<div class="r bg-light lt item hbox no-border m-b-sm">-->
+                                                <!--<div class="col w-xs v-middle text-center">-->
+                                                    <!--<img src="http://datamall-images.s3.mall.ekaidian.com/8e/8c/5e/d98f3ec4a8a8ed46745d748c8fb6ed31.png?1436866837#h" class="thumb">-->
+                                                <!--</div>-->
+                                                <!--<div class="col lter padder-v r-r text-center">-->
+                                                    <!--<div class="text-danger font-thin h3"><span>￥ 25,000.00</span></div>-->
+                                                    <!--<span class=" text font-bold">苏州方言手机语音数据</span>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+
+                                <!--</div>-->
+                            </div>
+
+
+                            <div class="row animated fadeInLeft hide" id="list_showing">
+                                <div class="col-sm-12">
+                                    <ul class="list-group list-group-lg no-radius m-b-none m-t-n-xxs">
+                                        <li class="list-group-item clearfix b-l-3x b-l-info">
+                                            <a class=" thumb pull-left m-r" href="#">
+                                                <img src="http://datamall-images.s3.mall.ekaidian.com/1a/a8/f9/75bd2e360564a6de192f03b888c4c62f.png?1435064748#h">
+                                            </a>
+                                            <div class="pull-right text-sm text-danger">
+                                                <span class="hidden-xs h4">￥ 1600.00</span>
+                                            </div>
+                                            <div class="clear">
+                                                <div><a  class="text-md font-bold" href="#">中文领域词典系列</a>
+                                                    <span class="label bg-info m-l-sm ">元数据</span>
+                                                </div>
+                                                <div class="text-ellipsis m-t-xs ">75个不同领域的中文词典包括常见领域词汇、城市地物名称等，可用于新词发现、机器翻译等</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item clearfix b-l-3x b-l-info">
+                                            <a class=" thumb pull-left m-r" href="#">
+                                                <img src="http://datamall-images.s3.mall.ekaidian.com/10/23/4b/f153ea465250d105e62f92f6fe015cb3.png?1437036007#h">
+                                            </a>
+                                            <div class="pull-right text-sm text-danger">
+                                                <span class="hidden-xs h4">￥ 1600.00</span>
+                                            </div>
+                                            <div class="clear">
+                                                <div><a  class="text-md font-bold" href="#">南京市出租车GPS位置数据</a>
+                                                    <span class="label bg-danger m-l-sm ">服务</span>
+                                                </div>
+                                                <div class="text-ellipsis m-t-xs ">
+                                                    7800辆出租车GPS位置实时数据，每日1.6GB位置数据，包括经纬度、行驶角度、速度、定位状态等
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item clearfix b-l-3x b-l-info">
+                                            <a class=" thumb pull-left m-r" href="#">
+                                                <img src="http://datamall-images.s3.mall.ekaidian.com/fe/7f/48/3dea29823847eef95296360d2908d41c.jpg?1439878664#h">
+                                            </a>
+                                            <div class="pull-right text-sm text-danger">
+                                                <span class="hidden-xs h4">￥ 1600.00</span>
+                                            </div>
+                                            <div class="clear">
+                                                <div><a  class="text-md font-bold" href="#">德语手机语音数据</a>
+                                                    <span class="label bg-warning m-l-sm ">应用</span>
+                                                </div>
+                                                <div class="text-ellipsis m-t-xs ">
+                                                    100名德语发音人录制40小时语音数据，4万句平衡语料，人工复检准确率高
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center m-t-lg m-b-lg">
+                            <ul class="pagination pagination-md">
+                                <li><a href><i class="fa fa-chevron-left"></i></a></li>
+                                <li class="active"><a href>1</a></li>
+                                <li><a href>2</a></li>
+                                <li><a href>3</a></li>
+                                <li><a href>4</a></li>
+                                <li><a href>5</a></li>
+                                <li><a href><i class="fa fa-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div ng-include="'pages/public/footer.html'"></div>
+
+   </div>
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+<script>
+    $(function(){
+
+        $('.selected_item').click(function(){
+            var this_item = $(this);
+
+            alert(this_item.find('.hidden_input').val());
+            if(this_item.find('.hidden_input').val() == 1){
+                this_item.removeClass('btn-default');
+                this_item.addClass('btn-danger');
+                this_item.find('.hidden_input').val('');
+            }else{
+                this_item.find('.hidden_input').val(1);
+                this_item.removeClass('btn-danger');
+                this_item.addClass('btn-default');
+            }
+
+        });
+
+
+        $('#list_show').bind('click', function(){
+
+            $('#list_showing').removeClass('hide');
+            $('#grid_showing').addClass('hide');
+        });
+
+        $('#grid_show').bind('click', function(){
+            $('#grid_showing').removeClass('hide');
+            $('#list_showing').addClass('hide');
+        });
+
+    })
+</script>
+
+</body>
+</html>

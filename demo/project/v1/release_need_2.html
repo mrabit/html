@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="" ng-app>
+<head>
+    <meta charset="utf-8"/>
+    <title>数据街</title>
+    <meta name="description"
+          content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" href="public/css/animate.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/font-awesome/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="public/fonts/simple-line-icons/css/simple-line-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="public/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/font.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.css" type="text/css"/>
+    <link rel="stylesheet" href="public/css/app.min.css" type="text/css"/>
+    <script src="public/angular/angular.min.js"></script>
+    <style>
+        html, body, a, p, span, small, h3, h5 {
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-light dk">
+
+<div id="content">
+    <!-- header -->
+    <div ng-include="'pages/public/header.html'"></div>
+    <!-- / header -->
+    <div class="bg-light">
+        <div class="container ">
+            <form class="" method="get" action="release_need_3.html">
+            <div class="row bg-white-only">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- .breadcrumb -->
+                        <ul class="breadcrumb no-borders no-radius bg-white  b-b ">
+                            <li><a href="index.html"><i class="icon icon-home"></i> 首页</a></li>
+                            <li class="active">发布需求</li>
+                        </ul>
+                        <!-- / .breadcrumb -->
+                    </div>
+                </div>
+                <!--nav-->
+                <div class="nav-tabs-alt ">
+                    <ul class="nav nav-tabs font-bold" role="tablist">
+                        <li>
+                            <a data-target="#" >
+                                <div class="text-md wrapper-sm">
+                                    1. 选择类目
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-target="#"  >
+                                <div class="text-md wrapper-sm">
+                                    2. 描述你的需求
+                                </div>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a data-target="#"  >
+                                <div class="text-md wrapper-sm">
+                                    3 .设置需求赏金
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-target="#" >
+                                <div class="text-md wrapper-sm">
+                                    4 .确认需求,并托管赏金
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                    <article class="col-sm-12 bg-white-only m-t-lg">
+                        <div class="row">
+                            <!--设置赏金-->
+                            <div class="col-sm-10 col-sm-offset-1  m-t-lg m-b-md " >
+                                <p class="b-l-5x b-info"><span class="h4 font-bold m-l-sm m-t-md">设置您的需求赏金:</span></p>
+                                <div class="m-t-lg m-b-md   table-bordered " >
+                                    <label class="m-t-md m-l-sm ">
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                        <span  class="h5 font-bold text-info m-l-sm " ><i class="icon-calculator m-r-xs fa-x" ></i>有明确的预算,明确的预算更能吸引服务商的参与</span>
+                                    </label>
+                                    <div class="input-group m-b col-sm-6 m-l-md m-b-md m-t-md">
+                                        <span class="input-group-addon"><span class="glyphicon glyphicon-yen" aria-hidden="true"></span></span>
+                                        <input type="text" class="form-control"  pattern="[0-9]+" placeholder="输入您觉得合适的价格">
+                                        <span class="input-group-addon">.00</span>
+                                    </div>
+                                    <div  class="bg-light">
+                                        <label class="m-t-sm m-b-sm m-l-sm">
+                                            <input type="radio" name="optionsRadios"  id="optionsRadios2" value="option2">
+                                            <span  class="h5 font-bold text-info m-l-sm " ><i class="icon-calculator m-r-xs fa-x" ></i>无明确的预算,先看看服务商的报价</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line line-dashed b-b line-lg "></div>
+                            <!--联系方式-->
+                            <div class="col-sm-4 col-sm-offset-1 m-t-md m-b-md">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" required=""  placeholder="请输入手机号" >
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default"  type="button">获取手机验证码</button>
+                                </span>
+                                </div>
+                                <div class="input-group m-t-md m-b-md">
+                                    <input disabled type="text" class="form-control" required="" placeholder="输入您收到的手机验证码" >
+                                </div>
+                            </div>
+                            <div class="clearfix form-group row  text-center ">
+                                <div class="col-sm-12 m-b-md">
+                                    <button type="button" onclick="history.go(-1)" class="btn btn-default m-r-lg ">
+                                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                                        上一步
+                                    </button>
+                                    <button type="reset" class="btn btn-default m-r-lg ">
+                                        重置
+                                    </button>
+                                    <button type="submit" class="btn btn-info">下一步
+                                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </form>
+        </div>
+        <div ng-include="'pages/public/footer.html'"></div>
+    </div>
+</div>
+
+
+<script src="public/libs/jquery/jquery/dist/jquery.js"></script>
+<script src="public/bootstrap/dist/js/bootstrap.js"></script>
+<script src="public/libs/jquery/jquery_appear/jquery.appear.js"></script>
+<script src="public/js/landing.js"></script>
+<script src="public/js/app.min.js"></script>
+
+</body>
+</html>

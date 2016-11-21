@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <script src="../../public/js/jquery-1.12.3.min.js"></script>
+</head>
+<body ng-app="">
+    <div class="container">
+        <div class="col-xs-4" ng-init="name=[1,2,3,4,5,6,7]">
+            <ul>
+                <li ng-repeat="x in name">
+                    {{x}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-4" ng-init="names=[
+            {name:'jason1',age:'5'},
+            {name:'jason2',age:'3'},
+            {name:'jason3',age:'1'} ]">
+            <ul>
+                <li ng-repeat="x in names">
+                    {{x.name + "   " + x.age}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+<script src="angular.min.js"></script>

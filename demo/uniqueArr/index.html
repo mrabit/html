@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script src="jquery-2.1.4.min.js"></script>
+<script>
+    /***
+     * 键值对
+     * @constructor
+     */
+    Array.prototype.unique= function () {
+        var a=[];
+        $.each(this, function (key,val) {
+            if($.inArray(val,a)<0){
+                a.push(val);
+            }
+        });
+        var json={};
+        json["array"]=a;//数组
+        json["length"]= a.length;//过滤后数组长度
+        json["oldLength"]=this.length;//过滤前数组长度
+        json["difference"]=json.oldLength-json.length;//长度差异
+        json["isEmpty"]=!a.length;//是否为空
+        return json;
+    }
+    $(document).ready(function () {
+        var a=[1,2,3,4,5,6,7,1,5,6,8,3,8,1,9,5,3,3,2].unique();
+        var testingText = $('<p>'+ JSON.stringify(a)+'</p>')
+        $('body').append(testingText)
+    })
+</script>
