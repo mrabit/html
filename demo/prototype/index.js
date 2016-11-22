@@ -11,8 +11,8 @@
             this.options = $.extend(true,{},defaultOption,options);
         };
         Test.prototype = {
-            say: function () {
-                console.log(this.options.name);
+            say: function (str) {
+                console.log(str || this.options.name);
             }
         };
         return Test;
