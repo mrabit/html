@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+<body>
+
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+    require(["script"], function ($) {
+        var soundObj = {
+            rain: {},
+            thunder: {},
+            waves: {},
+            wind: {},
+            fire: {},
+            birds: {},
+            crickets: {},
+            people: {},
+            sbowl: {},
+            whitenoise: {}
+        };
+
+        soundObj["rain"]["name"] = "rain";
+        soundObj["thunder"]["name"] = "thunder";
+        soundObj["waves"]["name"] = "waves";
+        soundObj["wind"]["name"] = "wind";
+        soundObj["fire"]["name"] = "fire";
+        soundObj["birds"]["name"] = "birds";
+        soundObj["crickets"]["name"] = "crickets";
+        soundObj["people"]["name"] = "people";
+        soundObj["sbowl"]["name"] = "sbowl";
+        soundObj["whitenoise"]["name"] = "whitenoise";
+
+// map subdomains to particular sounds
+
+        soundObj["rain"]["main-sd"] = "1";
+        soundObj["thunder"]["main-sd"] = "2";
+        soundObj["waves"]["main-sd"] = "3";
+        soundObj["wind"]["main-sd"] = "3";
+        soundObj["fire"]["main-sd"] = "3";
+        soundObj["birds"]["main-sd"] = "1";
+        soundObj["crickets"]["main-sd"] = "2";
+        soundObj["people"]["main-sd"] = "2";
+        soundObj["sbowl"]["main-sd"] = "3";
+        soundObj["whitenoise"]["main-sd"] = "1";
+
+        soundObj["rain"]["glue-sd"] = "2";
+        soundObj["thunder"]["glue-sd"] = "3";
+        soundObj["waves"]["glue-sd"] = "1";
+        soundObj["wind"]["glue-sd"] = "2";
+        soundObj["fire"]["glue-sd"] = "1";
+        soundObj["birds"]["glue-sd"] = "2";
+        soundObj["crickets"]["glue-sd"] = "3";
+        soundObj["people"]["glue-sd"] = "3";
+        soundObj["sbowl"]["glue-sd"] = "1";
+        soundObj["whitenoise"]["glue-sd"] = "2";
+        for (var n in soundObj) {
+            if (soundObj.hasOwnProperty(n)) {
+
+                var sdPrefixMain = soundObj[n]['main-sd'],
+                        sdPrefixGlue = soundObj[n]['glue-sd'],
+                        sdMain = 'http://st' + sdPrefixMain + '.asoftmurmur.com/beta/',
+                        sdGlue = 'http://st' + sdPrefixGlue + '.asoftmurmur.com/beta/';
+
+                var name = soundObj[n]['name'],
+                        id = '#sound-container-' + name,
+                        mp4Url = sdMain + 'main-' + name + '.mp4',
+                        oggUrl = sdMain +'main-' + name + '.ogg',
+                        mp4UrlGlue = sdGlue + 'glue-' + name + '.mp4',
+                        oggUrlGlue = sdGlue + 'glue-' + name + '.ogg';
+
+
+
+                soundObj[n]['containerId'] = id;
+                soundObj[n]['mp4Url'] = mp4Url;
+                soundObj[n]['mp4UrlGlue'] = mp4UrlGlue;
+                soundObj[n]['oggUrl'] = oggUrl;
+                soundObj[n]['oggUrlGlue'] = oggUrlGlue;
+                document.write(mp4Url + "<br>");
+                document.write(mp4UrlGlue + "<br>");
+                document.write(oggUrl + "<br>");
+                document.write(oggUrlGlue + "<br>");
+            }
+        }
+    });
+</script>

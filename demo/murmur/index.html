@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+<body>
+<script type="text/html" id="audio">
+    {{each data as value }}
+        {{each value as pattern}}
+            <audio controls>
+                {{each pattern as i}}
+                <source src="{{i.url}}" type="audio/{{i.name}}">
+                {{/each}}
+            </audio>
+        {{/each}}
+    {{/each}}
+
+</script>
+<div id="main"></div>
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+    require(["script","arttpl"], function ($,template) {
+        var state = [
+            "main",
+            "glue"
+        ];
+        var pattern = [
+            "mp4",
+            "ogg"
+        ];
+        var soundObj = [
+                "rain",
+                "thunder",
+                "waves",
+                "wind",
+                "fire",
+                "birds",
+                "crickets",
+                "people",
+                "sbowl",
+                "whitenoise"
+        ];
+        var url = "http://cdn.mrabit.com/murmur.";
+        var arr = [];
+        soundObj.forEach(function (k) {
+            var temp = {};
+            state.forEach(function (v) {
+                var temp_arr = [];
+                pattern.forEach(function (j) {
+                    var temp_json = {};
+                    temp_json["name"] = j;
+                    temp_json["url"] = url + v + "-" + k + "." + j;
+                    temp_arr.push(temp_json);
+                });
+                temp[v] = temp_arr;
+            });
+            arr.push(temp);
+        });
+        console.log(arr);
+        $("#main").html(template("audio",{data: arr}))
+    });
+</script>
