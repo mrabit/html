@@ -22,7 +22,7 @@
             'skycons': 'skycons/skycons',
             'bootstrapDialog': 'bootstrap-dialog/bootstrap-dialog',
             'bootstrapPaginator': 'bootstrap-paginator/bootstrap-paginator',
-            'paginator': 'bootstrap-paginator/paginator_extend',
+            'bs_paginator': 'bootstrap-paginator/paginator_extend',
             'bootstrap-wysiwyg': 'bootstrap-wysiwyg/bootstrap-wysiwyg',
             'datatables': 'jquery.datatables/dataTables.bootstrap.min',
             'datatables.net': 'jquery.datatables/jquery.dataTables.min',
@@ -41,7 +41,8 @@
             'parsley.lang.extend': 'parsley/i18n/zh_cn.extra',
             'swal': 'sweetalert2/sweetalert2',
             'nprogress': 'nprogress/nprogress',
-            'laytpl': 'laytpl'
+            'laytpl': 'laytpl',
+            'pagination': 'mricode.pagination/mricode.pagination'
         },
         shim:{
             'script': ['jquery', 'bootstrap'],
@@ -62,7 +63,7 @@
             'moment': ['jquery'],
             'bootstrap': ['jquery'],
             'bootstrapPaginator': ['jquery', 'bootstrap'],
-            'paginator': ['bootstrapPaginator'],
+            'bs_paginator': ['bootstrapPaginator'],
             'bootstrap-wysiwyg': ['jquery'],
             'datatables': ['jquery', 'css!../js/jquery.datatables/dataTables.bootstrap.min.css'],
             //'datatables.net':['../js/jquery.datatables/fnReloadAjax'],
@@ -77,7 +78,8 @@
             'parsley.lang': ['parsley'],
             'parsley.lang.extend': ['parsley'],
             'swal': ['jquery', 'css!../js/sweetalert2/sweetalert2.css'],
-            'nprogress': ['jquery', 'css!../js/nprogress/nprogress.css']
+            'nprogress': ['jquery', 'css!../js/nprogress/nprogress.css'],
+            'pagination': ['jquery','css!../js/mricode.pagination/mricode.pagination.css']
         }
     });
 })(window);

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+<body>
+    <div class="page" id="page"></div>
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+
+    (function () {
+        var dependencies = ["script",'pagination'];
+        require(dependencies, function ($) {
+            /***
+             * 实例化分页条
+             */
+            function initPagination() {
+
+                //判断分页条是否初始化，true则销毁
+                if($("#page").pagination()){
+                    $("#page").pagination('destroy');
+                }
+
+                /***
+                 * 初始化分页条
+                 * https://github.com/mricle/Mricode.Pagination
+                 */
+                $("#page").pagination({
+                    pageIndex: 0, //当前页数
+                    pageSize: 5, //每页条数
+                    total: 500,
+                    debug: false,
+                    showInfo: true,
+                    showJump: true,
+                    firstBtnText: "首页",
+                    lastBtnText: "尾页",
+                    pageBtnCount: 9,
+                    pageElementSort: ['$page', '$jump', '$info'],
+                    infoFormat: '共{totalPage}页{total}条',
+                    jumpBtnText: "确定",
+//                    remote: {
+//                        url: '/manage/enterprise/getAuditList',
+//                        success: function (d) {
+//                            console.log(d);
+//                        },
+//                        totalName: 'resultInfo.result.total', //总条数字段,当前为'd.result.total'
+//                        pageParams: function(data){ //配置ajax参数
+//                            return {
+//                                pageNum: data.pageIndex + 1, //当前页，默认0开始
+//                                pageSize: data.pageSize //每页条数,
+//                            };
+//                        }
+//                    }
+                });
+            }
+
+            /***
+             * 销毁分页条
+             */
+            function destroyPagination(){
+                if($("#page").pagination()){
+                    $("#page").pagination('destroy');
+                }
+            }
+
+            initPagination();
+        });
+    })();
+</script>
