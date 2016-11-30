@@ -7,27 +7,172 @@
     <link rel="stylesheet" href="../../public/css/bootstrap.css">
     <link rel="stylesheet" href="../../public/css/app.min.css">
     <link rel="stylesheet" href="../../public/css/animate.css">
-</head>
-<body>
-<script type="text/html" id="audio">
-    {{each data as value }}
-        {{each value as pattern}}
-            <audio controls>
-                {{each pattern as i}}
-                <source src="{{i.url}}" type="audio/{{i.name}}">
-                {{/each}}
-            </audio>
-        {{/each}}
-    {{/each}}
+    <style>
+        .container {
+            display: flex;
+            min-height: 100vh;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+        }
 
+        [id*='sound-container'] {
+            width: 100px;
+            margin: 0 auto;
+        }
+
+        .image-foreground {
+            cursor: hand;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+            background-image: url('http://cdn.mrabit.com/murmur.sprites.png');
+        }
+
+        #sound-container-rain .image-foreground {
+            background-position: -680px -14px;
+        }
+
+        #sound-container-thunder .image-foreground {
+            background-position: -403px -14px;
+        }
+
+        #sound-container-waves .image-foreground {
+            background-position: -266px 0;
+        }
+
+        #sound-container-wind .image-foreground {
+            background-position: 0 -2px;
+        }
+
+        #sound-container-fire .image-foreground {
+            background-position: -5px -271px;
+        }
+
+        #sound-container-birds .image-foreground {
+            background-position: -682px -135px;
+        }
+
+        #sound-container-crickets .image-foreground {
+            background-position: -7px -407px;
+        }
+
+        #sound-container-people .image-foreground {
+            background-position: -5px -131px;
+        }
+
+        #sound-container-sbowl .image-foreground {
+            background-position: -542px -16px;
+        }
+
+        #sound-container-whitenoise .image-foreground {
+            background-position: -135px -5px;
+        }
+
+        .image-background {
+            opacity: 0;
+            margin: 0 auto;
+            background-repeat: no-repeat;
+            background-image: url('http://cdn.mrabit.com/murmur.sprites.png');
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        #sound-container-rain .image-background {
+            background-position: -393px -156px;
+        }
+
+        #sound-container-thunder .image-background {
+            background-position: -526px -279px;
+        }
+
+        #sound-container-waves .image-background {
+            background-position: -535px -141px;
+        }
+
+        #sound-container-wind .image-background {
+            background-position: -668px -274px;
+        }
+
+        #sound-container-fire .image-background {
+            background-position: -389px -415px;
+        }
+
+        #sound-container-birds .image-background {
+            background-position: -132px -294px;
+        }
+
+        #sound-container-crickets .image-background {
+            background-position: -134px -150px;
+        }
+
+        #sound-container-people .image-background {
+            background-position: -389px -286px;
+        }
+
+        #sound-container-sbowl .image-background {
+            background-position: -517px -419px;
+        }
+
+        #sound-container-whitenoise .image-background {
+            background-position: -664px -403px;
+        }
+
+    </style>
+</head>
+<body style="background: url('http://ww2.sinaimg.cn/mw690/8fa21aabgw1f9gkw7dvw0j20zk0nmmz3.jpg') no-repeat;background-size: cover">
+<!--<script type="text/html" id="audio">-->
+<!--{{each data as value }}-->
+<!--{{each value as pattern}}-->
+<!--<audio controls>-->
+<!--{{each pattern as i}}-->
+<!--<source src="{{i.url}}" type="audio/{{i.name}}">-->
+<!--{{/each}}-->
+<!--</audio>-->
+<!--{{/each}}-->
+<!--{{/each}}-->
+
+<!--</script>-->
+<!--<div id="main"></div>-->
+<script type="text/html" id="sound-container">
+    <div class="col-lg-2-4 text-center m-t-xxl m-b-lg">
+        <div id="sound-container-{{name}}">
+            <div class="image-foreground">
+                <div class="image-background" id="img-bg-{{name}}"></div>
+                <input id="{{name}}" class="slider" data-slider-id="ex1Slider" type="text"
+                       data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                       data-slider-value="0"/>
+            </div>
+            <audio id="audio-glue-{{name}}" class="hide">
+                {{each glue as i}}
+                <source src="{{i.url}}" type="audio/{{i.name}}">
+                {{/each }}
+            </audio>
+            <audio id="audio-main-{{name}}" class="hide">
+                {{each main as i}}
+                <source src="{{i.url}}" type="audio/{{i.name}}">
+                {{/each }}
+            </audio>
+        </div>
+    </div>
 </script>
-<div id="main"></div>
+<div class="container">
+    <div class="row main-content">
+
+    </div>
+</div>
 </body>
 </html>
 <script src="../../public/js/require.js"></script>
 <script src="../../public/js/main.js"></script>
 <script>
-    require(["script","arttpl"], function ($,template) {
+    require(["script", "arttpl", "slider"], function ($, template) {
         var state = [
             "main",
             "glue"
@@ -37,21 +182,22 @@
             "ogg"
         ];
         var soundObj = [
-                "rain",
-                "thunder",
-                "waves",
-                "wind",
-                "fire",
-                "birds",
-                "crickets",
-                "people",
-                "sbowl",
-                "whitenoise"
+            "rain",
+            "thunder",
+            "waves",
+            "wind",
+            "fire",
+            "birds",
+            "crickets",
+            "people",
+            "sbowl",
+            "whitenoise"
         ];
         var url = "http://cdn.mrabit.com/murmur.";
         var arr = [];
-        soundObj.forEach(function (k) {
+        soundObj.forEach(function (k, v) {
             var temp = {};
+            temp.name = k;
             state.forEach(function (v) {
                 var temp_arr = [];
                 pattern.forEach(function (j) {
@@ -65,6 +211,36 @@
             arr.push(temp);
         });
         console.log(arr);
-        $("#main").html(template("audio",{data: arr}))
+//        arr = [arr[0]];
+//        $("#main").html(template("audio",{data: arr}));
+
+        arr.forEach(function (v, k) {
+            $(".main-content").append($.replaceElementInnerText("sound-container", v));
+        });
+        $("[id*=audio-glue-]").on("play", function (e) {
+            var _this = this;
+            var nextAll = ($(_this).nextAll()[0]);
+            nextAll.loop = true;
+            console.log(_this);
+            var timer = setTimeout(function () {
+                nextAll.currentTime = _this.currentTime;
+                nextAll.play();
+                _this.pause();
+            }, (_this.duration - 2)*1000);
+        });
+        $(".slider").slider({
+            formater: function (value) {
+                return 'Current value: ' + value;
+            }
+        }).on("slide", function (e) {
+            $("#img-bg-" + e.target.id).css("opacity", e.value / 100);
+            var audio1 = ($("#audio-glue-" + e.target.id)[0]);
+            var audio2 = ($("#audio-main-" + e.target.id)[0]);
+            audio1.volume = e.value / 100;
+            audio2.volume = e.value / 100;
+            if (audio1.paused && audio2.paused) {
+                audio1.play();
+            }
+        })
     });
 </script>

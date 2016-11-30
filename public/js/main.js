@@ -42,7 +42,8 @@
             'swal': 'sweetalert2/sweetalert2',
             'nprogress': 'nprogress/nprogress',
             'laytpl': 'laytpl',
-            'pagination': 'mricode.pagination/mricode.pagination'
+            'pagination': 'mricode.pagination/mricode.pagination',
+            'slider': 'bootstrap-slider/bootstrap-slider'
         },
         shim:{
             'script': ['jquery', 'bootstrap'],
@@ -79,7 +80,8 @@
             'parsley.lang.extend': ['parsley'],
             'swal': ['jquery', 'css!../js/sweetalert2/sweetalert2.css'],
             'nprogress': ['jquery', 'css!../js/nprogress/nprogress.css'],
-            'pagination': ['jquery','css!../js/mricode.pagination/mricode.pagination.css']
+            'pagination': ['jquery','css!../js/mricode.pagination/mricode.pagination.css'],
+            'slider': ['jquery','css!../js/bootstrap-slider/bootstrap-slider.css']
         }
     });
 })(window);

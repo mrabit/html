@@ -19,6 +19,9 @@ define(["jquery", "artTemplate/artTemplate"], function ($, template) {
                 $replaceEle = $(replaceEle);
             }
             $replaceEle.html(template(ele, data));
+        },
+        replaceElementInnerText: function (ele,data) {
+            return template(ele,data);
         }
     });
     return template;
