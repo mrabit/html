@@ -13,7 +13,7 @@ define(["jquery", "artTemplate/artTemplate"], function ($, template) {
                 $replaceEle = replaceEle;
             } else if (typeof(replaceEle) == "object" && Object.prototype.toString.call(replaceEle).toLowerCase() == "[object object]") {
                 //判断replaceEle是否为JSON数组
-                [$replaceEle, data] = [$("#" + ele), replaceEle];
+                $replaceEle = [$("#" + ele), data = replaceEle][0];
             } else {
                 //replaceEle为document实例对象
                 $replaceEle = $(replaceEle);
