@@ -8,14 +8,39 @@
     <link rel="stylesheet" href="../../public/css/app.min.css">
     <link rel="stylesheet" href="../../public/css/animate.css">
     <style>
-        .container {
+        body{
+            background: #1A1A1A;
+            overflow: hidden;
+        }
+        #fp-nav ul li:last-child { display: none;}
+        .slider.slider-horizontal {
+            width: 100%!important;
+        }
+        .section:nth-child(1) {
+            background: url('http://ww2.sinaimg.cn/mw690/8fa21aabgw1f9gkw7dvw0j20zk0nmmz3.jpg') no-repeat;
+            background-size: cover;
             display: flex;
             min-height: 100vh;
             margin: 0 auto;
             align-items: center;
             justify-content: center;
         }
+        #pb {
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin: 75px auto 50px auto;
+            cursor: hand;
+            background-repeat: no-repeat;
+            background-image: url('http://cdn.mrabit.com/murmur.sprites.png');
+        }
 
+        #pb.paused {
+            background-position: -281px -422px;
+        }
+        #pb.playing {
+            background-position: -134px -436px;
+        }
         [id*='sound-container'] {
             width: 100px;
             margin: 0 auto;
@@ -124,27 +149,118 @@
             background-position: -664px -403px;
         }
 
+        /*main-header*/
+        .main-header{
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+        }
+        .navbar-header .slider-horizontal {
+            width: calc(100% - 40px)!important;
+        }
+        #mute-button {
+            height: 25px;
+            width: 25px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: hand;
+            cursor: pointer;
+        }
+        #mute-button.unmuted {
+            background-image: url('http://cdn.mrabit.com/murmur.ab-mute-large.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #mute-button.muted {
+            background-image: url('http://cdn.mrabit.com/murmur.ab-unmute-large.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        /*main-header end*/
+        /*main-footer*/
+        .main-footer{
+            background: #202020;
+            padding:35px 0;
+            color: #959595;
+            position: relative;
+            width: 100%;
+        }
+        .main-footer .widget{
+            padding: 0 30px;
+
+        }
+        .main-footer .widget .title{
+            color: #ffffff;
+            border-bottom: 1px #303030;
+        }
+        .widget .title{
+            margin-top: 0;
+            padding-bottom: 7px;
+            border-bottom: 1px solid #ebebeb;
+            margin-bottom: 21px;
+            position: relative;
+        }
+        .main-footer .widget .recent-single-post{
+            border-bottom:1px dashed #303030;
+            padding-bottom: 14px;
+            margin-bottom: 14px;
+        }
+        .main-footer .widget .recent-single-post .post-title {
+            color: #959595;
+        }
+        .main-footer .widget .recent-single-post .post-title:hover{
+            color:#e67e22;
+            text-decoration: none;
+            transition:all 0.3s ease-in-out ;
+        }
+        .main-footer .widget .recent-single-post .date{
+            color: #505050;
+        }
+        .widget .title:after{
+            content: '';
+            width:90px;
+            height: 1px;
+            background: #e67e22;
+            position: absolute;
+            left:0;
+            bottom: -1px;
+        }
+        .main-footer .widget .tag-cloud a {
+            color: #959595;
+            border: 1px solid #303030;
+            text-decoration: none;
+            line-height: 50px;
+            padding: 5px;
+            margin-left: 5px;
+        }
+        .main-footer .widget .tag-friend {
+            border-bottom:1px dashed #303030 ;
+            padding-bottom: 10px;
+            padding-top: 15px;
+
+        }
+        .main-footer .widget .tag-friend a {
+            border: 0;
+            text-decoration:none;
+        }
+        .widget .tag-cloud a:hover {
+            background:#e67e22;
+            color:#ffffff;
+            transition:all 0.3s ease-in-out ;
+        }
+        /*main-footer end*/
     </style>
 </head>
-<body style="background: url('http://ww2.sinaimg.cn/mw690/8fa21aabgw1f9gkw7dvw0j20zk0nmmz3.jpg') no-repeat;background-size: cover">
-<!--<script type="text/html" id="audio">-->
-<!--{{each data as value }}-->
-<!--{{each value as pattern}}-->
-<!--<audio controls>-->
-<!--{{each pattern as i}}-->
-<!--<source src="{{i.url}}" type="audio/{{i.name}}">-->
-<!--{{/each}}-->
-<!--</audio>-->
-<!--{{/each}}-->
-<!--{{/each}}-->
+<body>
 
-<!--</script>-->
-<!--<div id="main"></div>-->
 <script type="text/html" id="sound-container">
-    <div class="col-lg-2-4 text-center m-t-xxl m-b-lg">
+    <div class="col-lg-2-4 col-sm-3 col-xs-3 text-center m-t-xxl m-b-lg">
         <div id="sound-container-{{name}}">
             <div class="image-foreground">
                 <div class="image-background" id="img-bg-{{name}}"></div>
+                <p class="h4 text-white padder-v">{{name}}</p>
                 <input id="{{name}}" class="slider" data-slider-id="ex1Slider" type="text"
                        data-slider-min="0" data-slider-max="100" data-slider-step="1"
                        data-slider-value="0"/>
@@ -162,17 +278,72 @@
         </div>
     </div>
 </script>
-<div class="container">
-    <div class="row main-content">
-
+<div class="navbar navbar-inverse navbar-fixed-top main-header">
+    <div class="container">
+        <div class="navbar-header clearfix">
+            <input id="main-audio" class="slider pull-left" style="width: calc(100% - 25px)" data-slider-id="ex1Slider" type="text"
+                   data-slider-min="0" data-slider-max="100" data-slider-step="1"
+                   data-slider-value="100"/>
+            <div id="mute-button" class="action-bar-item unmuted pull-right" title="Mute">
+                <div class="action-bar-icon"></div>
+            </div>
+        </div>
     </div>
 </div>
+<div id="fullpage">
+    <div class="section">
+        <div class="container">
+            <h1 class="text-center text-white m-b-lg">A SOFT MURMUR</h1>
+            <p class="h3 text-center text-white">Ambient sounds to wash away distraction.</p>
+            <div id="pb" class="paused clickable"></div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <div class="row main-content">
+
+            </div>
+        </div>
+    </div>
+    <footer class="main-footer section  header fp-auto-height">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="widget">
+                        <h4 class="title">最新版本</h4>
+                        <div class="content recent-post" id="footer-nav">
+                            <!--<div class="recent-single-post">-->
+                                <!--<a href="index.php#firstpage" class="post-title">实力VIP8.2版正式发布</a>-->
+                                <!--<div class="date">2016-12-03</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="widget">
+                        <h4 class="title">标签云</h4>
+                        <div class="row content tag-cloud">
+                            <!--<a target="_blank" href="http://vip.xunlei.com/">迅雷会员</a>-->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="widget">
+                        <h4 class="title">合作伙伴</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
 </body>
 </html>
 <script src="../../public/js/require.js"></script>
 <script src="../../public/js/main.js"></script>
 <script>
-    require(["script", "arttpl", "slider"], function ($, template) {
+    require(["script", "arttpl", "slider", "fullPage"], function ($, template) {
         var state = [
             "main",
             "glue"
@@ -221,26 +392,43 @@
             var _this = this;
             var nextAll = ($(_this).nextAll()[0]);
             nextAll.loop = true;
-            console.log(_this);
             var timer = setTimeout(function () {
                 nextAll.currentTime = _this.currentTime;
                 nextAll.play();
                 _this.pause();
             }, (_this.duration - 2)*1000);
         });
-        $(".slider").slider({
+        slider_arr = $(".slider").slider({
             formater: function (value) {
                 return 'Current value: ' + value;
             }
         }).on("slide", function (e) {
-            $("#img-bg-" + e.target.id).css("opacity", e.value / 100);
-            var audio1 = ($("#audio-glue-" + e.target.id)[0]);
-            var audio2 = ($("#audio-main-" + e.target.id)[0]);
-            audio1.volume = e.value / 100;
-            audio2.volume = e.value / 100;
-            if (audio1.paused && audio2.paused) {
-                audio1.play();
+            if($.inArray(e.target.id,soundObj) >= 0){
+                $("#img-bg-" + e.target.id).css("opacity", e.value / 100);
+                var audio1 = ($("#audio-glue-" + e.target.id)[0]);
+                var audio2 = ($("#audio-main-" + e.target.id)[0]);
+                audio1.volume = e.value / 100;
+                audio2.volume = e.value / 100;
+                if (audio1.paused && audio2.paused) {
+                    audio1.play();
+                }
             }
-        })
+        });
+        $("#mute-button").click(function () {
+            $(this).toggleClass("muted");
+            if($(this).hasClass("muted")){
+
+            }
+        });
+        $("#pb").click(function () {
+            $(this).toggleClass("playing");
+        });
+        $('#fullpage').fullpage({
+            navigation: true,
+            onLeave: function(index, nextIndex, direction){
+
+            }
+        });
+
     });
 </script>
