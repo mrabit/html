@@ -309,7 +309,7 @@
       <workItem from="1480482769591" duration="990000" />
       <workItem from="1481078799484" duration="574000" />
       <workItem from="1481079384063" duration="14000" />
-      <workItem from="1481079607735" duration="764000" />
+      <workItem from="1481079607735" duration="776000" />
     </task>
     <task id="LOCAL-00001" summary="test Phpstorm">
       <created>1479781662721</created>
@@ -353,11 +353,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480298297936</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="jquery.promise">
+      <created>1481080378479</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1481080378479</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7904000" />
+    <option name="totallyTimeSpent" value="7916000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

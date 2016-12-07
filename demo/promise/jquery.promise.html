@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery.promise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+<body>
+
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+    require(["script"], function ($) {
+        function first() {
+
+        }
+        function second(data) {
+            var promise = $.Deferred();
+            setTimeout(function () {
+                console.log(data + ",second");
+                promise.resolve(data + ",second");
+            },3000);
+            return promise.promise();
+        }
+        $.when(function () {
+            console.log("start");
+            var promise = $.Deferred();
+            setTimeout(function () {
+                console.log("first");
+                promise.resolve("first");
+            },3000);
+            return promise.promise();
+        }()).then(function (data) {
+           return second(data);
+        }).then(function (data) {
+            setTimeout(function () {
+                console.log("done");
+            },3000)
+        });
+    });
+</script>
