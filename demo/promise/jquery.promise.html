@@ -17,7 +17,13 @@
 <script>
     require(["script"], function ($) {
         function first() {
-
+            console.log("start");
+            var promise = $.Deferred();
+            setTimeout(function () {
+                console.log("first");
+                promise.resolve("first");
+            },3000);
+            return promise.promise();
         }
         function second(data) {
             var promise = $.Deferred();
@@ -27,17 +33,7 @@
             },3000);
             return promise.promise();
         }
-        $.when(function () {
-            console.log("start");
-            var promise = $.Deferred();
-            setTimeout(function () {
-                console.log("first");
-                promise.resolve("first");
-            },3000);
-            return promise.promise();
-        }()).then(function (data) {
-           return second(data);
-        }).then(function (data) {
+        first().then(second).then(function (data) {
             setTimeout(function () {
                 console.log("done");
             },3000)
