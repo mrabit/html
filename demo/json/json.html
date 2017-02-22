@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+<body>
+
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+    require(["script"], function ($) {
+        var max = 0;
+        function getMax(json,count) {
+            if(json.check_name){
+                if(count > max)
+                    max = count;
+                count = 0;
+                return false;
+            }else{
+                count++;
+                for(var name in json){
+                    getMax(json[name],count);
+                }
+            }
+        }
+        var arr = [];
+        function resolve(json,temp_arr) {
+            if(json.check_name){
+                arr.push(temp_arr);
+                return false;
+            }else{
+                for(var name in json){
+                    var temp = temp_arr.concat();
+                    temp.push(name);
+                    resolve(json[name],temp);
+                }
+            }
+        }
+        
+        
+        $.post("temp.json",function (data) {
+            for(var name in data){
+                resolve(data[name],[]);
+            }
+            console.log(arr);
+        },"json");
+    });
+</script>
