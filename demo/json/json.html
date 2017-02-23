@@ -16,24 +16,31 @@
 <script src="../../public/js/main.js"></script>
 <script>
     require(["script"], function ($) {
-        var max = 0;
-        function getMax(json,count) {
-            if(json.check_name){
-                if(count > max)
-                    max = count;
-                count = 0;
-                return false;
-            }else{
-                count++;
-                for(var name in json){
-                    getMax(json[name],count);
-                }
-            }
-        }
+//        function getMax(json,count) {
+//            if(json.check_name){
+//                if(count > max)
+//                    max = count;
+//                count = 0;
+//                return false;
+//            }else{
+//                count++;
+//                for(var name in json){
+//                    getMax(json[name],count);
+//                }
+//            }
+//        }
         var arr = [];
+        var max = 0;
         function resolve(json,temp_arr) {
             if(json.check_name){
-                arr.push(temp_arr);
+                if(temp_arr.length > max)
+                    max = temp_arr.length;
+                temp_arr.push(json.focus_status == 2?"重点关注": "特别关注");
+                var temp_json = {
+                    "id": json.id,
+                    "value": temp_arr
+                };
+                arr.push(temp_json);
                 return false;
             }else{
                 for(var name in json){
@@ -50,6 +57,7 @@
                 resolve(data[name],[]);
             }
             console.log(arr);
+            console.log(max);
         },"json");
     });
 </script>
