@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/css/animate.css">
+</head>
+<body>
+    <div id="view">
+        index
+    </div>
+    <a href="view1.html" class="btn btn-default">view1</a>
+    <a href="view2.html" class="btn btn-default">view2</a>
+</body>
+</html>
+<script src="../../public/js/require.js"></script>
+<script src="../../public/js/main.js"></script>
+<script>
+    var dependencies = ["jquery", "pjax"];
+    require(dependencies, function ($) {
+        $("a").click(function(event) {
+            if ($("#view").length == 0 || $(this).hasClass('no-ajax')) {
+                return;
+            }
+            var container = $("#view"); //当前页面容器的对象
+            $.pjax.click(event, {
+                container: container,
+                timeout: 6000,
+                fragment: '#view' //pjax目标页面的容器id
+            });
+        });
+    });
+</script>

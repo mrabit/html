@@ -2,7 +2,7 @@
  * Created by yuany on 2016/11/22 0022.
  */
 (function () {
-    var dependencies = ["script"];
+    var dependencies = ["jquery"];
     define(dependencies,function ($) {
         var Test = function (options) {
             var defaultOption = {

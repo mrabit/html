@@ -92,10 +92,10 @@ define(["jquery"], function ($) {
         },
         //随机秒
         GetRandomNum: function (Min,Max) {
-        var Range = Max - Min;
-        var Rand = Math.random();
-        return(Min + Math.round(Rand * Range * 1000));
-    }
+            var Range = Max - Min;
+            var Rand = Math.random();
+            return(Min + Math.round(Rand * Range * 1000));
+        }
     });
     return $;
 });

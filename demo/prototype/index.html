@@ -16,7 +16,7 @@
 <script src="../../public/js/main.js"></script>
 <script>
     var WEB_DIR_PATH = window.location.pathname.substring(0,window.location.pathname.lastIndexOf("/"));
-    require(["script",WEB_DIR_PATH + "/index.js"], function ($,Test) {
+    require(["jquery",WEB_DIR_PATH + "/index.js"], function ($,Test) {
         var test1 = new Test({name: "mash"});
         var test2 = new Test();
         test1.say();
