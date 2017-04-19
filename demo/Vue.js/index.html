@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [id*=app]{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <p v-bind:title="title">hello,{{message || "world"}}</p>
+    </div>
+    <div id="app2">
+        <ul>
+            <li v-for="(item,index) in arr">
+                值：{{item}}，角标：{{index}}
+            </li>
+        </ul>
+    </div>
+    <div id="app3">
+        <ul>
+            <li v-for="(index,value) in list">
+                值:{{value}}，角标：{{index}}
+            </li>
+        </ul>
+    </div>
+    <div id="app4">
+        <p>{{message}}</p>
+        <input type="text" v-model="message">
+    </div>
+    <div id="app5">
+        <p v-if="show">标签1：{{message}}</p>
+        <p v-show="!show">标签2：{{message}}</p>
+        <input type="text" v-model="message">
+        <button type="button" v-on:click="get">{{message}}1</button>
+        <button type="button" @click="set">{{message}}2</button>
+        <button type="button" @click="hidden">显示/隐藏</button>
+    </div>
+</body>
+</html>
+<script src="vue.js"></script>
+<script>
+    let vm1 = new Vue({
+        el: "#app1",
+        data: {
+            message: "yuany",
+            title: "页面加载于：" + new Date()
+        }
+    })
+    let vm2 = new Vue({
+        el: "#app2",
+        data: {
+            arr: [1,2,3,4,5,6,7]
+        }
+    })
+    let vm3 = new Vue({
+        el: "#app3",
+        data: {
+            list: {
+                "a": 1,
+                "b": 2,
+                "c": 3,
+                "d": 4,
+            }
+        }
+    })
+    let vm4 = new Vue({
+        el: "#app4",
+        data: {
+            message: "yuany"
+        }
+    })
+    let vm5 = new Vue({
+        el: "#app5",
+        data: {
+            message: "",
+            show: true
+        },
+        methods: {
+            get: function () {
+                alert(this.message || "暂无数据")
+            },
+            set: function () {
+                this.message = this.message.split("").reverse().join("");
+            },
+            hidden: function () {
+                this.show = !this.show;
+            }
+        }
+    })
+</script>
