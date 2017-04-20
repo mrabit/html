@@ -9,7 +9,7 @@
  * Released under the MIT license
  */
 
-(function (factory) {
+(function (global,factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD
         define(['jquery'], factory);
@@ -18,9 +18,9 @@
         factory(require('jquery'));
     } else {
         // Globals
-        factory(jQuery);
+        global.Pagination = factory(jQuery);
     }
-})(function ($) {
+})(this,function ($) {
     "use strict";
 
     var Page = function (element, options) {
@@ -80,7 +80,7 @@
         this.currentPageSize = utility.convertInt(this.options.pageSize);
         this.currentParams = utility.deserializeParams(this.options.remote.params) || {};
         this.getLastPageNum = function () {
-            return pagination.core.calLastPageNum(this.total, this.currentPageSize);
+            return this.pagination.core.calLastPageNum(this.total, this.currentPageSize);
         }
         if (this.options.remote.success === null) {
             this.options.remote.success = this.options.remote.callback;
@@ -182,7 +182,7 @@
         jumpEventHandler: function (inputValue, event) {
             if (!inputValue) {
                 this.$jump.removeClass('error');
-            } else if (!pagination.check.checkJumpPage(inputValue)) {
+            } else if (!this.pagination.check.checkJumpPage(inputValue)) {
                 this.$jump.addClass('error');
             }
             else if (utility.convertInt(inputValue) > this.getLastPageNum()) {
@@ -209,7 +209,7 @@
                 this.currentParams[this.options.remote.pageIndexName] = this.currentPageIndex;
                 this.currentParams[this.options.remote.pageSizeName] = this.currentPageSize;
             }
-            pagination.remote.getAjax(this, this.currentUrl, this.currentParams, this.ajaxCallBack, this.options.remote.beforeSend, this.options.remote.complete,this.options.remote.traditional);
+            this.pagination.remote.getAjax(this, this.currentUrl, this.currentParams, this.ajaxCallBack, this.options.remote.beforeSend, this.options.remote.complete,this.options.remote.traditional);
         },
 
         ajaxCallBack: function (result) {
@@ -248,10 +248,10 @@
             }
             var lastPageNum = this.getLastPageNum();
             this.currentPageIndex = lastPageNum > 0 && this.currentPageIndex > lastPageNum - 1 ? lastPageNum - 1 : this.currentPageIndex;
-            this.$page.empty().append(pagination.core.renderPages(this.currentPageIndex, this.currentPageSize, this.total, this.options.pageBtnCount, option)).show();
+            this.$page.empty().append(this.pagination.core.renderPages(this.currentPageIndex, this.currentPageSize, this.total, this.options.pageBtnCount, option)).show();
             if (this.options.showPageSizes && lastPageNum !== 0) this.$size.show(); else this.$size.hide();
             if (this.options.showJump && lastPageNum !== 0) this.$jump.show(); else this.$jump.hide();
-            this.$info.text(pagination.core.renderInfo(this.currentPageIndex, this.currentPageSize, this.total, this.options.infoFormat, this.options.noInfoText));
+            this.$info.text(this.pagination.core.renderInfo(this.currentPageIndex, this.currentPageSize, this.total, this.options.infoFormat, this.options.noInfoText));
             if (this.options.showInfo) this.$info.show(); else this.$info.hide();
         },
         //销毁分页
@@ -264,6 +264,144 @@
                 message && console.info(message + ' : pageIndex = ' + this.currentPageIndex + ' , pageSize = ' + this.currentPageSize + ' , total = ' + this.total);
                 data && console.info(data);
             }
+        },
+        pagination: {
+            event: {
+                pageClicked: 'pageClicked',
+                jumpClicked: 'jumpClicked',
+                pageSizeChanged: 'pageSizeChanged'
+            },
+            remote: {
+                getAjax: function (pagination, url, data, success, beforeSend, complate,traditional) {
+                    $.ajax({
+                        url: url,
+                        dataType: 'json',
+                        data: data,
+                        cache: false,
+                        traditional:traditional,
+                        //contentType: 'application/Json',
+                        beforeSend: function (XMLHttpRequest) {
+                            if (typeof beforeSend === 'function') beforeSend.call(this, XMLHttpRequest);
+                        },
+                        complete: function (XMLHttpRequest, textStatue) {
+                            if (typeof complate === 'function') complate.call(this, XMLHttpRequest, textStatue);
+                        },
+                        success: function (result) {
+                            success.call(pagination, result);
+                        }
+                    })
+                }
+            },
+            core: {
+                /*
+                 options : {
+                 showFirstLastBtn
+                 firstBtnText:
+                 }
+                 */
+                renderPages: function (pageIndex, pageSize, total, pageBtnCount, options) {
+                    options = options || {};
+                    var pageNumber = pageIndex + 1;
+                    var lastPageNumber = this.calLastPageNum(total, pageSize);
+                    var html = [];
+
+                    if (lastPageNumber <= pageBtnCount) {
+                        html = this.renderGroupPages(1, lastPageNumber, pageNumber);
+                    }
+                    else {
+                        var firstPage = this.renderPerPage(options.firstBtnText || 1, 0);
+                        var lastPage = this.renderPerPage(options.lastBtnText || lastPageNumber, lastPageNumber - 1);
+
+
+                        //button count of  both sides
+                        var symmetryBtnCount = (pageBtnCount - 1 - 4) / 2;
+                        if (!options.showFirstLastBtn)
+                            symmetryBtnCount = symmetryBtnCount + 1;
+                        var frontBtnNum = (pageBtnCount + 1) / 2;
+                        var behindBtnNum = lastPageNumber - ((pageBtnCount + 1) / 2);
+
+                        var prevPage = this.renderPerPage(options.prevBtnText, pageIndex - 1);
+                        var nextPage = this.renderPerPage(options.nextBtnText, pageIndex + 1);
+
+                        symmetryBtnCount = symmetryBtnCount.toString().indexOf('.') == -1 ? symmetryBtnCount : symmetryBtnCount + 0.5;
+                        frontBtnNum = frontBtnNum.toString().indexOf('.') == -1 ? frontBtnNum : frontBtnNum + 0.5;
+                        behindBtnNum = behindBtnNum.toString().indexOf('.') == -1 ? behindBtnNum : behindBtnNum + 0.5;
+                        if (pageNumber < frontBtnNum) {
+                            if (options.showFirstLastBtn) {
+                                html = this.renderGroupPages(1, pageBtnCount - 2, pageNumber);
+                                html.push(nextPage);
+                                html.push(lastPage);
+                            } else {
+                                html = this.renderGroupPages(1, pageBtnCount - 1, pageNumber);
+                                html.push(nextPage);
+                            }
+                        }
+                        else if (pageNumber > behindBtnNum) {
+                            if (options.showFirstLastBtn) {
+                                html = this.renderGroupPages(lastPageNumber - pageBtnCount + 3, pageBtnCount - 2, pageNumber);
+                                html.unshift(prevPage);
+                                html.unshift(firstPage);
+                            } else {
+                                html = this.renderGroupPages(lastPageNumber - pageBtnCount + 2, pageBtnCount - 1, pageNumber);
+                                html.unshift(prevPage);
+                            }
+                        }
+                        else {
+                            if (options.showFirstLastBtn) {
+                                html = this.renderGroupPages(pageNumber - symmetryBtnCount, pageBtnCount - 4, pageNumber);
+                                html.unshift(prevPage);
+                                html.push(nextPage);
+                                html.unshift(firstPage);
+                                html.push(lastPage);
+                            } else {
+                                html = this.renderGroupPages(pageNumber - symmetryBtnCount, pageBtnCount - 2, pageNumber);
+                                html.unshift(prevPage);
+                                html.push(nextPage);
+                            }
+                        }
+                    }
+                    return html;
+                },
+                renderGroupPages: function (beginPageNum, count, currentPage) {
+                    var html = [];
+                    for (var i = 0; i < count; i++) {
+                        var page = this.renderPerPage(beginPageNum, beginPageNum - 1);
+                        if (beginPageNum === currentPage)
+                            page.addClass("active");
+                        html.push(page);
+                        beginPageNum++;
+                    }
+                    return html;
+                },
+                renderPerPage: function (text, value) {
+                    return $("<li><a data-page-index='" + value + "'>" + text + "</a></li>");
+                },
+                renderInfo: function (currentPageIndex, currentPageSize, total, infoFormat, noInfoText) {
+                    if (total <= 0) {
+                        return noInfoText;
+                    } else {
+                        var startNum = (currentPageIndex * currentPageSize) + 1;
+                        var endNum = (currentPageIndex + 1) * currentPageSize;
+                        var totalPageNum = this.calLastPageNum(total,currentPageSize);
+                        endNum = endNum >= total ? total : endNum;
+                        return infoFormat.replace('{start}', startNum).replace('{end}', endNum).replace('{total}', total).replace('{totalPage}', totalPageNum);
+                    }
+                },
+                //计算最大分页数
+                calLastPageNum: function (total, pageSize) {
+                    total = utility.convertInt(total);
+                    pageSize = utility.convertInt(pageSize);
+                    var i = total / pageSize;
+                    return utility.isDecimal(i) ? parseInt(i) + 1 : i;
+                }
+            },
+            check: {
+                //校验跳转页数有效性
+                checkJumpPage: function (pageIndex) {
+                    var reg = /^\+?[1-9][0-9]*$/;
+                    return reg.test(pageIndex);
+                }
+            }
         }
     }
 
@@ -272,160 +410,22 @@
         var $target = $(event.target);
 
         if (event.type === 'click' && $target.data('pageIndex') !== undefined && !$target.parent().hasClass('active')) {
-            that.onEvent(pagination.event.pageClicked, $target.data("pageIndex"), null);
+            that.onEvent(this.pagination.event.pageClicked, $target.data("pageIndex"), null);
         }
         else if ((event.type === 'click' || event.type === 'keypress') && $target.data('pageBtn') === 'jump') {
             var pageIndexStr = that.$jump.find('input').val();
             if (utility.convertInt(pageIndexStr) <= that.getLastPageNum()) {
-                that.onEvent(pagination.event.jumpClicked, pageIndexStr - 1, null);
+                that.onEvent(this.pagination.event.jumpClicked, pageIndexStr - 1, null);
                 that.$jump.find('input').val(null);
             }
         }
         else if (event.type === 'change' && $target.data('pageBtn') === 'size') {
             var newPageSize = that.$size.find('select').val();
-            var lastPageNum = pagination.core.calLastPageNum(that.total, newPageSize);
+            var lastPageNum = this.pagination.core.calLastPageNum(that.total, newPageSize);
             if (lastPageNum > 0 && that.currentPageIndex > lastPageNum - 1) {
                 that.currentPageIndex = lastPageNum - 1;
             }
-            that.onEvent(pagination.event.pageSizeChanged, that.currentPageIndex, newPageSize);
-        }
-    };
-
-    var pagination = {};
-    pagination.event = {
-        pageClicked: 'pageClicked',
-        jumpClicked: 'jumpClicked',
-        pageSizeChanged: 'pageSizeChanged'
-    };
-    pagination.remote = {
-        getAjax: function (pagination, url, data, success, beforeSend, complate,traditional) {
-            $.ajax({
-                url: url,
-                dataType: 'json',
-                data: data,
-                cache: false,
-                traditional:traditional,
-                //contentType: 'application/Json',
-                beforeSend: function (XMLHttpRequest) {
-                    if (typeof beforeSend === 'function') beforeSend.call(this, XMLHttpRequest);
-                },
-                complete: function (XMLHttpRequest, textStatue) {
-                    if (typeof complate === 'function') complate.call(this, XMLHttpRequest, textStatue);
-                },
-                success: function (result) {
-                    success.call(pagination, result);
-                }
-            })
-        }
-    };
-    pagination.core = {
-        /*
-        options : {
-            showFirstLastBtn
-            firstBtnText:
-        }
-        */
-        renderPages: function (pageIndex, pageSize, total, pageBtnCount, options) {
-            options = options || {};
-            var pageNumber = pageIndex + 1;
-            var lastPageNumber = this.calLastPageNum(total, pageSize);
-            var html = [];
-
-            if (lastPageNumber <= pageBtnCount) {
-                html = this.renderGroupPages(1, lastPageNumber, pageNumber);
-            }
-            else {
-                var firstPage = this.renderPerPage(options.firstBtnText || 1, 0);
-                var lastPage = this.renderPerPage(options.lastBtnText || lastPageNumber, lastPageNumber - 1);
-
-
-                //button count of  both sides
-                var symmetryBtnCount = (pageBtnCount - 1 - 4) / 2;
-                if (!options.showFirstLastBtn)
-                    symmetryBtnCount = symmetryBtnCount + 1;
-                var frontBtnNum = (pageBtnCount + 1) / 2;
-                var behindBtnNum = lastPageNumber - ((pageBtnCount + 1) / 2);
-
-                var prevPage = this.renderPerPage(options.prevBtnText, pageIndex - 1);
-                var nextPage = this.renderPerPage(options.nextBtnText, pageIndex + 1);
-
-                symmetryBtnCount = symmetryBtnCount.toString().indexOf('.') == -1 ? symmetryBtnCount : symmetryBtnCount + 0.5;
-                frontBtnNum = frontBtnNum.toString().indexOf('.') == -1 ? frontBtnNum : frontBtnNum + 0.5;
-                behindBtnNum = behindBtnNum.toString().indexOf('.') == -1 ? behindBtnNum : behindBtnNum + 0.5;
-                if (pageNumber < frontBtnNum) {
-                    if (options.showFirstLastBtn) {
-                        html = this.renderGroupPages(1, pageBtnCount - 2, pageNumber);
-                        html.push(nextPage);
-                        html.push(lastPage);
-                    } else {
-                        html = this.renderGroupPages(1, pageBtnCount - 1, pageNumber);
-                        html.push(nextPage);
-                    }
-                }
-                else if (pageNumber > behindBtnNum) {
-                    if (options.showFirstLastBtn) {
-                        html = this.renderGroupPages(lastPageNumber - pageBtnCount + 3, pageBtnCount - 2, pageNumber);
-                        html.unshift(prevPage);
-                        html.unshift(firstPage);
-                    } else {
-                        html = this.renderGroupPages(lastPageNumber - pageBtnCount + 2, pageBtnCount - 1, pageNumber);
-                        html.unshift(prevPage);
-                    }
-                }
-                else {
-                    if (options.showFirstLastBtn) {
-                        html = this.renderGroupPages(pageNumber - symmetryBtnCount, pageBtnCount - 4, pageNumber);
-                        html.unshift(prevPage);
-                        html.push(nextPage);
-                        html.unshift(firstPage);
-                        html.push(lastPage);
-                    } else {
-                        html = this.renderGroupPages(pageNumber - symmetryBtnCount, pageBtnCount - 2, pageNumber);
-                        html.unshift(prevPage);
-                        html.push(nextPage);
-                    }
-                }
-            }
-            return html;
-        },
-        renderGroupPages: function (beginPageNum, count, currentPage) {
-            var html = [];
-            for (var i = 0; i < count; i++) {
-                var page = this.renderPerPage(beginPageNum, beginPageNum - 1);
-                if (beginPageNum === currentPage)
-                    page.addClass("active");
-                html.push(page);
-                beginPageNum++;
-            }
-            return html;
-        },
-        renderPerPage: function (text, value) {
-            return $("<li><a data-page-index='" + value + "'>" + text + "</a></li>");
-        },
-        renderInfo: function (currentPageIndex, currentPageSize, total, infoFormat, noInfoText) {
-            if (total <= 0) {
-                return noInfoText;
-            } else {
-                var startNum = (currentPageIndex * currentPageSize) + 1;
-                var endNum = (currentPageIndex + 1) * currentPageSize;
-                var totalPageNum = this.calLastPageNum(total,currentPageSize);
-                endNum = endNum >= total ? total : endNum;
-                return infoFormat.replace('{start}', startNum).replace('{end}', endNum).replace('{total}', total).replace('{totalPage}', totalPageNum);
-            }
-        },
-        //计算最大分页数
-        calLastPageNum: function (total, pageSize) {
-            total = utility.convertInt(total);
-            pageSize = utility.convertInt(pageSize);
-            var i = total / pageSize;
-            return utility.isDecimal(i) ? parseInt(i) + 1 : i;
-        }
-    };
-    pagination.check = {
-        //校验跳转页数有效性
-        checkJumpPage: function (pageIndex) {
-            var reg = /^\+?[1-9][0-9]*$/;
-            return reg.test(pageIndex);
+            that.onEvent(this.pagination.event.pageSizeChanged, that.currentPageIndex, newPageSize);
         }
     };
 
@@ -520,4 +520,6 @@
             return typeof result === 'undefined' ? this : result;
         }
     }
+
+    return Page;
 });
