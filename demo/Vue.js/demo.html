@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vueJS demo</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">插值</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                文本
+                            </div>
+                            <div class="panel-body">
+                                {{message}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                纯HTML
+                            </div>
+                            <div class="panel-body" v-html="message">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                属性
+                            </div>
+                            <div class="panel-body" v-bind:id="id">
+                                <button type="button" :disabled="disabled" class="btn btn-default">button</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app4">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                JavaScript表达式
+                            </div>
+                            <div class="panel-body" >
+                                {{ number + 1 }}
+                                {{ ok ? 'YES' : 'NO' }}
+                                {{ message.split('').reverse().join('') }}
+                                <div :id="'list-' + id"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">指令</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app5">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                参数
+                            </div>
+                            <div class="panel-body" >
+                                <a :href="url">{{url}}</a>
+                                <button class="btn btn-default" @click="click">点击</button>
+                                <p v-if="see">内容</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                修饰符
+                            </div>
+                            <div class="panel-body" >
+                                <form action="" @submit.prevent="onSubmit">
+                                    <button type="submit" class="btn btn-default">提交</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">过滤器</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app7">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                1
+                            </div>
+                            <div class="panel-body">
+                                <p>{{message | reverse}}</p>
+                                <p>{{message | reverse('名称:')}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">计算属性</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app8">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">基础例子</div>
+                            <div class="panel-body">
+                                <p>Original message: "{{ message }}"</p>
+                                <p>Computed reversed message: "{{ reversedMessage }}"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app9">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">计算缓存 vs methods</div>
+                            <div class="panel-body">
+                                <p>Original message: "{{ message }}"</p>
+                                <p>methods reversed message: "{{ reversedMessage() }}"</p>
+                                <p>Computed now1-1 : "{{ now1 }}"</p>
+                                <p v-if="see">Computed now1-2 : "{{ now1 }}"</p>
+                                <p>methods now2-1 : "{{ now2() }}"</p>
+                                <p v-if="see">methods now2-2 : "{{ now2() }}"</p>
+                                <button type="button" class="btn btn-default" @click="show">show</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app10">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Computed-属性-vs-Watched-属性</div>
+                            <div class="panel-body">
+                                <div id="demo">{{ fullName }}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app11">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">计算-setter</div>
+                            <div class="panel-body">
+                                <p>{{ fullName }}</p>
+                                <p>{{ firstName }}</p>
+                                <p>{{ lastName }}</p>
+                                <button type="button" class="btn btn-default" @click="set_name">this.fullName = "John Doe"</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">观察-Watchers</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">1</div>
+                            <div class="panel-body">
+                                <input type="text" class="form-control" v-model="question">
+                                <p>{{ answer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">绑定-HTML-Class</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app13">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">对象语法</div>
+                            <div class="panel-body">
+                                <div class="static"
+                                     v-bind:class="{ active: isActive, 'text-danger': hasError }">
+                                </div>
+                                <div v-bind:class="classObject"></div>
+                                <div v-bind:class="classObject2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app14">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">数组语法</div>
+                            <div class="panel-body">
+                                <div :class="[activeClass, errorClass]"></div>
+                                <div :class="[isActive ? activeClass : '', errorClass]"></div>
+                                <div :class="[{ active: isActive }, errorClass]">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">绑定内联样式</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app15">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">对象语法</div>
+                            <div class="panel-body">
+                                <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+                                <div v-bind:style="styleObject"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app16">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">数组语法</div>
+                            <div class="panel-body">
+                                <div v-bind:style="[baseStyles, overridingStyles]">{{baseStyles}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">条件渲染</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app17">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">v-if & v-eles</div>
+                            <div class="panel-body">
+                                <div v-if="type === 'A'">
+                                    A
+                                </div>
+                                <div v-else-if="type === 'B'">
+                                    B
+                                </div>
+                                <div v-else-if="type === 'C'">
+                                    C
+                                </div>
+                                <div v-else>
+                                    Not A/B/C
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app18">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">&lt;template&gt;中 v-if 条件组</div>
+                            <div class="panel-body">
+                                <template v-if="ok">
+                                    <h1>Title</h1>
+                                    <p>Paragraph 1</p>
+                                    <p>Paragraph 2</p>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app19">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">用-key-管理可复用的元素</div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <template v-if="loginType == 'username'">
+                                        <label>UserName</label>
+                                        <input type="text" class="form-control" placeholder="Enter your username">
+                                    </template>
+                                    <template v-else>
+                                        <label>Email address</label>
+                                        <input type="text" class="form-control" placeholder="Enter your email">
+                                    </template>
+                                </div>
+                                <div class="form-group">
+                                    <template v-if="loginType === 'username'">
+                                        <label>UserName</label>
+                                        <input type="text" class="form-control" placeholder="Enter your username" key="username-input">
+                                    </template>
+                                    <template v-else>
+                                        <label>Email address</label>
+                                        <input type="text" class="form-control" placeholder="Enter your email" key="email-input">
+                                    </template>
+                                </div>
+                                <button type="button" class="btn btn-default" @click="toggle">Toggle login type</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">列表渲染</div>
+            <div class="panel-body">
+                <div class="row">
+                    <p></p>
+                    <div class="col-sm-4" id="app20">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">基本用法</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li v-for="item in items">
+                                        {{ item.message }}
+                                    </li>
+                                </ul>
+                                <ul>
+                                    <li v-for="(item, index) of items2">
+                                        {{ parentMessage }} - {{ index }} - {{ item.message }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app21">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">对象迭代-v-for</div>
+                            <div class="panel-body">
+                                <ul class="demo">
+                                    <li v-for="value in object">
+                                        {{ value }}
+                                    </li>
+                                </ul>
+                                <div v-for="(value, key) in object">
+                                    {{ key }} : {{ value }}
+                                </div>
+                                <div v-for="(value, key, index) in object">
+                                    {{ index }}. {{ key }} : {{ value }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app22">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Template-v-for</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <template v-for="item in items">
+                                        <li>{{ item.msg }}</li>
+                                        <li class="divider"></li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app23">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">整数迭代-v-for</div>
+                            <div class="panel-body">
+                                <div>
+                                    <span v-for="n in 10">{{ n }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app24">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">v-for & v-if & key</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li v-for="todo in todos" v-if="!todo.isComplete" :key="todo.id">
+                                        {{ todo.value }}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>数组更新检测</p>
+                    <div class="col-sm-4" id="app25">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">变异方法</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li>push()</li>
+                                    <li>pop()</li>
+                                    <li>shift()</li>
+                                    <li>unshift()</li>
+                                    <li>splice()</li>
+                                    <li>sort()</li>
+                                    <li>reverse()</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>显示过滤-排序结果</p>
+                    <div class="col-sm-4" id="app26">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">1</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li v-for="n in evenNumbers">{{ n }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app27">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">2</div>
+                            <div class="panel-body">
+                                <ul>
+                                    <li v-for="n in event(numbers)">{{ n }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">事件处理器</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app28">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">监听事件</div>
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-default m-b-sm" @click="counter += 1">+1</button>
+                                <p>这个按钮被点击了 {{ counter }} 次。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app29">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">方法事件处理器</div>
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-default" @click="greet">点击</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app30">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">内联处理器方法</div>
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-default" @click="say('hi')">hi</button>
+                                <button type="button" class="btn btn-default" @click="say('hello',$event)">hello</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">表单控件绑定</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app31">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">文本 & 多行文本</div>
+                            <div class="panel-body">
+                                <input v-model="message" class="form-control" placeholder="edit me">
+                                <p>Message is: {{ message }}</p>
+                                <span>Multiline message is:</span>
+                                <p style="white-space: pre">{{ textarea }}</p>
+                                <br>
+                                <textarea v-model="textarea" class="form-control" placeholder="add multiple lines"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app32">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">复选框</div>
+                            <div class="panel-body">
+                                <input type="checkbox" id="checkbox" v-model="checked">
+                                <label for="checkbox">{{ checked }}</label>
+                                <br>
+                                <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+                                <label for="jack">Jack</label>
+                                <input type="checkbox" id="john" value="John" v-model="checkedNames">
+                                <label for="john">John</label>
+                                <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+                                <label for="mike">Mike</label>
+                                <br>
+                                <span>Checked names: {{ checkedNames }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app33">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">单选按钮</div>
+                            <div class="panel-body">
+                                <input type="radio" id="one" value="1" v-model="picked">
+                                <label for="one">One</label>
+                                <br>
+                                <input type="radio" id="two" value="2" v-model="picked">
+                                <label for="two">Two</label>
+                                <br>
+                                <span>Picked: {{ picked }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app34">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">选择列表</div>
+                            <div class="panel-body">
+                                <select v-model="selected" class="form-control">
+                                    <option value="">请选择</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                </select>
+                                <span>Selected: {{ selected || "请选择" }}</span>
+                                <select v-model="selected2" class="form-control m-t-sm" multiple style="width: 50px">
+                                    <option v-for="value in items" :value="value.val">{{value.text}}</option>
+                                </select>
+                                <br>
+                                <span>Selected: {{ selected2 }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app35">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">修饰符</div>
+                            <div class="panel-body">
+                                <input v-model.lazy="msg" class="form-control" placeholder='<!-- 在 "change" 而不是 "input" 事件中更新 -->'>
+                                <p>{{ msg }}</p>
+                                <input v-model.number="num1" class="form-control" type="number">
+                                <input v-model.number="num2" class="form-control" type="number">
+                                <p>{{ num1 + num2}}</p>
+                                <input v-model.trim="msg" class="form-control">
+                                <p>{{ msg }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="vue.js"></script>
+<script>
+    let vm35 = new Vue({
+        el: '#app35',
+        data: {
+            msg: "",
+            num1: 0,
+            num2: 0
+        }
+    });
+    let vm34 = new Vue({
+        el: '#app34',
+        data: {
+            selected: '',
+            selected2: [],
+            items: [
+                {
+                    val: 0,
+                    text: "A"
+                },
+                {
+                    val: 1,
+                    text: "B"
+                },
+                {
+                    val: 2,
+                    text: "C"
+                },
+
+            ]
+        }
+    });
+    let vm33 = new Vue({
+        el: '#app33',
+        data: {
+            picked: ''
+        }
+    });
+    let vm32 = new Vue({
+        el: '#app32',
+        data: {
+            checked: false,
+            checkedNames: []
+        }
+    });
+    let vm31 = new Vue({
+        el: "#app31",
+        data: {
+            message: "",
+            textarea: ""
+        }
+    });
+    let vm30 = new Vue({
+        el: "#app30",
+        methods: {
+            say: function (message,event) {
+                if(event) event.preventDefault();
+                alert(message)
+            }
+        }
+    });
+    let vm29 = new Vue({
+        el: "#app29",
+        data: {
+            name: 'Vue.js'
+        },
+        // 在 `methods` 对象中定义方法
+        methods: {
+            greet: function (event) {
+                // `this` 在方法里指当前 Vue 实例
+                alert('Hello ' + this.name + '!')
+                // `event` 是原生 DOM 事件
+                alert(event.target.tagName)
+            }
+        }
+    });
+    let vm28 = new Vue({
+        el: "#app28",
+        data: {
+            counter: 0
+        }
+    });
+    let vm27 = new Vue({
+        el: "#app27",
+        data: {
+            numbers: [ 1, 2, 3, 4, 5 ]
+        },
+        methods: {
+            event: function (number) {
+                return number.filter(function (number) {
+                    return number % 2 === 0
+                })
+            }
+        }
+    });
+    let vm26 = new Vue({
+        el: "#app26",
+        data: {
+            numbers: [ 1, 2, 3, 4, 5 ]
+        },
+        computed: {
+            evenNumbers: function () {
+                return this.numbers.filter(function (number) {
+                    return number % 2 === 0
+                })
+            }
+        }
+    });
+    let vm24 = new Vue({
+        el: "#app24",
+        data: {
+            todos: [
+                {
+                    isComplete: true,
+                    value: "true",
+                    id: 0
+                },
+                {
+                    isComplete: false,
+                    value: "false",
+                    id: 1
+                },
+
+            ]
+        }
+    });
+    let vm23 = new Vue({
+        el: "#app23",
+        data: {
+
+        }
+    });
+    let vm22 = new Vue({
+        el: "#app22",
+        data: {
+            items: [
+                {msg: 'Foo' },
+                {msg: 'Bar' }
+            ]
+        }
+    });
+    let vm21 = new Vue({
+        el: "#app21",
+        data: {
+            object: {
+                FirstName: 'John',
+                LastName: 'Doe',
+                Age: 30
+            }
+        }
+    });
+    let vm20 = new Vue({
+        el: "#app20",
+        data: {
+            items: [
+                {message: 'Foo' },
+                {message: 'Bar' }
+            ],
+            parentMessage: 'Parent',
+            items2: [
+                { message: 'Foo' },
+                { message: 'Bar' }
+            ]
+        }
+    });
+    let vm19 = new Vue({
+        el: "#app19",
+        data: {
+            loginType: "username"
+        },
+        methods: {
+            toggle: function () {
+                this.loginType = this.loginType == "username"?"email":"username";
+            }
+        }
+    });
+    let vm18 = new Vue({
+        el: "#app18",
+        data: {
+            ok: true
+        }
+    });
+    let vm17 = new Vue({
+        el: "#app17",
+        data: {
+            type: "B"
+        }
+    });
+    let vm16 = new Vue({
+        el: "#app16",
+        data: {
+            baseStyles: "color:red",
+            overridingStyles: "font-size:15px",
+        }
+    });
+    let vm15 = new Vue({
+        el: "#app15",
+        data: {
+            activeColor: "red",
+            fontSize: "15",
+            styleObject: {
+                color: 'red',
+                fontSize: '13px'
+            }
+        }
+    });
+    let vm14 = new Vue({
+        el: "#app14",
+        data: {
+            isActive: false,
+            activeClass: 'active',
+            errorClass: 'text-danger'
+        }
+    });
+    let vm13 = new Vue({
+        el: "#app13",
+        data: {
+            isActive: true,
+            hasError: true,
+            classObject: {
+                active: true,
+                'text-danger': false
+            },
+            isActive2: true,
+            error: null
+        },
+        computed: {
+            classObject2: function () {
+                return {
+                    active: this.isActive2 && !this.error,
+                    'text-danger': !this.error,
+                }
+            }
+        }
+    });
+    let vm12 = new Vue({
+        el: "#app12",
+        data: {
+            question: '',
+            answer: 'I cannot give you an answer until you ask a question!',
+            timer: null
+        },
+        watch: {
+            // 如果 question 发生改变，这个函数就会运行
+            question: function (newQuestion) {
+                vm12.answer = 'Waiting for you to stop typing...';
+                this.getAnswer();
+            }
+        },
+        methods: {
+            getAnswer: function () {
+                clearTimeout(vm12.timer);
+                vm12.timer = setTimeout(function () {
+                    if(vm12.question.indexOf("?") < 0){
+                        vm12.answer = 'Questions usually contain a question mark. ;-)'
+                        return false;
+                    }
+                    vm12.answer = 'Thinking...';
+                    console.log(vm12.question);
+                },1000);
+            }
+        }
+    });
+    let vm11 = new Vue({
+        el: "#app11",
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar'
+        },
+        methods: {
+            set_name: function () {
+                this.fullName = "John Doe";
+            }
+        },
+        computed: {
+            fullName: {
+                // getter
+                get: function () {
+                    return this.firstName + ' ' + this.lastName
+                },
+                // setter
+                set: function (newValue) {
+                    var names = newValue.split(' ')
+                    this.firstName = names[0]
+                    this.lastName = names[names.length - 1]
+                }
+            }
+        }
+    });
+    let vm10 = new Vue({
+        el: "#app10",
+        data: {
+            firstName: 'Foo',
+            lastName: 'Bar',
+            fullName: 'Foo Bar'
+        },
+        watch: {
+            firstName: function (val) {
+                this.fullName = val + ' ' + this.lastName
+            },
+            lastName: function (val) {
+                this.fullName = this.firstName + ' ' + val
+            }
+        }
+    })
+    let vm9 = new Vue({
+        el: "#app9",
+        data: {
+            message: "hello",
+            see: false
+        },
+        methods: {
+            show: function () {
+              this.see = !this.see;
+            },
+            reversedMessage: function () {
+                return this.message.split('').reverse().join('')
+            },
+            now2: function () {
+                return Date.now()
+            }
+        },
+        computed: {
+            now1: function () {
+                return Date.now()
+            }
+        }
+    })
+    let vm8 = new Vue({
+        el: "#app8",
+        data: {
+            message: "hello"
+        },
+        computed: {
+            // a computed getter
+            reversedMessage: function () {
+                // `this` points to the vm instance
+                return this.message.split('').reverse().join('')
+            }
+        }
+    })
+    let vm7 = new Vue({
+        el: "#app7",
+        data: {
+            message: "中江吴彦祖"
+        },
+        filters: {
+            reverse: function (str,arg1) {
+                return (arg1 || "") + str.split('').reverse().join('');
+            }
+        }
+    });
+    let vm6 = new Vue({
+        el: "#app6",
+        methods: {
+            onSubmit: function () {
+                alert("submit");
+                return false;
+            }
+        }
+    });
+    let vm5 = new Vue({
+        el: "#app5",
+        data: {
+            see: true,
+            url: "https://www.baidu.com"
+        },
+        methods: {
+            click: function () {
+                this.see = !this.see;
+            }
+        }
+    });
+    let vm4 = new Vue({
+        el: "#app4",
+        data: {
+            id: "5",
+            number: 5,
+            ok: true,
+            message: "中江吴彦祖"
+        }
+    });
+    let vm3 = new Vue({
+        el: "#app3",
+        data: {
+            id: "5",
+            disabled: true
+        }
+    });
+    let vm2 = new Vue({
+        el: "#app2",
+        data: {
+            message: "<p class='m-b-none'> 纯HTML </p>"
+        }
+    });
+    let vm1 = new Vue({
+        el: "#app1",
+        data: {
+            message: "文本"
+        }
+    });
+</script>
