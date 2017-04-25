@@ -43,7 +43,9 @@
             'laytpl': 'laytpl',
             'pagination': 'mricode.pagination/mricode.pagination',
             'slider': 'bootstrap-slider/bootstrap-slider',
-            'pjax': 'jquery.pjax/jquery.pjax'
+            'pjax': 'jquery.pjax/jquery.pjax',
+            'awardRotate': 'jquery.prize/awardRotate',
+            'prize': 'jquery.prize/jquery.prize',
         },
         shim:{
             //'jquery': ['../js/jquery', 'bootstrap'],
@@ -82,7 +84,9 @@
             'nprogress': ['jquery', 'css!../js/nprogress/nprogress.css'],
             'pagination': ['jquery','css!../js/mricode.pagination/mricode.pagination.css'],
             'slider': ['jquery','css!../js/bootstrap-slider/bootstrap-slider.css'],
-            'pjax': ['jquery']
+            'pjax': ['jquery'],
+            'awardRotate': ['jquery'],
+            'prize': ['jquery','awardRotate','css!../js/jquery.prize/jquery.prize.css']
         }
     });
 })(window);

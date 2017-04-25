@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/js/jquery.prize/jquery.prize.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-sm-offset-4" id="prize_container">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/jquery.prize/awardRotate.js"></script>
+<script src="../../public/js/jquery.prize/jquery.prize.js"></script>
+<script>
+    $(document).ready(function(){
+        getPrizeList().then(function (prize_list) {
+            $("#prize_container").prize({
+                restaraunts:prize_list,				//大转盘奖品名称
+                colors:["#FFF4D6", "#FFFFFF"],		//大转盘奖品区块对应背景颜色
+                event: {
+                    click: function (prize) {
+                        //获取随机数(奖品个数范围内)
+                        $.post("prize.php",function (d) {
+                            prize.rotateFn(d);
+                        });
+                    },
+                    rotate: function (text) {
+                        alert(text);
+                    }
+                }
+            });
+        });
+    });
+
+    function getPrizeList() {
+        var $d = $.Deferred();
+        $.post("prize.json",function (d) {
+            $d.resolve(d.resultInfo.result.list);
+        },"json");
+        return $d.promise();
+    }
+</script>
