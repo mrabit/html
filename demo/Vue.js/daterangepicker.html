@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/js/bootstrap-daterangepicker/daterangepicker.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div id="levelData_calendar" class="btn btn-default w-lg">
+                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    <span id="time" v-text="time"></span>
+                    <b class="caret">
+                    </b>
+                </div>
+                <button type="button" class="btn btn-default w-sm" @click="search">查询</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="../../public/js/jquery.js"></script>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript" src="../../public/js/bootstrap-daterangepicker/moment.js"></script>
+<script type="text/javascript" src="../../public/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script>
+    let vm = new Vue({
+        el: ".row",
+        data: {
+            time: "asd"
+        },
+        methods: {
+            search: function () {
+                console.log(this.time)
+            }
+        },
+        watch: {
+            // 如果 time 发生改变，这个函数就会运行
+            time: function (newTime) {
+                console.log(newTime)
+            }
+        },
+    });
+    //实例化daterangepicker
+    moment.locale("zh-cn");
+    let format = "YYYY-MM-DD";
+    let LevelDataTime = {
+        start: moment().subtract(30, 'days').format(format),   //开始时间默认值
+        end: moment().format(format),    //结束时间默认值
+        separator: " ~ ",     //连接符号
+        minDate: moment().format(format),
+        maxDate: moment().format(format),
+        dateLimit: 5
+    };
+    /***
+     * 实例化对象
+     */
+    $("#levelData_calendar").daterangepicker({
+        //timePicker: true,
+        //timePicker24Hour: true,
+        startDate: LevelDataTime.start,
+        endDate: LevelDataTime.end,
+        //minDate: LevelDataTime.minDate,
+        maxDate: LevelDataTime.maxDate,
+        format: format,
+        locale: {
+            format: format,
+            separator: LevelDataTime.separator,
+            applyLabel: '确定',
+            cancelLabel: '取消'
+        },
+        showDropdowns: true,
+        "opens": "right",
+        "drops": "bottom"
+    }, function (start, end, label) {
+        LevelDataTime.start = moment(start).format(format);
+        LevelDataTime.end = moment(end).format(format);
+        vm.time = LevelDataTime.start+LevelDataTime.separator+LevelDataTime.end;
+    });
+    vm.time = LevelDataTime.start+LevelDataTime.separator+LevelDataTime.end;
+</script>
