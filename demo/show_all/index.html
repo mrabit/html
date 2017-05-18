@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <style>
+        html,body{
+            background: #ffffff;
+        }
+        .content{
+            position: relative;
+            max-height: 300px;
+            overflow: hidden;
+        }
+        .show_all{
+            position: absolute;
+            bottom: 4rem;
+            width: 100%;
+            height: 20rem;
+            margin: auto;
+            background-image: -webkit-gradient(linear,left top,left bottom,from(hsla(0,0%,100%,0)),to(#fff));
+            background-image: -webkit-linear-gradient(top,hsla(0,0%,100%,0),#fff);
+            background-image: linear-gradient(180deg,hsla(0,0%,100%,0),#fff);
+        }
+        .show-full-block{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 6.7rem;
+            margin: auto;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            background-color: #fff;
+            align-items: center;
+        }
+        .show-full-block .show-full-btn {
+            cursor: pointer;
+            background-color: #ebf4fc;
+            color: #007fff;
+            font-size: 1.2em;
+            height: 40px;
+            margin: 0 auto;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="content">
+                    <blockquote style="margin: 1em 0px; border-left: 4px solid rgb(221, 221, 221); padding: 0px 1.3rem; color: rgb(102, 102, 102); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        <p style="line-height: 2.27rem; margin-top: 0.6rem; margin-bottom: 0.6rem;">
+                            谷歌今天发布了一系列“性感”的软件，我们也发布了一款大家期待已久的开发者工具，同样很性感 ：)
+                        </p>
+                    </blockquote>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        iView 2.0 已经发布有两个月了，在 2.0 发布后，npm 下载量、issues 数量都提升了很多（可以 watch 下项目，感受感受邮件量）。两个月里，我们平均 1 周发布一个版本，现在已发布了 13 个版本，2.0 的正式版也发布在即，不过在此之前，先给大家带来一个开发利器：<span style="font-weight: 700;">&nbsp;iView Cli&nbsp;</span>。
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        相信大部分 Vue 开发者都使用过 vue-cli 来构建项目，它的确很方便，但对于很多初级开发者来说，还是要踩不少坑的，构建完需要进一步个性化配置。而 iView Cli 具有以下特点：
+                    </p>
+                    <ul style="padding: 0px 0px 0px 2.7rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);" class=" list-paddingleft-2">
+                        <li>
+                            <p>
+                                有 GUI 的脚手架
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                配置简单、业务化
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                分开发和生产环境
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                很多常用工具可选择
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                它不仅好用，还很好看
+                            </p>
+                        </li>
+                    </ul>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        先来感受下 iView Cli 的界面吧：
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        <br/>
+                    </p>
+                    <p class="img-full">
+                        <img src="https://dn-mhke0kuv.qbox.me/27cee8537233a0f52954.jpg" class="medium-zoom-image"/>
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        <br/>
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        <br/>
+                    </p>
+                    <p class="img-full">
+                        <img src="https://dn-mhke0kuv.qbox.me/66a0af3b118c3eef3319.jpg" class="medium-zoom-image"/>
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        <br/>
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        在配置方面，支持 CSS 预处理器 Less 和 Sass。Ajax 使用的是 axios，而且会把配置写在工具函数 util.js 里，并做了开发和生产环境的不同配置。
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        多语言使用了 vue-i18n 的 5.x 版本，并整合了 iView 的多语言和使用者自己的多语言配置，而且会根据用户系统的语言自动切换为中文和英文。
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        状态管理可选 vuex 或 bus.js 。
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        除此之外，还增加了一些常用的中后台开发的工具：echarts、Cookie、复制 clipboard，以及 HTML 转图片的工具等。
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        这次还支持了大部分设备的安装包，包括 Mac、Windows 64 位、Windows 32 位、Linux 64 位、Linux 32 位。
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        用过 GitHub 的同学都知道，release 的文件下载走的国外的 AWS，那个慢仿佛回到了20年前拨号上网的窄带。这次我们 release 在了开源中国的码云，下载不是问题了。
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        话不多说，快去下载体验最性感的 Vue 脚手架吧！
+                    </p>
+                    <p style="line-height: 2.27rem; color: rgb(51, 51, 51); font-family: -apple-system, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, Arial, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, sans-serif; white-space: normal; background-color: rgb(255, 255, 255);">
+                        <span style="font-weight: 700;">高速下载地址：<a href="https://link.juejin.im/?target=https%3A%2F%2Fwww.iviewui.com%2Fcli" target="_blank" style="background-color: transparent; text-decoration-line: none; cursor: pointer; color: rgb(34, 85, 153);">https://www.iviewui.com/cli</a></span>
+                    </p>
+                    <p>
+                        <br/>
+                    </p>
+                </div>
+                <div class="show_all"></div>
+                <div class="show-full-block">
+                    <div class="show-full-btn col-xs-4 col-xs-offset-4 col- text-center">展开全文</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
