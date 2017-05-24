@@ -61,10 +61,10 @@
         this.buttonClasses = 'btn btn-sm';
         this.applyClass = 'btn-success';
         this.cancelClass = 'btn-default';
-
+        this.format="YYYY-MM-DD HH:mm:ss";
         this.locale = {
             direction: 'ltr',
-            format: 'MM/DD/YYYY',
+            format: this.format,
             separator: ' - ',
             applyLabel: 'Apply',
             cancelLabel: 'Cancel',
@@ -77,7 +77,7 @@
 
         this.callback = function() { };
 
-        //some state information
+        //some state inshowDropdownsion
         this.isShowing = false;
         this.leftCalendar = {};
         this.rightCalendar = {};
@@ -322,7 +322,7 @@
 
                 // If the end of the range is before the minimum or the start of the range is
                 // after the maximum, don't display this range option at all.
-                if ((this.minDate && end.isBefore(this.minDate, this.timepicker ? 'minute' : 'day'))
+                if ((this.minDate && end.isBefore(this.minDate, this.timepicker ? 'minute' : 'day')) 
                   || (maxDate && start.isAfter(maxDate, this.timepicker ? 'minute' : 'day')))
                     continue;
 
@@ -546,7 +546,6 @@
 
         updateMonthsInView: function() {
             if (this.endDate) {
-
                 //if both dates are visible already, do nothing
                 if (!this.singleDatePicker && this.leftCalendar.month && this.rightCalendar.month &&
                     (this.startDate.format('YYYY-MM') == this.leftCalendar.month.format('YYYY-MM') || this.startDate.format('YYYY-MM') == this.rightCalendar.month.format('YYYY-MM'))
@@ -1430,7 +1429,6 @@
         },
 
         timeChanged: function(e) {
-
             var cal = $(e.target).closest('.calendar'),
                 isLeft = cal.hasClass('left');
 
@@ -1507,7 +1505,7 @@
             this.container.find('input[name="daterangepicker_start"], input[name="daterangepicker_end"]').removeClass('active');
             $(e.target).addClass('active');
 
-            // Set the state such that if the user goes back to using a mouse,
+            // Set the state such that if the user goes back to using a mouse, 
             // the calendars are aware we're selecting the end of the range, not
             // the start. This allows someone to edit the end of a date range without
             // re-selecting the beginning, by clicking on the end date input then

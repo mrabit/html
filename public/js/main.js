@@ -60,7 +60,7 @@
             },
             'ngMessages': ['angular'],
             'init-angular': ['ngMessages'],
-            'daterangepicker': ['jquery', 'moment/moment', 'css!../js/bootstrap-daterangepicker/daterangepicker.css'],
+            'daterangepicker': ['jquery', 'moment', 'css!../js/bootstrap-daterangepicker/daterangepicker.css'],
             'tagsinput': ['jquery', '../js/bootstrap-tagsinput/init-bootstrap-tagsinput', 'css!../js/bootstrap-tagsinput/bootstrap-tagsinput.css'],
             'typeahead': ['jquery', 'css!../js/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.css'],
             'moment': ['jquery'],

@@ -3,15 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
     <script src="../../public/js/require.js"></script>
     <script src="../../public/js/main.js"></script>
+    <style>
+        .picker{
+            position: relative;
+            display: inline-block;
+        }
+        .picker input{
+            width: 300px!important;
+        }
+        .picker i{
+            position: absolute;
+            bottom: 11px;
+            right: 10px;
+            top: auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <form class="form-inline text-left" role="form">
+                <div class="form-group">
+                    <label class="h5" for="prize_name">商品名称：</label>
+                    <input name="prize_name" v-model="prize_name" type="text" class="form-control" id="prize_name" placeholder="商品名称">
+                </div>
+                <div class="form-group" :class="{ visibility: isHidden }">
+                    <label class="h5" for="prize_time">兑换时间段：</label>
+                    <div class="picker">
+                        <input type="text" id="prize_time" class="form-control" v-date="time" >
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-default w-xs" @click="search">查询</button>
+            </form>
+        </div>
+    </div>
+</div>
 </body>
 </html>
 <script>
     require(["jquery",'moment','daterangepicker'], function ($,moment) {
         moment.locale("zh-cn");
+        var format = "YYYY-MM-DD HH:mm:ss";
+        var LevelDataTime = {
+            start: moment().subtract(30, 'days').format(format),   //开始时间默认值
+            end: moment().format(format),    //结束时间默认值
+            separator: " ~ ",     //连接符号
+            minDate: moment().format(format),
+            maxDate: moment().format(format),
+            dateLimit: 5
+        };
+        /***
+         * 实例化对象
+         */
+        $("#prize_time").daterangepicker({
+            timePicker: true,
+            timePicker24Hour: true,
+            startDate: LevelDataTime.start,
+            endDate: LevelDataTime.end,
+            maxDate: LevelDataTime.maxDate,
+            format: format,
+            locale: {
+                format: format,
+                separator: LevelDataTime.separator,
+                applyLabel: '确定',
+                cancelLabel: '取消'
+            },
+            "opens": "left",
+            "drops": "top"
+        }, function (start, end, label) {
+            LevelDataTime.start = moment(start).format(format);
+            LevelDataTime.end = moment(end).format(format);
+        });
     })
 </script>

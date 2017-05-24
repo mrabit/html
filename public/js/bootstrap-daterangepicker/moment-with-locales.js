@@ -727,6 +727,7 @@
     }
 
     function warn(msg) {
+        if(msg.indexOf("deprecated")>=0) return false;
         if (utils_hooks__hooks.suppressDeprecationWarnings === false && typeof console !== 'undefined' && console.warn) {
             console.warn('Deprecation warning: ' + msg);
         }
