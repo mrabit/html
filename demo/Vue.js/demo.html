@@ -610,6 +610,25 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-4" id="app43_1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">父子组件双向绑定</div>
+                            <div class="panel-body">
+                                <child v-model="value"></child> :
+                                <span>{{ value }}</span>
+                                <button class="btn btn-default" type="button" @click="reduce">-1</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app43_2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">非父子组件双向绑定</div>
+                            <div class="panel-body">
+                                <com-a ref="a"></com-a>
+                                <com-a ref="b"></com-a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-sm-4" id="app44">
                         <div class="panel panel-default">
                             <div class="panel-heading">使用自定义事件的表单输入组件</div>
@@ -710,6 +729,22 @@
                             <div class="panel-heading">子组件索引</div>
                             <div class="panel-body">
                                 <child ref="child"></child>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app51_1">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">递归组件</div>
+                            <div class="panel-body">
+                                <vm51_1 :province="province" :index="0"></vm51_1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app51_2">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">手动挂载实例</div>
+                            <div class="panel-body">
+                                <div class="v-content"></div>
                             </div>
                         </div>
                     </div>
@@ -873,10 +908,74 @@
     });
     // `vm.a` 是响应的
     vm52.b = 2;
-//    vm52.a["b"] = 10;
+    //vm52.a["b"] = 10;
     // `vm.b` 是非响应的
     //可以使用 Vue.set(object, key, value) 方法将响应属性添加到嵌套的对象上
-    Vue.set(vm52.a, 'b', 200)
+    Vue.set(vm52.a, 'b', 200);
+
+    let vm51_2 = Vue.extend({
+        template: "<div>手动挂载实例</div>"
+    });
+    new vm51_2().$mount("#app51_2 .panel-body .v-content");
+    Vue.component("vm51_1",{
+        name: "vm51_1",
+        props: {
+            province: {
+                type: Array,
+                default: function () {
+                    return [];
+                }
+            },
+            index: {
+                type: Number,
+                default: 0
+            }
+        },
+        template: '<div><vm51_1 :province="province" :index="index+1" v-if="index < province.length"></vm51_1>{{province[index]}}</div>'
+    });
+    let vm51_1 = new Vue({
+        el: "#app51_1",
+        data: function () {
+            return {
+                province: [
+                    "安徽",
+                    "澳门",
+                    "北京",
+                    "重庆",
+                    "福建",
+                    "甘肃",
+                    "广东",
+                    "广西",
+                    "贵州",
+                    "海南",
+                    "河北",
+                    "黑龙江",
+                    "河南",
+                    "湖北",
+                    "湖南",
+                    "江苏",
+                    "江西",
+                    "吉林",
+                    "辽宁",
+                    "内蒙古",
+                    "宁夏",
+                    "青海",
+                    "山东",
+                    "上海",
+                    "陕西",
+                    "山西",
+                    "四川",
+                    "天津",
+                    "香港",
+                    "新疆",
+                    "西藏",
+                    "云南",
+                    "浙江"
+                ]
+            }
+        }
+
+    });
     let vm51 = new Vue({
         el: "#app51",
         components: {
@@ -885,6 +984,9 @@
                 '<slot>暂无数据</slot>'+
                 '</div>'
             }
+        },
+        mounted: function () {
+            this.$slots.child;
         }
     });
     let vm50 = new Vue({
@@ -975,7 +1077,7 @@
         el: "#app47",
         components: {
             "my-component": {
-                template: "<div>\
+                template: "<div data-id='1'>\
                     <h2>我是子组件的标题</h2>\
                     <slot>\
                     只有在没有要分发的内容时才会显示。\
@@ -1038,7 +1140,7 @@
                 }
             }
         }
-    })
+    });
     let vm44 = new Vue({
         el: "#app44",
         data: {
@@ -1074,6 +1176,68 @@
                         this.$emit('input', Number(formattedValue))
                     }
                 }
+            }
+        }
+    });
+    let bus = new Vue();
+    Vue.component("com-a",{
+        template: '<button class="btn btn-default" type="button" @click="sendMessage">传递事件</button>',
+        methods: {
+            sendMessage: function () {
+                bus.$emit("on-message","来自com-a组件的消息");
+            }
+        }
+    });
+    let vm43_2 = new Vue({
+        el: "#app43_2",
+        data: {
+            message: ""
+        },
+        mounted: function () {
+            bus.$on("on-message",function (msg) {
+                alert(msg)
+            });
+            //子链
+            this.$children[0].sendMessage();
+            //子组件索引
+            this.$refs.a;
+            this.$refs.b;
+        }
+    });
+    let vm43_1 = new Vue({
+        el: "#app43_1",
+        components: {
+            child: {
+                template: '<button class="btn btn-default" type="button" @click="addCount">{{ count }}</button>',
+                props: {
+                    value: {
+                        default: 0
+                    }
+                },
+                data: function () {
+                    return {
+                        count: this.value
+                    }
+                },
+                methods: {
+                    addCount: function () {
+                        this.count++;
+                        this.$emit("input",this.count);
+                    }
+                },
+                watch: {
+                    value: function (val) {
+                        this.count = val;
+                    }
+                }
+            }
+        },
+        data: {
+            value: 0
+        },
+        methods: {
+            reduce: function () {
+                this.value--;
             }
         }
     });
@@ -1142,7 +1306,7 @@
                         }
                     }
                 },
-                template: '<p>Prop验证{{ propC }}{{ propB }}{{ propB + propD }}</p>'
+                template: '<p>Prop验证{{ propC }},{{ propB }},{{ propB + propD }}</p>'
             }
         }
     });
