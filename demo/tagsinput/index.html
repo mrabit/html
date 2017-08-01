@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/js/bootstrap-tagsinput/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="../../public/js/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+                <input type="text" id="tags_input" class="form-control">
+            </div>
+            <select id="select_value" ng-model="select_value" class="form-control m-b ng-pristine ng-untouched ng-valid ng-empty" style="width: 150px;">
+                <option value="" disabled="" selected="">选择已有标签</option>
+                <option value="&quot;tags_name&quot;:&quot;C#&quot;,&quot;id&quot;:&quot;2&quot;">C#</option><option value="&quot;tags_name&quot;:&quot;first&quot;,&quot;id&quot;:&quot;14&quot;">first</option><option value="&quot;tags_name&quot;:&quot;javascript&quot;,&quot;id&quot;:&quot;15&quot;">javascript</option><option value="&quot;tags_name&quot;:&quot;jquery&quot;,&quot;id&quot;:&quot;3&quot;">jquery</option><option value="&quot;tags_name&quot;:&quot;新增字段&quot;,&quot;id&quot;:&quot;16&quot;">新增字段</option><option value="&quot;tags_name&quot;:&quot;测试&quot;,&quot;id&quot;:&quot;18&quot;">测试</option><option value="&quot;tags_name&quot;:&quot;转载&quot;,&quot;id&quot;:&quot;17&quot;">转载</option><option value="&quot;tags_name&quot;:&quot;随笔&quot;,&quot;id&quot;:&quot;13&quot;">随笔</option>                        </select>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="../../public/js/jquery.js"></script>
+<script type="text/javascript" src="../../public/js/bootstrap.js"></script>
+<script type="text/javascript" src="../../public/js/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script type="text/javascript" src="../../public/js/bootstrap-tagsinput/bootstrap-tagsinput.extends.js"></script>
+<script type="text/javascript" src="../../public/js/typeahead.js/typeahead.bundle.js"></script>
+<script>
+
+    window.tags_arr = new Map();
+    $.each($("#select_value option"), function (k, v) {
+        if ($(v).val()) {
+            var temp = JSON.parse('{' + $(v).val() + '}');
+            window.tags_arr.set(temp["tags_name"], temp);
+        }
+    });
+    var elt = $('input');
+    elt.tagsinput({
+        itemValue: 'id',
+        itemText: 'tags_name',
+        tags_arr: tags_arr,
+        trimValue: true
+    });
+
+    elt.tagsinput('add', { "id": 1 , "tags_name": "Amsterdam"   , "continent": "Europe"    });
+    elt.tagsinput('add', { "id": 4 , "tags_name": "Washington"  , "continent": "America"   });
+    elt.tagsinput('add', { "id": 7 , "tags_name": "Sydney"      , "continent": "Australia" });
+    elt.tagsinput('add', { "id": 10, "tags_name": "Beijing"     , "continent": "Asia"      });
+    elt.tagsinput('add', { "id": 13, "tags_name": "Cairo"       , "continent": "Africa"    });
+</script>
