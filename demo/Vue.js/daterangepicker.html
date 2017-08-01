@@ -6,16 +6,27 @@
     <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../public/css/app.min.css">
     <link rel="stylesheet" href="../../public/js/bootstrap-daterangepicker/daterangepicker.css">
+    <style>
+        .picker{
+            position: relative;
+            display: inline-block;
+        }
+        .picker i{
+            position: absolute;
+            bottom: 11px;
+            right: 10px;
+            top: auto;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-3">
-                <div id="levelData_calendar" class="btn btn-default w-lg">
+                <div class="picker">
+                    <input type="text" style="width: 300px" id="prize_time" class="form-control" v-date="time" >
                     <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                    <span id="time" v-text="time"></span>
-                    <b class="caret">
-                    </b>
                 </div>
                 <button type="button" class="btn btn-default w-sm" @click="search">查询</button>
             </div>
@@ -25,9 +36,58 @@
 </html>
 <script type="text/javascript" src="../../public/js/jquery.js"></script>
 <script type="text/javascript" src="vue.js"></script>
-<script type="text/javascript" src="../../public/js/bootstrap-daterangepicker/moment.js"></script>
+<script type="text/javascript" src="../../public/js/moment/moment.js"></script>
 <script type="text/javascript" src="../../public/js/bootstrap-daterangepicker/daterangepicker.js"></script>
 <script>
+
+    // 注册一个全局自定义指令 v-date
+    Vue.directive('date', {
+        bind: function (el, binding, vnode) {
+            moment.locale("zh-cn");
+            var format = "YYYY-MM-DD HH:mm:ss";
+            var LevelDataTime = {
+                start: moment().subtract(30, 'days').format(format),   //开始时间默认值
+                end: moment().format(format),    //结束时间默认值
+                separator: " ~ ",     //连接符号
+                minDate: moment().format(format),
+                maxDate: moment().format(format),
+                dateLimit: 5
+            };
+            /***
+             * 实例化对象
+             */
+            $(el).daterangepicker({
+                timePicker: true,
+                timePicker24Hour: true,
+                startDate: LevelDataTime.start,
+                endDate: LevelDataTime.end,
+                maxDate: LevelDataTime.maxDate,
+                format: format,
+                locale: {
+                    format: format,
+                    separator: LevelDataTime.separator,
+                    applyLabel: '确定',
+                    cancelLabel: '取消'
+                },
+                "opens": "left",
+                "drops": "bottom"
+            }, function (start, end, label) {
+                LevelDataTime.start = moment(start).format(format);
+                LevelDataTime.end = moment(end).format(format);
+                vnode.context.time = LevelDataTime.start+LevelDataTime.separator+LevelDataTime.end;
+            });
+            vnode.context.time = LevelDataTime.start+LevelDataTime.separator+LevelDataTime.end;
+        },
+        update: function (el, binding, vnode) {
+            console.log(vnode)
+            //vnode.context.time = binding.value;
+        },
+        unbind: function () {
+            $(this.el).off();
+        }
+    });
+
+
     let vm = new Vue({
         el: ".row",
         data: {
@@ -35,7 +95,7 @@
         },
         methods: {
             search: function () {
-                console.log(this.time)
+                alert(this.time)
             }
         },
         watch: {
@@ -45,41 +105,7 @@
             }
         },
     });
-    //实例化daterangepicker
-    moment.locale("zh-cn");
-    let format = "YYYY-MM-DD";
-    let LevelDataTime = {
-        start: moment().subtract(30, 'days').format(format),   //开始时间默认值
-        end: moment().format(format),    //结束时间默认值
-        separator: " ~ ",     //连接符号
-        minDate: moment().format(format),
-        maxDate: moment().format(format),
-        dateLimit: 5
-    };
-    /***
-     * 实例化对象
-     */
-    $("#levelData_calendar").daterangepicker({
-        //timePicker: true,
-        //timePicker24Hour: true,
-        startDate: LevelDataTime.start,
-        endDate: LevelDataTime.end,
-        //minDate: LevelDataTime.minDate,
-        maxDate: LevelDataTime.maxDate,
-        format: format,
-        locale: {
-            format: format,
-            separator: LevelDataTime.separator,
-            applyLabel: '确定',
-            cancelLabel: '取消'
-        },
-        showDropdowns: true,
-        "opens": "right",
-        "drops": "bottom"
-    }, function (start, end, label) {
-        LevelDataTime.start = moment(start).format(format);
-        LevelDataTime.end = moment(end).format(format);
-        vm.time = LevelDataTime.start+LevelDataTime.separator+LevelDataTime.end;
-    });
-    vm.time = LevelDataTime.start+LevelDataTime.separator+LevelDataTime.end;
+
+
+
 </script>

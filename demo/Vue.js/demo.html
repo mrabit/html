@@ -595,7 +595,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">Prop验证</div>
                             <div class="panel-body">
-                                <example :prop-a="1" prop-c="1"></example>
+                                <example :prop-a="1" :prop-b="12" prop-c="1"></example>
                             </div>
                         </div>
                     </div>
@@ -603,9 +603,10 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">使用-v-on-绑定自定义事件</div>
                             <div class="panel-body">
-                                <p>{{ total }}</p>
-                                <child @add="parAdd"></child>
-                                <child @add="parAdd"></child>
+                                <child @add="parAdd"></child> +
+                                <child @add="parAdd"></child> +
+                                <child @add="parAdd"></child> =
+                                <span>{{ total }}</span>
                             </div>
                         </div>
                     </div>
@@ -617,6 +618,197 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-4" id="app45">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">单项数据流,子组件不能改变父组件值</div>
+                            <div class="panel-body">
+                                <div>
+                                    <p>prop 作为初始值传入后，子组件想把它当作局部数据来用；</p>
+                                    <input v-model="parentMsg1" v-model="parentMsg2">
+                                    <br>
+                                    <child :child-value="parentMsg1" :size="parentMsg2"></child>
+                                    <p>prop 作为初始值传入，由子组件处理成其它数据输出。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app46">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">定制组件的-v-model</div>
+                            <div class="panel-body">
+                                <my-checkbox v-model="checked" :value="str"></my-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app47">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">单个Slot</div>
+                            <div class="panel-body">
+                                <div>
+                                    <h1>我是父组件的标题</h1>
+                                    <my-component>
+                                        <p>这是一些初始内容</p>
+                                        <p>这是更多的初始内容</p>
+                                    </my-component>
+                                    <my-component>
+                                    </my-component>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app48">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">具名Slot</div>
+                            <div class="panel-body">
+                                <app-layout>
+                                    <h1 slot="header">这里可能是一个页面标题</h1>
+                                    <p>主要内容的一个段落。</p>
+                                    <p>另一个主要段落。</p>
+                                    <p>再一个主要段落。</p>
+                                    <p>再再一个主要段落。</p>
+                                    <p slot="footer">这里有一些联系信息</p>
+                                </app-layout>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app49">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">作用域插槽</div>
+                            <div class="panel-body">
+                                <div class="parent">
+                                    <child>
+                                        <template scope="props">
+                                            <p>hello from parent</p>
+                                            <p>{{ props.text }}</p>
+                                        </template>
+                                    </child>
+                                </div>
+                                <list :parent-item="parentItems">
+                                    <!-- 作用域插槽也可以是具名的 -->
+                                    <template slot="item" scope="props">
+                                        <li class="my-fancy-item">{{ props.text }}</li>
+                                    </template>
+                                </list>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app50">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">动态组件</div>
+                            <div class="panel-body">
+                                <keep-alive>
+                                    <component v-bind:is="currentView">
+                                        <!-- 组件在 vm.currentview 变化时改变！ -->
+                                    </component>
+                                </keep-alive>
+                                <button class="btn btn-default" @click="change">切换</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app51">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">子组件索引</div>
+                            <div class="panel-body">
+                                <child ref="child"></child>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">深入响应式原理</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app52">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">变化检测问题</div>
+                            <div class="panel-body">
+                                <p>{{ a.b }}</p>
+                                <p>{{ a }}</p>
+                                <p>{{ b }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app53">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">异步更新队列</div>
+                            <div class="panel-body">
+                                {{message}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">过渡效果</div>
+            <div class="panel-body">
+                <div class="row">
+                    <style>
+                        .demo-transition-enter-active, .demo-transition-leave-active {
+                            transition: opacity .5s
+                        }
+                        .demo-transition-enter, .demo-transition-leave-to {
+                            opacity: 0
+                        }
+                    </style>
+                    <div class="col-sm-4" id="app54">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">单元素-组件的过渡</div>
+                            <div class="panel-body">
+                                <button v-on:click="show = !show">
+                                    Toggle
+                                </button>
+                                <transition name="demo-transition">
+                                    <p v-if="show">hello</p>
+                                </transition>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">Render 函数</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-4" id="app55">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">基础</div>
+                            <div class="panel-body">
+                                <script type="text/x-template" id="anchored-heading-template">
+                                    <h1 v-if="level === 1">
+                                        <slot></slot>
+                                    </h1>
+                                    <h2 v-else-if="level === 2">
+                                        <slot></slot>
+                                    </h2>
+                                    <h3 v-else-if="level === 3">
+                                        <slot></slot>
+                                    </h3>
+                                    <h4 v-else-if="level === 4">
+                                        <slot></slot>
+                                    </h4>
+                                    <h5 v-else-if="level === 5">
+                                        <slot></slot>
+                                    </h5>
+                                    <h6 v-else-if="level === 6">
+                                        <slot></slot>
+                                    </h6>
+                                </script>
+                                <anchored-heading :level="level">Hello world!</anchored-heading>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="app56">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">createElement-参数</div>
+                            <div class="panel-body">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -625,6 +817,228 @@
 </html>
 <script type="text/javascript" src="vue.js"></script>
 <script>
+//    Vue.component('anchored-heading', {
+//        template: '#anchored-heading-template',
+//        props: {
+//            level: {
+//                type: Number,
+//                required: true
+//            }
+//        }
+//    });
+    Vue.component('anchored-heading', {
+        render: function (createElement) {
+            return createElement(
+                'h' + this.level,   // tag name 标签名称
+                this.$slots.default // 子组件中的阵列
+            )
+        },
+        props: {
+            level: {
+                type: Number,
+                required: true
+            }
+        }
+    })
+    let vm55 = new Vue({
+        el: "#app55",
+        data: {
+            level: 1
+        }
+    });
+    let vm54 = new Vue({
+        el: "#app54",
+        data: {
+            show: true
+        }
+    });
+    let vm53 = new Vue({
+        el: '#app53',
+        data: {
+            message: '123'
+        }
+    });
+    vm53.message = 'new message'; // 更改数据
+    vm53.$el.textContent === 'new message1'; // false
+    Vue.nextTick(function () {
+        vm53.$el.textContent === 'new message2'; // true
+    });
+    let vm52 = new Vue({
+        el: "#app52",
+        data:{
+            a:{
+
+            }
+        }
+    });
+    // `vm.a` 是响应的
+    vm52.b = 2;
+//    vm52.a["b"] = 10;
+    // `vm.b` 是非响应的
+    //可以使用 Vue.set(object, key, value) 方法将响应属性添加到嵌套的对象上
+    Vue.set(vm52.a, 'b', 200)
+    let vm51 = new Vue({
+        el: "#app51",
+        components: {
+            "child": {
+                template: '<div>' +
+                '<slot>暂无数据</slot>'+
+                '</div>'
+            }
+        }
+    });
+    let vm50 = new Vue({
+        el: "#app50",
+        data: {
+            currentView: {
+                template: '<p>other</p>'
+            }
+        },
+        components: {
+            home: {
+                template: '<p><input type="text"></p>'
+            },
+            posts: {
+                template: '<p><input type="checkbox">checkbox</p>'
+            },
+            archive: {
+                template: '<p><input type="radio" name="1">1<input type="radio" class="m-l-md" name="1">2</p>'
+            }
+        },
+        methods: {
+            change: function () {
+                if(this.currentView === "home"){
+                    this.currentView = "posts";
+                    return;
+                }
+                if(this.currentView === "posts"){
+                    this.currentView = "archive";
+                    return;
+                }
+
+                this.currentView = "home";
+            }
+        }
+    });
+    let vm49 = new Vue({
+        el: "#app49",
+        data: {
+            parentItems: [
+                {text:1},{text:2},{text:3},{text:4},{text:5}
+            ]
+        },
+        components: {
+            "child": {
+                template: ' <div class="child">\
+                                <slot text="hello from child"></slot>\
+                            </div>'
+            },
+            "list": {
+                props: ["parentItem"],
+                data: function () {
+                    let data = [];
+                    this.parentItem.forEach(function (v,k) {
+                        v.text+=1;
+                        data.push(v);
+                    });
+                    return {childItems: data};
+                },
+                template: ' <ul>\
+                                <slot name="item"\
+                                v-for="item in childItems"\
+                                :text="item.text">\
+                                <!-- 这里写入备用内容 -->\
+                                </slot>\
+                            </ul>'
+            }
+        }
+    });
+    let vm48 = new Vue({
+        el: "#app48",
+        components: {
+            "app-layout": {
+                template: ' <div class="w-full">\
+                                <header>\
+                                    <slot name="header"></slot>\
+                                </header>\
+                                <main>\
+                                    <slot></slot>\
+                                </main>\
+                                <footer>\
+                                    <slot name="footer"></slot>\
+                                </footer>\
+                            </div>'
+            }
+        }
+    });
+    let vm47 = new Vue({
+        el: "#app47",
+        components: {
+            "my-component": {
+                template: "<div>\
+                    <h2>我是子组件的标题</h2>\
+                    <slot>\
+                    只有在没有要分发的内容时才会显示。\
+                    </slot>\
+                </div>"
+            }
+        }
+    });
+    Vue.component('my-checkbox', {
+        model: {
+            prop: 'checked',
+            event: 'change'
+        },
+        props: {
+            checked: Boolean,
+            // this allows using the `value` prop for a different purpose
+            value: String
+        },
+        template: "<div><input type='checkbox' :id='myValue' v-model='myChecked'/>{{ myValue }}</div>",
+        data: function () {
+            return {
+                myChecked: this.checked,
+                myValue: this.value
+            }
+        },
+        watch: {
+            myChecked: "updateMyValue"
+        },
+        methods: {
+            updateMyValue: function (newChecked) {
+                console.log(this.myValue)
+                this.myValue = newChecked?"选中":"取消";
+            }
+        }
+    })
+    let vm46 = new Vue({
+        el: "#app46",
+        data: {
+            checked: true,
+            str: "一桶浆糊"
+        }
+    });
+    let vm45 = new Vue({
+        el: "#app45",
+        data: {
+            parentMsg1: 1154,
+            parentMsg2: " message for parent   "
+        },
+        components: {
+            "child": {
+                template: '<span>{{ value }}{{ size }}</span>',
+                props: ['childValue','size'],
+                data: function () {
+                    return { value: this.childValue+1 }
+                },
+                computed: {
+                    normalizedSize: function () {
+                        return this.size.trim().toLowerCase()
+                    }
+                }
+            }
+        }
+    })
     let vm44 = new Vue({
         el: "#app44",
         data: {
@@ -640,6 +1054,7 @@
                         v-bind:value="value"\
                         v-on:input="updateValue($event.target.value)"\
                       >\
+                      <p class="m-t-sm">{{ value }}</p>\
                     </span>\
                   ',
                 props: ['value'],
@@ -727,7 +1142,7 @@
                         }
                     }
                 },
-                template: '<p>Prop验证{{ propC }}{{ propD }}</p>'
+                template: '<p>Prop验证{{ propC }}{{ propB }}{{ propB + propD }}</p>'
             }
         }
     });
