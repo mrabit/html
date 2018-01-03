@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const MissLi = (callback) => {
+        setTimeout(() => {
+            callback("MissLi")
+        }, 1500)
+    }
+    const MrWang = (callback) => {
+        setTimeout(() => {
+            callback("MrWang")
+        }, 200)
+    }
+    const MrChen = (callback) => {
+        setTimeout(() => {
+            callback("MrChen")
+        }, 3000)
+    }
+    const MrLiu = (callback) => {
+        setTimeout(() => {
+            callback("MrLiu")
+        }, 3)
+    }
+    const MrZhang = (callback) => {
+        setTimeout(() => {
+            callback("MrZhang")
+        }, 1)
+    }
+
+
+    //根据时间
+    const driveCustimers1 = (...person) => {
+        let arr = [];
+        for (k in person) {
+            person[k]((name) => {
+                arr.push(name);
+                if (arr.length == person.length) {
+                    console.log(arr);
+                }
+            })
+        }
+    }
+
+    //根据顺序
+    const driveCustimers2 = (...person) => {
+        let arr = [];
+        person.reduce((prev, next) => {
+            return prev.then(() => {
+                return new Promise(resolve => next(resolve)).then((name) => {
+                    arr.push(name);
+                });
+            });
+        }, Promise.resolve()).then(() => {
+            console.log(arr);
+        })
+    }
+
+
+    driveCustimers1(MissLi, MrChen, MrWang, MrLiu, MrZhang);
+    driveCustimers2(MissLi, MrChen, MrWang, MrLiu, MrZhang);
+</script>

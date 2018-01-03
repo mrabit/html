@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="utf8">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/app.min.css">
+    <link rel="stylesheet" href="../../public/js/cropper/dist/cropper.css">
+    <link rel="stylesheet" href="../../public/css/font-awesome.min.css">
+    <style>
+        .cropper-img{
+            height: 500px;
+            width: 800px;
+            background: #f7f7f7;
+        }
+        .preview-lg {
+            width: 600px;
+            height: 600px;
+            zoom: 0.4;
+        }
+        .preview {
+            float: left;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            background: #f7f7f7;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        开始演示模态框
+    </button>
+
+    <div id="preview" class="col-xs-12 wrapper">
+
+    </div>
+
+    <!-- 模态框（Modal） -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" style="width: 80%">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        模态框（Modal）标题
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="wrapper">
+                        <div class="row">
+                            <div class="col-xs-12 m-b-sm no-padder">
+                                <p>DEMO地址：<a href="https://fengyuanchen.github.io/cropper/">https://fengyuanchen.github.io/cropper/</a></p>
+                                <p>文档地址：<a href="https://github.com/fengyuanchen/cropper">https://github.com/fengyuanchen/cropper</a></p>
+                            </div>
+                            <div class="col-xs-4 cropper-img">
+
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="preview preview-lg"></div>
+                            </div>
+                        </div>
+                        <div class="row m-t-sm">
+                            <div class="col-xs-12">
+                                <button class="btn btn-default" onclick='$(".cropper-img > img").cropper("rotate", -45)'>
+                                    <span class="fa fa-rotate-left"></span>
+                                </button>
+                                <button class="btn btn-default" onclick='$(".cropper-img > img").cropper("rotate", 45)'>
+                                    <span class="fa fa-rotate-right"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row m-t-sm">
+                            <div class="col-xs-8">
+                                <input type="file" id="file" data-icon="false" data-classbutton="btn btn-default"
+                                       data-classinput="form-control inline v-middle input-s" tabindex="-1"
+                                       style="position: absolute; clip: rect(0px 0px 0px 0px);">
+                                <div class="bootstrap-filestyle input-group">
+                                    <input type="text" class="form-control " id="show_file" disabled="">
+                                    <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                    <label for="file" class="btn btn-default ">
+                                        <span class="glyphicon glyphicon-folder-open"></span>
+                                        Choose file
+                                    </label>
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button"  class="btn btn-default padder-lg getDataUrl">获取</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+</body>
+</html>
+<script>
+    window.onload = function () {
+        var script = document.createElement("script");
+        script.src= "../../public/js/cropper/dist/cropper.js";
+        document.head.appendChild(script);
+    }
+</script>
+<!--<script src="../../public/js/cropper/dist/cropper.js"></script>-->
+<script src="../../public/js/jquery.js"></script>
+<script src="../../public/js/bootstrap.js"></script>
+
+<script>
+
+    $('#file').change(function (e) {
+        //html5实现预览
+        var file = e.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var $img = $('<img>').attr("src", e.target.result).addClass("img-full");
+            $(".cropper-img").empty().append($img);
+            $('.cropper-img > img').cropper({
+                aspectRatio: 1,
+                preview: ".preview",
+                dragMode: 'move',
+                viewMode: 1
+            });
+        };
+        reader.readAsDataURL(file);
+    });
+
+    $(".getDataUrl").click(function () {
+        var $image = $('.cropper-img > img');
+
+        //cropper插件方法调用
+        var $imgData=$image.cropper('getCroppedCanvas');
+        //dataurl便是base64图片
+        var dataurl = $imgData.toDataURL('image/png');
+
+        var $img = $('<img>').attr("src", dataurl);
+        $('#preview').html($img);
+    });
+</script>
